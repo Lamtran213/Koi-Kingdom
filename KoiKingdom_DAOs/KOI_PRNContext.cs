@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using KoiKingdom_BusinessObject;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.Extensions.Configuration;
 
 namespace KoiKingdom_DAOs
 {
@@ -10,6 +11,11 @@ namespace KoiKingdom_DAOs
     {
         public KOI_PRNContext()
         {
+
+        }
+        public KOI_PRNContext(string connectionString)
+        {
+            this.Database.SetConnectionString(connectionString);
         }
 
         public KOI_PRNContext(DbContextOptions<KOI_PRNContext> options)
@@ -39,9 +45,21 @@ namespace KoiKingdom_DAOs
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=DESKTOP-NEIB8B6\\MINHNGO;Database=KOI_PRN;Uid=sa;Pwd=12345;");
+                optionsBuilder.UseSqlServer(GetConnectionString());
             }
         }
+
+        private string GetConnectionString()
+        {
+            IConfiguration config = new ConfigurationBuilder()
+                 .SetBasePath(Directory.GetCurrentDirectory())
+                        .AddJsonFile("appsettings.json", true, true)
+                        .Build();
+            var strConn = config["ConnectionStrings:DefaultConnectionStringDB"];
+
+            return strConn;
+        }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

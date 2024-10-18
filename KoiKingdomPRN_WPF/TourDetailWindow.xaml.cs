@@ -13,7 +13,7 @@ namespace KoiKingdomPRN_WPF
         private readonly ITourService tourService;
         private readonly IFarmService farmService;
         private readonly CartService cartService; // Thêm biến cho CartService
-        private const string ImageBasePath = @"D:\LAB_PRN\KoiKingdomPRN_WPF\"; // Image base path
+        private const string ImageBasePath = @"C:\Users\ADMIN LAM\OneDrive\Documents\Visual Studio 2022\PRN212_Project\Koi-Kingdom"; // Image base path
 
         public TourDetailWindow(ITourService tourService, IFarmService farmService, int selectedTourId)
         {

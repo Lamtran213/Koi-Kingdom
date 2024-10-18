@@ -17,4 +17,10 @@
     <ProjectReference Include="..\KoiKingdom_Service\KoiKingdom_Service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
