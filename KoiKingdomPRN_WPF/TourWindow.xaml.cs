@@ -1,0 +1,82 @@
+﻿using KoiKingdom_Service;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media.Imaging;
+
+namespace KoiKingdomPRN_WPF
+{
+    public partial class TourWindow : Window
+    {
+        private readonly ITourService tourService; // Giả định bạn có một interface cho tourService
+        private readonly IFarmService farmService; // Giả định bạn có một interface cho farmService
+        private const string ImageBasePath = @"D:\LAB_PRN\KoiKingdomPRN_WPF\"; // Đường dẫn cơ sở cho hình ảnh
+
+        public TourWindow(ITourService tourService, IFarmService farmService)
+        {
+            InitializeComponent();
+            this.tourService = tourService;
+            this.farmService = farmService;
+            LoadTourInformation(); // Gọi phương thức này tại đây
+        }
+
+        public TourWindow()
+        {
+        }
+
+        private void TourButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Lấy tourId từ Tag của button
+            var button = sender as Button;
+            if (button != null)
+            {
+                // Kiểm tra và chuyển đổi Tag sang int
+                if (int.TryParse(button.Tag.ToString(), out int selectedTourId))
+                {
+                  
+                    TourDetailWindow tourDetailWindow = new TourDetailWindow(tourService, farmService, selectedTourId);
+                    tourDetailWindow.Show();
+                }
+                else
+                {
+                    MessageBox.Show("TourId không hợp lệ."); // Hiển thị thông báo nếu không thể chuyển đổi
+                }
+            }
+        }
+
+        private void LoadTourInformation()
+        {
+            var tours = tourService.GetTours().ToList(); // Lấy tất cả các tour
+            var farms = farmService.GetFarms().Select(f => f.FarmName).ToList(); // Lấy tên farm
+
+            if (tours.Any())
+            {
+                // Chuyển đổi thông tin tour thành danh sách đối tượng để binding
+                var tourItems = tours.Select(tour => new
+                {
+                    TourID = tour.TourId,
+                    ImageSource = new BitmapImage(new Uri(Path.Combine(ImageBasePath, tour.Image), UriKind.Absolute)), // Kết hợp đường dẫn hình ảnh
+                    TourName = tour.TourName ?? "Không có tên tour",
+                    Rating = "4.0", // Thay đổi giá trị xếp hạng theo yêu cầu
+                    Duration = $"Duration: {tour.Duration ?? "N/A"}",
+                    StartDate = tour.StartDate,
+                    EndDate = tour.EndDate,
+                    Farms = $"Farm: {string.Join(", ", farms)}",
+                    KoiTypes = $"Koi Type: {(tour.TourKoitypes != null && tour.TourKoitypes.Any() ? string.Join(", ", tour.TourKoitypes.Select(k => k.KoiType)) : "N/A")}",
+                    DepartureLocation = $"Departure Location: {tour.DepartureLocation ?? "N/A"}",
+                    TourPrice = tour.TourPrice
+                }).ToList();
+
+                // Gán danh sách tour vào ItemsControl
+                TourItemsControl.ItemsSource = tourItems;
+            }
+            else
+            {
+                MessageBox.Show("Không có tour nào được tìm thấy.", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+    }
+}

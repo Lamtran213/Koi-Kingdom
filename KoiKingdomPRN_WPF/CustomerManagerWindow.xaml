@@ -1,0 +1,36 @@
+﻿<Window x:Class="KoiKingdomPRN_WPF.CustomerManagerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KoiKingdomPRN_WPF"
+        mc:Ignorable="d"
+        Title="CustomerManagerWindow" Height="450" Width="800" Loaded="WindowLoaded">
+    <Grid>
+        <Label Content="CustomerID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,40,0,0"/>
+        <TextBox x:Name="txtCustomerID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,44,0,0" Width="200"/>
+
+        <!-- Existing Label and TextBox for Email -->
+        <Label Content="Email" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="422,87,0,0"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="518,87,0,0" Width="200"/>
+
+        <!-- New Label and TextBox for FullName -->
+        <Label Content="Full Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,83,0,0"/>
+        <TextBox x:Name="txtFullName" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,83,0,0" Width="200" RenderTransformOrigin="1.817,0.386"/>
+
+        <Label Content="Address" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,126,0,0"/>
+        <TextBox x:Name="txtAddress" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,130,0,0" Width="200"/>
+
+        <!-- New Label and TextBox for AccountType -->
+        <Label Content="Account Type" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="400,126,0,0"/>
+        <TextBox x:Name="txtAccountType" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="518,130,0,0" Width="200"/>
+
+        <Label Content="Status" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="422,44,0,0"/>
+        <ComboBox x:Name="cmbStatus" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="518,48,0,0" Width="200" SelectionChanged="cmbStatus_SelectionChanged">
+            <ComboBoxItem Content="Active" Tag="True"/>
+            <ComboBoxItem Content="Blocked" Tag="False"/>
+        </ComboBox>
+
+        <DataGrid x:Name="dtgCustomer" HorizontalAlignment="Left" Height="176" Margin="36,195,0,0" VerticalAlignment="Top" Width="716" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="dtgCustomer_SelectionChanged"/>
+    </Grid>
+</Window>
