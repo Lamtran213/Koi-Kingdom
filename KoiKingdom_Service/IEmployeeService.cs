@@ -9,8 +9,12 @@ namespace KoiKingdom_Service
 {
     public interface IEmployeeService
     {
+        public Employee GetEmployeeById(int id);
+
         public Employee GetEmployeeByEmail(string email);
 
         public List<Employee> GetEmployees();
+
+        public bool UpdateEmployeeProfile(Employee EmployeeProfile);
     }
 }

@@ -1,0 +1,80 @@
+﻿<Window x:Class="KoiKingdomPRN_WPF.TourManagerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KoiKingdomPRN_WPF"
+        mc:Ignorable="d"
+        Title="TourManagerWindow" Height="450" Width="800" Loaded="WindowLoaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <!-- Sidebar width -->
+            <ColumnDefinition Width="*"/>
+            <!-- Main content takes the remaining space -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Sidebar -->
+        <local:HeaderManagerWindow Grid.Column="0"/>
+
+        <!-- Main Content -->
+        <Grid Grid.Column="1" Margin="10,0,10,0" Height="414" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <!-- Define three columns for content -->
+                <ColumnDefinition Width="264*"/>
+                <ColumnDefinition Width="33*"/>
+                <ColumnDefinition Width="283*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Left Column -->
+            <!-- TourID -->
+            <Label Content="Tour ID" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Height="26" Width="70"/>
+            <TextBox x:Name="txtTourID" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="90,10,0,0" Width="150" Height="26"/>
+
+            <!-- TourName -->
+            <Label Content="Tour Name" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,40,0,0" Height="26" Width="70"/>
+            <TextBox x:Name="txtTourName" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="90,40,0,0" Width="150" Height="26"/>
+
+            <!-- Duration -->
+            <Label Content="Duration" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,70,0,0" Height="26" Width="70"/>
+            <TextBox x:Name="txtDuration" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="90,70,0,0" Width="150" Height="26"/>
+
+            <!-- Description -->
+            <Label Content="Description" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,100,0,0" Height="26" Width="70"/>
+            <TextBox x:Name="txtDescription" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="90,100,0,0" Width="150" Height="60" TextWrapping="Wrap"/>
+
+            <!-- Right Column -->
+            <!-- TourPrice -->
+            <Label Content="Tour Price" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Height="26" Width="70"/>
+            <TextBox x:Name="txtTourPrice" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="125,15,0,0" Width="150" Height="26"/>
+
+            <!-- StartDate -->
+            <!-- Start Date -->
+            <Label Content="Start Date" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,40,0,0" Height="26" Width="70"/>
+            <DatePicker x:Name="dpStartDate" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="123,41,0,0" Width="150" Height="26"/>
+
+            <!-- End Date -->
+            <Label Content="End Date" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,70,0,0" Height="26" Width="70"/>
+            <DatePicker x:Name="dpEndDate" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="125,71,0,0" Width="150" Height="26"/>
+
+
+            <!-- Image -->
+            <Label Content="Image" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,100,0,0" Height="26" Width="70"/>
+            <TextBox x:Name="txtImage" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="125,104,0,0" Width="150" Height="26"/>
+
+            <!-- Departure Location -->
+            <Label Content="Departure Location" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,129,0,0" Height="26" Width="110"/>
+            <TextBox x:Name="txtDepartureLocation" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="125,130,0,0" Width="150" Height="26"/>
+
+            <!-- Status -->
+            <Label Content="Status" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,160,0,0" Height="26" Width="70"/>
+            <ComboBox x:Name="cmbStatus" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="125,160,0,0" Width="150" Height="26" SelectionChanged="cmbStatus_SelectionChanged">
+                <ComboBoxItem Content="Active" Tag="1"/>
+                <ComboBoxItem Content="Inactive" Tag="0"/>
+            </ComboBox>
+
+            <!-- DataGrid for displaying employee data -->
+            <DataGrid Grid.ColumnSpan="3" x:Name="dtgTour" HorizontalAlignment="Left" Height="176" Margin="10,200,0,0" VerticalAlignment="Top" Width="570" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="dtgTour_SelectionChanged"/>
+        </Grid>
+    </Grid>
+</Window>

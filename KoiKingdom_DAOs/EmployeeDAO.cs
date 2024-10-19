@@ -34,6 +34,11 @@ namespace KoiKingdom_DAOs
             dbContext = new KOI_PRNContext();
         }
 
+        public Employee GetEmployeeById(int id)
+        {
+            return dbContext.Employees.SingleOrDefault(e => e.EmployeeId == id);
+        }
+
         // Method to get employee by email
         public Employee GetEmployeeByEmail(string email)
         {
@@ -43,6 +48,30 @@ namespace KoiKingdom_DAOs
         public List<Employee> GetEmployees()
         {
             return dbContext.Employees.ToList();
+        }
+
+        public bool UpdateEmployeeProfile(Employee EmployeeProfile)
+        {
+            bool isSuccess = false;
+            try
+            {
+                Employee existingEmployee = this.GetEmployeeById(EmployeeProfile.EmployeeId);
+                if (existingEmployee != null)
+                {
+                    dbContext.Entry(existingEmployee).CurrentValues.SetValues(EmployeeProfile);
+                    dbContext.SaveChanges();
+                    isSuccess = true;
+                }
+                else
+                {
+                    throw new Exception("Employee not found.");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("An error occurred while updating the Employee: " + ex.Message);
+            }
+            return isSuccess;
         }
     }
 }

@@ -22,9 +22,19 @@ namespace KoiKingdom_Service
            return iEmployeeRepo.GetEmployeeByEmail(email);  
         }
 
+        public Employee GetEmployeeById(int id)
+        {
+            return iEmployeeRepo.GetEmployeeById(id);
+        }
+
         public List<Employee> GetEmployees()
         {
             return iEmployeeRepo.GetEmployees();
+        }
+
+        public bool UpdateEmployeeProfile(Employee EmployeeProfile)
+        {
+            return iEmployeeRepo.UpdateEmployeeProfile(EmployeeProfile);
         }
     }
 }

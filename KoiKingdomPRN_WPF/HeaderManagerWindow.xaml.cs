@@ -30,5 +30,23 @@ namespace KoiKingdomPRN_WPF
             CustomerManagerWindow customerManagerWindow = new CustomerManagerWindow();
             customerManagerWindow.Show();
         }
+
+        private void Employee_Click(object sender, RoutedEventArgs e)
+        {
+            EmployeeManagerWindow employeeManagerWindow = new EmployeeManagerWindow();
+            employeeManagerWindow.Show();
+        }
+
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+            ManagerWindow managerWindow = new ManagerWindow();
+            managerWindow.Show();
+        }
+
+        private void Tour_Click(object sender, RoutedEventArgs e)
+        {
+            TourManagerWindow tourManagerWindow = new TourManagerWindow();
+            tourManagerWindow.Show();
+        }
     }
 }

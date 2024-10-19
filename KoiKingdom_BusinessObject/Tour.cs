@@ -22,7 +22,7 @@ namespace KoiKingdom_BusinessObject
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public string Image { get; set; } = null!;
-        public string? Status { get; set; }
+        public bool? Status { get; set; }
         public string? DepartureLocation { get; set; }
 
         public virtual ICollection<Booking> Bookings { get; set; }
