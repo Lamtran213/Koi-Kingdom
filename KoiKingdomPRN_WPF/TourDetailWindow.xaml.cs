@@ -13,8 +13,7 @@ namespace KoiKingdomPRN_WPF
         private readonly ITourService tourService;
         private readonly IFarmService farmService;
         private readonly CartService cartService; // Thêm biến cho CartService
-        private const string ImageBasePath = @"C:\Users\ADMIN LAM\OneDrive\Documents\Visual Studio 2022\PRN212_Project\Koi-Kingdom"; // Image base path
-
+    
         public TourDetailWindow(ITourService tourService, IFarmService farmService, int selectedTourId)
         {
             InitializeComponent();
@@ -33,18 +32,9 @@ namespace KoiKingdomPRN_WPF
             if (tour != null)
             {
                 // Use BitmapImage with error handling
-                BitmapImage bitmapImage;
-                try
-                {
-                    bitmapImage = new BitmapImage(new Uri(Path.Combine(ImageBasePath, tour.Image), UriKind.Absolute));
-                }
-                catch
-                {
-                    // Handle image loading error (e.g., set a default image or log the error)
-                    bitmapImage = new BitmapImage(); // Placeholder or default image
-                }
+                string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
-                TourImage.Source = bitmapImage;
+                TourImage.Source = new BitmapImage(new Uri(Path.Combine(currentDirectory, tour.Image), UriKind.Absolute));
                 TourName.Text = tour.TourName ?? "Không có tên tour";
                 Rating.Text = "4.0"; // Update rating value as needed
                 Duration.Text = $"Duration: {tour.Duration ?? "N/A"}";

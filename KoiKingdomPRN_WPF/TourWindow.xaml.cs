@@ -13,8 +13,7 @@ namespace KoiKingdomPRN_WPF
     {
         private readonly ITourService tourService; // Giả định bạn có một interface cho tourService
         private readonly IFarmService farmService; // Giả định bạn có một interface cho farmService
-        private const string ImageBasePath = @"C:\Users\ADMIN LAM\OneDrive\Documents\Visual Studio 2022\PRN212_Project\Koi-Kingdom"; // Đường dẫn cơ sở cho hình ảnh
-
+        
         public TourWindow(ITourService tourService, IFarmService farmService)
         {
             InitializeComponent();
@@ -54,11 +53,14 @@ namespace KoiKingdomPRN_WPF
 
             if (tours.Any())
             {
+                // Lấy đường dẫn thư mục hiện tại của ứng dụng (bỏ thư mục "Koi-Kingdom")
+                string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+
                 // Chuyển đổi thông tin tour thành danh sách đối tượng để binding
                 var tourItems = tours.Select(tour => new
                 {
                     TourID = tour.TourId,
-                    ImageSource = new BitmapImage(new Uri(Path.Combine(ImageBasePath, tour.Image), UriKind.Absolute)), // Kết hợp đường dẫn hình ảnh
+                    ImageSource = new BitmapImage(new Uri(Path.Combine(currentDirectory, tour.Image), UriKind.Absolute)), // Không có thư mục "Koi-Kingdom"
                     TourName = tour.TourName ?? "Không có tên tour",
                     Rating = "4.0", // Thay đổi giá trị xếp hạng theo yêu cầu
                     Duration = $"Duration: {tour.Duration ?? "N/A"}",

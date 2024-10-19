@@ -7,30 +7,40 @@
         mc:Ignorable="d"
         Title="CustomerManagerWindow" Height="450" Width="800" Loaded="WindowLoaded">
     <Grid>
-        <Label Content="CustomerID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,40,0,0"/>
-        <TextBox x:Name="txtCustomerID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,44,0,0" Width="200"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <!-- Sidebar width -->
+            <ColumnDefinition Width="*"/>
+            <!-- Main content takes the remaining space -->
+        </Grid.ColumnDefinitions>
 
-        <!-- Existing Label and TextBox for Email -->
-        <Label Content="Email" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="422,87,0,0"/>
-        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="518,87,0,0" Width="200"/>
+        <!-- Sidebar -->
+        <local:HeaderManagerWindow Grid.Column="0"/>
 
-        <!-- New Label and TextBox for FullName -->
-        <Label Content="Full Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,83,0,0"/>
-        <TextBox x:Name="txtFullName" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,83,0,0" Width="200" RenderTransformOrigin="1.817,0.386"/>
+        <!-- Main Content -->
+        <Grid Grid.Column="1" Margin="10">
+            <Label Content="CustomerID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,40,0,0"/>
+            <TextBox x:Name="txtCustomerID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,44,0,0" Width="122"/>
 
-        <Label Content="Address" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,126,0,0"/>
-        <TextBox x:Name="txtAddress" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,130,0,0" Width="200"/>
+            <Label Content="Email" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,83,0,0"/>
+            <TextBox x:Name="txtEmail" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="346,87,0,0" Width="200"/>
 
-        <!-- New Label and TextBox for AccountType -->
-        <Label Content="Account Type" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="400,126,0,0"/>
-        <TextBox x:Name="txtAccountType" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="518,130,0,0" Width="200"/>
+            <Label Content="Full Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,83,0,0"/>
+            <TextBox x:Name="txtFullName" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,83,0,0" Width="122" RenderTransformOrigin="1.817,0.386"/>
 
-        <Label Content="Status" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="422,44,0,0"/>
-        <ComboBox x:Name="cmbStatus" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="518,48,0,0" Width="200" SelectionChanged="cmbStatus_SelectionChanged">
-            <ComboBoxItem Content="Active" Tag="True"/>
-            <ComboBoxItem Content="Blocked" Tag="False"/>
-        </ComboBox>
+            <Label Content="Address" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,126,0,0"/>
+            <TextBox x:Name="txtAddress" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,130,0,0" Width="122"/>
 
-        <DataGrid x:Name="dtgCustomer" HorizontalAlignment="Left" Height="176" Margin="36,195,0,0" VerticalAlignment="Top" Width="716" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="dtgCustomer_SelectionChanged"/>
+            <Label Content="Account Type" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="261,126,0,0"/>
+            <TextBox x:Name="txtAccountType" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="348,130,0,0" Width="200"/>
+
+            <Label Content="Status" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="267,41,0,0"/>
+            <ComboBox x:Name="cmbStatus" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="346,50,0,0" Width="200" SelectionChanged="cmbStatus_SelectionChanged">
+                <ComboBoxItem Content="Active" Tag="True"/>
+                <ComboBoxItem Content="Blocked" Tag="False"/>
+            </ComboBox>
+
+            <DataGrid x:Name="dtgCustomer" HorizontalAlignment="Center" Height="176" Margin="0,207,0,0" VerticalAlignment="Top" Width="560" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="dtgCustomer_SelectionChanged"/>
+        </Grid>
     </Grid>
 </Window>

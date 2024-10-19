@@ -44,16 +44,23 @@ namespace KoiKingdomPRN_WPF
             Customer customer = customerService.GetCustomerByEmail(txtEmail.Text);
             if (employee != null && txtPassword.Password.Equals(employee.Password) && employee.Role.Equals("Manager"))
             {
-                CustomerManagerWindow customerManagerWindow = new CustomerManagerWindow();
-                customerManagerWindow.Show();
+                ManagerWindow managerWindow = new ManagerWindow();
+                managerWindow.Show();
             }
             else if (customer != null && txtPassword.Password.Equals(customer.Password))
             {
-                HomeWindow homeWindow = new HomeWindow();
-                homeWindow.Show();
+                if (customer.Status == true)
+                {
+                    HomeWindow homeWindow = new HomeWindow();
+                    homeWindow.Show();
+                } else 
+                {
+                    MessageBox.Show("Your account is blocked !");
+                }
+               
             } else
             {
-                MessageBox.Show("Bye bye");
+                MessageBox.Show("Your email or password is inconrrect");
             }
                 
         }
