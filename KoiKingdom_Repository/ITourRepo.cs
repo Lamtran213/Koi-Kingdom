@@ -14,7 +14,7 @@ namespace KoiKingdom_Repository
 
         public List<Tour> GetTours();
 
-        public bool AddTour(Tour tour);
+        public Tour AddTour(string tourName, string duration, DateTime startDate, DateTime endDate, string image, decimal? tourPrice = null, string? description = null, bool status = true, string? departureLocation = null);
 
         public bool DeleteTour(int tourId);
 

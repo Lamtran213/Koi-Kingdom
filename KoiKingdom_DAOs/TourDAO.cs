@@ -44,32 +44,46 @@ namespace KoiKingdom_DAOs
         }
 
         // Thêm hồ sơ tour
-        public bool AddTour(Tour tour)
+        public Tour AddTour(string tourName, string duration, DateTime startDate, DateTime endDate, string image, decimal? tourPrice = null, string? description = null, bool status = true, string? departureLocation = null)
         {
-            bool isSuccess = false;
             try
             {
-                if (tour != null)
+                // Kiểm tra xem tour đã tồn tại chưa dựa trên thuộc tính duy nhất (ví dụ: tourName)
+                Tour existingTour = dbContext.Tours.FirstOrDefault(t => t.TourName == tourName);
+
+                if (existingTour == null) // Chỉ thêm nếu không tồn tại
                 {
-                    Tour existingTour = this.GetTourById(tour.TourId);
-                    if (existingTour == null) // Chỉ thêm nếu chưa tồn tại
+                    // Tạo một đối tượng Tour mới
+                    Tour newTour = new Tour
                     {
-                        dbContext.Tours.Add(tour);
-                        dbContext.SaveChanges();
-                        isSuccess = true;
-                    }
-                    else
-                    {
-                        throw new Exception("Tour already exists.");
-                    }
+                        TourName = tourName,
+                        Duration = duration,
+                        Description = description,
+                        TourPrice = tourPrice,
+                        StartDate = startDate,
+                        EndDate = endDate,
+                        Image = image,
+                        Status = status, // Sử dụng status trực tiếp
+                        DepartureLocation = departureLocation
+                    };
+
+                    dbContext.Tours.Add(newTour);
+                    dbContext.SaveChanges();
+                    return newTour; // Trả về tour vừa tạo
+                }
+                else
+                {
+                    throw new Exception("Tour đã tồn tại.");
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception("An error occurred while adding the tour: " + ex.Message);
+                throw new Exception("Đã xảy ra lỗi khi thêm tour: " + ex.Message, ex);
             }
-            return isSuccess;
         }
+
+
+
 
         // Xóa hồ sơ tour theo ID
         public bool DeleteTour(int tourId)
@@ -121,6 +135,6 @@ namespace KoiKingdom_DAOs
             return isSuccess;
         }
 
-  
+
     }
 }

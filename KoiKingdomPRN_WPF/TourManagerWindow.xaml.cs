@@ -41,7 +41,7 @@ namespace KoiKingdomPRN_WPF
                 StartDate = t.StartDate.ToString("dd/MM/yyyy"), // Hiển thị ngày bắt đầu
                 EndDate = t.EndDate.ToString("dd/MM/yyyy"),    // Hiển thị ngày kết thúc
                 t.DepartureLocation,
-                Status = (bool)t.Status ? "Active" : "Blocked"
+                Status = (bool)t.Status ? "Active" : "Inactive"
                 // Hiển thị trạng thái "Active" hoặc "Blocked"
             }).ToList();
         }
@@ -59,7 +59,7 @@ namespace KoiKingdomPRN_WPF
                 StartDate = a.StartDate.ToString("dd/MM/yyyy"), // Hiển thị ngày bắt đầu
                 EndDate = a.EndDate.ToString("dd/MM/yyyy"),    // Hiển thị ngày kết thúc
                 a.DepartureLocation,
-                Status = (bool)a.Status ? "Active" : "Blocked"
+                Status = (bool)a.Status ? "Active" : "Inactive"
                 // Hiển thị trạng thái "Active" hoặc "Blocked"
             }).ToList();
             ReloadTourData();
@@ -100,7 +100,7 @@ namespace KoiKingdomPRN_WPF
 
                                 cmbStatus.SelectedItem = (bool)tour.Status ?
                                                           cmbStatus.Items.OfType<ComboBoxItem>().FirstOrDefault(item => item.Content.ToString() == "Active") :
-                                                          cmbStatus.Items.OfType<ComboBoxItem>().FirstOrDefault(item => item.Content.ToString() == "Blocked");
+                                                          cmbStatus.Items.OfType<ComboBoxItem>().FirstOrDefault(item => item.Content.ToString() == "Inactive");
                             }
                         }
                         catch (FormatException)

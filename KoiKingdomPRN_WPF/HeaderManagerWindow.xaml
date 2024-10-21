@@ -18,7 +18,7 @@
             <Button Content="Customer" Margin="5" FontSize="16" Click="Customer_Click"/>
             <Button Content="Employee" Margin="5" FontSize="16" Click="Employee_Click"/>
             <Button Content="Tour" Margin="5" FontSize="16" Click="Tour_Click"/>
-            <Button Content="Add Tour" Margin="5" FontSize="16"/>
+            <Button Content="Add Tour" Margin="5" FontSize="16" Click="Addtour_Click"/>
             <Button Content="Add Employee" Margin="5" FontSize="16"/>
             <Button Content="Profile" Margin="5" FontSize="16"/>
             <Button Content="Logout" Margin="5" FontSize="16"/>

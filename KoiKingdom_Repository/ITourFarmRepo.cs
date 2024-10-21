@@ -7,16 +7,16 @@ namespace KoiKingdom_Repository
     public interface ITourFarmRepo
     {
         // Lấy tour farm theo ID
-        TourFarm GetTourFarmById(int id);
+        TourFarm GetTourFarmById(int tourId, int farmId);
 
         // Lấy danh sách tất cả tour farms
         List<TourFarm> GetTourFarms();
 
         // Thêm hồ sơ tour farm
-        bool AddTourFarm(TourFarm tourFarm);
+        TourFarm AddTourFarm(int tourId, int farmId);
 
         // Xóa hồ sơ tour farm theo ID
-        bool DeleteTourFarm(int tourId);
+        bool DeleteTourFarm(int tourId, int farmId);
 
         // Cập nhật hồ sơ tour farm
         bool UpdateTourFarm(TourFarm tourFarm);

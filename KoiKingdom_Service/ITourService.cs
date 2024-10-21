@@ -10,9 +10,9 @@ namespace KoiKingdom_Service
 {
     public interface ITourService
     {
-        public bool AddTour(Tour tour) => TourDAO.Instance.AddTour(tour);
+        public Tour AddTour(string tourName, string duration, DateTime startDate, DateTime endDate, string image, decimal? tourPrice = null, string? description = null, bool status = true, string? departureLocation = null);
 
-        public bool DeleteTour(int tourId) => TourDAO.Instance.DeleteTour(tourId);
+        public bool DeleteTour(int tourId) => TourDAO.Instance.DeleteTour(tourId);  
 
         public Tour GetTourById(int id) => TourDAO.Instance.GetTourById(id);
 

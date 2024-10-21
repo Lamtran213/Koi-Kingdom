@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KoiKingdom_Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,20 @@ namespace KoiKingdomPRN_WPF
     /// </summary>
     public partial class HeaderManagerWindow : UserControl
     {
+        private ITourService tourService;
+        private IFarmService farmService;
+        private IKoitypeService koitypeService;
+        private ITourFarmService tourFarmService;
+        private ITourKoitypeService tourKoitypeService;
+
         public HeaderManagerWindow()
         {
             InitializeComponent();
+            tourService = new TourService();
+            farmService = new FarmService();
+            koitypeService = new KoitypeService();
+            tourFarmService = new TourFarmService();
+            tourKoitypeService = new TourKoitypeService();
         }
 
         private void Customer_Click(object sender, RoutedEventArgs e)
@@ -47,6 +59,12 @@ namespace KoiKingdomPRN_WPF
         {
             TourManagerWindow tourManagerWindow = new TourManagerWindow();
             tourManagerWindow.Show();
+        }
+
+        private void Addtour_Click(object sender, RoutedEventArgs e)
+        {
+            AddTourManagerWindow addTourManagerWindow = new AddTourManagerWindow(tourService, farmService, koitypeService, tourFarmService, tourKoitypeService);
+            addTourManagerWindow.Show();
         }
     }
 }

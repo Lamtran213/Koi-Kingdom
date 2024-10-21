@@ -1,0 +1,68 @@
+﻿<Window x:Class="KoiKingdomPRN_WPF.AddTourManagerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KoiKingdomPRN_WPF"
+        mc:Ignorable="d"
+        Title="Add Tour Manager" Height="450" Width="800" Loaded="WindowLoaded">
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="10">
+                <TextBlock Text="Tour Name" Margin="0,0,0,5"/>
+                <TextBox Name="TourName" Margin="0,0,0,10"/>
+
+                <TextBlock Text="Description" Margin="0,0,0,5"/>
+                <TextBox Name="Description" Margin="0,0,0,10" AcceptsReturn="True" Height="60"/>
+
+                <TextBlock Text="Tour Price" Margin="0,0,0,5"/>
+                <TextBox Name="TourPrice" Margin="0,0,0,10" />
+
+
+                <TextBlock Text="Start Date" Margin="0,0,0,5"/>
+                <DatePicker Name="StartDate" Margin="0,0,0,10"/>
+
+                <TextBlock Text="End Date" Margin="0,0,0,5"/>
+                <DatePicker Name="EndDate" Margin="0,0,0,10"/>
+
+                <TextBlock Text="Tour Image" Margin="0,0,0,5"/>
+                <Button Content="Choose File" Margin="0,0,0,10" Click="ChooseFile_Click"/>
+
+                <TextBlock Text="Duration" Margin="0,0,0,5"/>
+                <DatePicker Name="Duration" Margin="0,0,0,10"/>
+
+                <TextBlock Text="Departure Location" Margin="0,0,0,5"/>
+                <ComboBox Name="DepartureLocation" Margin="0,0,0,10">
+                    <ComboBoxItem Content="Hà Nội" />
+                    <ComboBoxItem Content="Hồ Chí Minh" />
+                    <ComboBoxItem Content="Đà Nẵng" />
+                    <ComboBoxItem Content="Cam Ranh" />
+                    <ComboBoxItem Content="Phú Quốc" />
+                    <ComboBoxItem Content="Hải Phòng" />
+                    <ComboBoxItem Content="Cần Thơ" />
+                    <ComboBoxItem Content="Quảng Ninh" />
+                    <ComboBoxItem Content="Thanh Hóa" />
+                </ComboBox>
+
+                <ItemsControl Name="FarmsItemsControl" Margin="0,0,0,10">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <CheckBox Content="{Binding Name}" Tag="{Binding FarmId}" />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <ItemsControl Name="KoiTypesItemsControl" Margin="0,0,0,10">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <CheckBox Content="{Binding TypeName}" Tag="{Binding KoiTypeId}" />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+
+                <Button Content="Create Tour" Margin="0,10,0,0" Click="CreateTour_Click"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

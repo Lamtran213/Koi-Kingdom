@@ -17,29 +17,29 @@ namespace KoiKingdom_Service
             iTourFarmRepo = new TourFarmRepo();
         }
 
-        public TourFarm GetTourById(int id)
+        public TourFarm GetTourFarmById(int tourId, int farmid)
         {
-            return iTourFarmRepo.GetTourFarmById(id);
+            return iTourFarmRepo.GetTourFarmById(tourId, farmid);
         }
 
-        public List<TourFarm> GetTours()
+        public List<TourFarm> GetTourFarms()
         {
             return iTourFarmRepo.GetTourFarms();
         }
 
-        public bool AddTour(TourFarm tour)
+        public TourFarm AddTourFarm(int tourId, int farmId)
         {
-            return iTourFarmRepo.AddTourFarm(tour);
+            return iTourFarmRepo.AddTourFarm(tourId, farmId);
         }
 
-        public bool UpdateTour(TourFarm tour)
+        public bool UpdateTourFarm(TourFarm tour)
         {
             return iTourFarmRepo.UpdateTourFarm(tour);
         }
 
-        public bool DeleteTour(int tourId)
+        public bool DeleteTourFarm(int tourId, int  farmid)
         {
-            return iTourFarmRepo.DeleteTourFarm(tourId);
+            return iTourFarmRepo.DeleteTourFarm(tourId, farmid);
         }
     }
 }

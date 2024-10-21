@@ -10,12 +10,12 @@ namespace KoiKingdom_Repository
 {
     public class TourFarmRepo : ITourFarmRepo
     {
-        public bool AddTourFarm(TourFarm tourFarm) => TourFarmDAO.Instance.AddTourFarm(tourFarm);
+        public TourFarm AddTourFarm(int tourId, int farmId) => TourFarmDAO.Instance.AddTourFarm(tourId, farmId);
   
 
-        public bool DeleteTourFarm(int tourId) => TourFarmDAO.Instance.DeleteTourFarm(tourId);
+        public bool DeleteTourFarm(int tourId, int farmId) => TourFarmDAO.Instance.DeleteTourFarm(tourId, farmId);
 
-        public TourFarm GetTourFarmById(int id) => TourFarmDAO.Instance.GetTourFarmById(id);
+        public TourFarm GetTourFarmById(int tourId, int farmId) => TourFarmDAO.Instance.GetTourFarmById(tourId, farmId);
 
         public List<TourFarm> GetTourFarms() => TourFarmDAO.Instance.GetTourFarms();
 

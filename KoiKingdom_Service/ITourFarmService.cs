@@ -1,24 +1,24 @@
 ﻿using KoiKingdom_BusinessObject;
 using KoiKingdom_DAOs;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KoiKingdom_Service
 {
     public interface ITourFarmService
     {
-        public bool AddTour(TourFarm tourFarm) => TourFarmDAO.Instance.AddTourFarm(tourFarm);
+        // Lấy tour farm theo ID
+        TourFarm GetTourFarmById(int tourId, int farmId);
 
-        public bool DeleteTour(int tourFarmId) => TourFarmDAO.Instance.DeleteTourFarm(tourFarmId);
+        // Lấy danh sách tất cả tour farms
+        List<TourFarm> GetTourFarms();
 
-        public TourFarm GetTourById(int tourFarmId) => TourFarmDAO.Instance.GetTourFarmById(tourFarmId);
+        // Thêm hồ sơ tour farm
+        public TourFarm AddTourFarm(int tourId, int farmId);
 
-        public List<TourFarm> GetTours() => TourFarmDAO.Instance.GetTourFarms();
+        // Xóa hồ sơ tour farm theo ID
+        bool DeleteTourFarm(int tourId, int farmId);
 
-        public bool UpdateTour(TourFarm tourFarmId) => TourFarmDAO.Instance.UpdateTourFarm(tourFarmId);
-
+        // Cập nhật hồ sơ tour farm
+        bool UpdateTourFarm(TourFarm tourFarm);
     }
 }
