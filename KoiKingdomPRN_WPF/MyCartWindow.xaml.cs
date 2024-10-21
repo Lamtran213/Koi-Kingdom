@@ -20,14 +20,15 @@ namespace KoiKingdomPRN_WPF
     /// </summary>
     public partial class MyCartWindow : Window
     {
-        private readonly CartService cartService;
-        public MyCartWindow()
+        private readonly ICartItemServices cartItemServices;
+        public MyCartWindow(ICartItemServices cartItemServices)
         {
             InitializeComponent();
-            this.cartService = new CartService();
+            this.cartItemServices = cartItemServices;
         }
+        public MyCartWindow() { }
 
 
-       
+
     }
 }

@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace KoiKingdom_Service
 {
-    public class CartService
+    public class CartItemServices : ICartItemServices
     {
-        private CartItemRepository cartItemRepository;
+        private ICartItemRepo iCartRepo;
 
-        public CartService()
+        public CartItemServices()
         {
-            cartItemRepository = new CartItemRepository();
+            iCartRepo = new CartItemRepository();
         }
 
         // Thêm một tour vào giỏ hàng với logic kiểm tra số lượng
@@ -22,7 +22,7 @@ namespace KoiKingdom_Service
         {
             if (quantity > 0)
             {
-                cartItemRepository.AddCartItem(tour, quantity);
+                iCartRepo.AddCartItem(tour, quantity);
             }
             else
             {
@@ -32,13 +32,13 @@ namespace KoiKingdom_Service
         // Lấy các mục trong giỏ hàng
         public List<CartItem> GetCartItems()
         {
-            return cartItemRepository.GetCartItems();
+            return iCartRepo.GetCartItems();
         }
 
         // Xóa tour khỏi giỏ hàng
         public void RemoveTourFromCart(int tourId)
         {
-            cartItemRepository.RemoveCartItem(tourId);
+            iCartRepo.RemoveCartItem(tourId);
         }
     }
 }

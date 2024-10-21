@@ -12,14 +12,14 @@ namespace KoiKingdomPRN_WPF
     {
         private readonly ITourService tourService;
         private readonly IFarmService farmService;
-        private readonly CartService cartService; // Thêm biến cho CartService
+        private readonly CartItemServices cartService; // Thêm biến cho CartService
     
         public TourDetailWindow(ITourService tourService, IFarmService farmService, int selectedTourId)
         {
             InitializeComponent();
             this.tourService = tourService;
             this.farmService = farmService;
-            this.cartService = new CartService(); // Khởi tạo CartService
+            this.cartService = new CartItemServices(); // Khởi tạo CartService
 
             LoadTourInformation(selectedTourId);
         }

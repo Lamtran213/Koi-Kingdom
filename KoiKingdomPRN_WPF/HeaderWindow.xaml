@@ -14,7 +14,10 @@
                     <MenuItem Header="Custom Tour" Click="CustomTour_Click"/>
                 </MenuItem>
                 <MenuItem Header="Services" Click="Services_Click"/>
-                <MenuItem Header="Information" Click="MenuItem_Click_1"/>
+                <MenuItem Header="Information" Click="MenuItem_Click_1">
+                    <MenuItem Header="Farm" Click="Farm_Click"/>
+                    <MenuItem Header="KoiType" Click="KoiType_Click"/>
+                </MenuItem>
                 <MenuItem Header="Contact" Click="Contact_Click"/>
             </Menu>
 

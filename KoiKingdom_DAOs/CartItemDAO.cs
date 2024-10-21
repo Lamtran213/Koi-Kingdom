@@ -7,6 +7,27 @@ namespace KoiKingdom_DAOs
 {
     public class CartItemDAO
     {
+
+        private KOI_PRNContext dbContext;
+        private static CartItemDAO instance;
+
+        public CartItemDAO()
+        {
+            dbContext = new KOI_PRNContext();
+        }
+
+        public static CartItemDAO Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new CartItemDAO();
+                }
+                return instance;
+            }
+        }
+
         // Giả sử bạn sử dụng một danh sách tạm thời để lưu giỏ hàng
         private static List<CartItem> cartItems = new List<CartItem>();
 

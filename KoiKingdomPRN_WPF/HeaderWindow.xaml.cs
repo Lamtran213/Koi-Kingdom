@@ -8,12 +8,14 @@ namespace KoiKingdomPRN_WPF
     {
         private ITourService tourService;
         private IFarmService farmService;
+        private ICartItemServices cartItemServices;
 
         public HeaderWindow()
         {
             InitializeComponent();
             tourService = new TourService();
             farmService = new FarmService();
+            cartItemServices = new CartItemServices();
         }
 
         private void Home_Click(object sender, RoutedEventArgs e)
@@ -41,6 +43,16 @@ namespace KoiKingdomPRN_WPF
             // Implement logic for Contact menu item click
         }
 
+        private void Farm_Click(object sender, RoutedEventArgs e)
+        {
+            // Implement logic for Contact menu item click
+        }
+
+        private void KoiType_Click(object sender, RoutedEventArgs e)
+        {
+            // Implement logic for Contact menu item click
+        }
+
         private void Booking_Click(object sender, RoutedEventArgs e)
         {
             // Implement logic for Booking menu item click
@@ -60,7 +72,7 @@ namespace KoiKingdomPRN_WPF
         // Event handlers for button clicks
         private void AddToCart_Click(object sender, RoutedEventArgs e)
         {
-            MyCartWindow myCartWindow = new MyCartWindow();
+            MyCartWindow myCartWindow = new MyCartWindow(cartItemServices);
             myCartWindow.Show();
         }
 

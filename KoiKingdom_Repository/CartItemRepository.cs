@@ -8,31 +8,22 @@ using System.Threading.Tasks;
 
 namespace KoiKingdom_Repository
 {
-    public class CartItemRepository
+    public class CartItemRepository : ICartItemRepo
     {
-        private CartItemDAO cartItemDAO;
-
-        public CartItemRepository()
-        {
-            cartItemDAO = new CartItemDAO();
-        }
 
         // Thêm một mục vào giỏ hàng
-        public void AddCartItem(Tour tour, int quantity)
-        {
-            cartItemDAO.AddCartItem(tour, quantity);
-        }
+        public void AddCartItem(Tour tour, int quantity)=> CartItemDAO.Instance.AddCartItem(tour, quantity);
+
 
         // Lấy tất cả các mục trong giỏ hàng
-        public List<CartItem> GetCartItems()
-        {
-            return cartItemDAO.GetCartItems();
-        }
+        public List<CartItem> GetCartItems() => CartItemDAO.Instance.GetCartItems();
+
+
 
         // Xóa một mục khỏi giỏ hàng
-        public void RemoveCartItem(int tourId)
-        {
-            cartItemDAO.RemoveCartItem(tourId);
-        }
+        public void RemoveCartItem(int tourId) => CartItemDAO.Instance.RemoveCartItem(tourId);
+
+
+
     }
 }
