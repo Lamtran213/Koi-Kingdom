@@ -186,27 +186,65 @@ namespace KoiKingdomPRN_WPF
 
 
         // Giả sử bạn có một phương thức chọn file
-        private string ImagePath;
+        private string ImagePath; // Store relative image path
+        private string fullImagePath; // Store full image path
+
         private void ChooseFile_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
 
-            // Để cho phép chọn bất kỳ loại tệp nào
-            dlg.Filter = "All files (*.*)|*.*"; // Chọn tất cả các loại tệp
+            // Allow any file type selection
+            dlg.Filter = "All files (*.*)|*.*"; // Choose all types of files
 
             bool? result = dlg.ShowDialog();
             if (result == true)
             {
-                // Lấy tên tệp từ đường dẫn đã chọn
+                // Get the file name from the selected path
                 string fileName = System.IO.Path.GetFileName(dlg.FileName);
 
-                // Kết hợp với đường dẫn thư mục mong muốn
+                // Combine with the desired folder path
                 ImagePath = System.IO.Path.Combine("img", "TourImage", fileName);
+                ImagePath = ImagePath.Replace("\\", "/");
 
-                // Nếu cần, có thể hiển thị đường dẫn đã chọn trên giao diện người dùng
-                MessageBox.Show($"Image path set to: {ImagePath}");
+                // Get the full path for uploading
+                fullImagePath = GetFullImagePath(fileName);
+
+                // Display the selected image path to the user
+                MessageBox.Show($"Image path set to: {ImagePath}\nFull path for upload: {fullImagePath}");
+
+                // Optionally, you can copy the file to the destination if required
+                SaveFileToDestination(dlg.FileName, fullImagePath);
             }
         }
+
+        // Method to construct the full image path for upload
+        private string GetFullImagePath(string fileName)
+        {
+            return System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, ImagePath);
+        }
+
+        // Method to save the file to the destination folder
+        private void SaveFileToDestination(string sourceFilePath, string destinationFilePath)
+        {
+            try
+            {
+                // Ensure the directory exists
+                string directoryPath = System.IO.Path.GetDirectoryName(destinationFilePath);
+                if (!System.IO.Directory.Exists(directoryPath))
+                {
+                    System.IO.Directory.CreateDirectory(directoryPath);
+                }
+
+                // Copy the file to the destination path
+                System.IO.File.Copy(sourceFilePath, destinationFilePath, true);
+                MessageBox.Show("Image uploaded successfully.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error uploading image: " + ex.Message);
+            }
+        }
+
 
 
         private void TourPrice_TextChanged(object sender, TextChangedEventArgs e)
