@@ -35,10 +35,15 @@ namespace KoiKingdom_Service
             return iCartRepo.GetCartItems();
         }
 
-        // Xóa tour khỏi giỏ hàng
-        public void RemoveTourFromCart(int tourId)
+        public List<(Tour tour, int quantity)> GetList()
         {
-            iCartRepo.RemoveCartItem(tourId);
+            return iCartRepo.GetList();
+        }
+
+        // Xóa tour khỏi giỏ hàng
+        public void RemoveTourFromCart(Tour tour, int quantity)
+        {
+            iCartRepo.RemoveCartItem(tour, quantity);
         }
     }
 }

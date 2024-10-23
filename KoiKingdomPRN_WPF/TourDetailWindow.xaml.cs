@@ -12,38 +12,38 @@ namespace KoiKingdomPRN_WPF
     {
         private readonly ITourService tourService;
         private readonly IFarmService farmService;
-        private readonly CartItemServices cartService; // Thêm biến cho CartService
-    
+        private readonly CartItemServices cartService;
+        private Tour currentTour; // Store the current selected tour
+
         public TourDetailWindow(ITourService tourService, IFarmService farmService, int selectedTourId)
         {
             InitializeComponent();
             this.tourService = tourService;
             this.farmService = farmService;
-            this.cartService = new CartItemServices(); // Khởi tạo CartService
+            this.cartService = new CartItemServices(); // Initialize CartService
 
             LoadTourInformation(selectedTourId);
         }
 
         private void LoadTourInformation(int selectedTourId)
         {
-            var tour = tourService.GetTours().FirstOrDefault(t => t.TourId == selectedTourId);
+            currentTour = tourService.GetTours().FirstOrDefault(t => t.TourId == selectedTourId);
             var farms = farmService.GetFarms().Select(f => f.FarmName).ToList();
 
-            if (tour != null)
+            if (currentTour != null)
             {
-                // Use BitmapImage with error handling
                 string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
-                TourImage.Source = new BitmapImage(new Uri(Path.Combine(currentDirectory, tour.Image), UriKind.Absolute));
-                TourName.Text = tour.TourName ?? "Không có tên tour";
+                TourImage.Source = new BitmapImage(new Uri(Path.Combine(currentDirectory, currentTour.Image), UriKind.Absolute));
+                TourName.Text = currentTour.TourName ?? "Không có tên tour";
                 Rating.Text = "4.0"; // Update rating value as needed
-                Duration.Text = $"Duration: {tour.Duration ?? "N/A"}";
-                StartDate.Text = tour.StartDate.ToString("dd-MM-yyyy");
-                EndDate.Text = tour.EndDate.ToString("dd-MM-yyyy");
+                Duration.Text = $"Duration: {currentTour.Duration ?? "N/A"}";
+                StartDate.Text = currentTour.StartDate.ToString("dd-MM-yyyy");
+                EndDate.Text = currentTour.EndDate.ToString("dd-MM-yyyy");
                 FarmNames.Text = $"Farm: {string.Join(", ", farms)}";
-                KoiTypes.Text = $"Koi Type: {(tour.TourKoitypes != null && tour.TourKoitypes.Any() ? string.Join(", ", tour.TourKoitypes.Select(k => k.KoiType)) : "N/A")}";
-                DepartureLocation.Text = $"Departure Location: {tour.DepartureLocation ?? "N/A"}";
-                TourPrice.Text = string.Format("{0:C}", tour.TourPrice);
+                KoiTypes.Text = $"Koi Type: {(currentTour.TourKoitypes != null && currentTour.TourKoitypes.Any() ? string.Join(", ", currentTour.TourKoitypes.Select(k => k.KoiType)) : "N/A")}";
+                DepartureLocation.Text = $"Departure Location: {currentTour.DepartureLocation ?? "N/A"}";
+                TourPrice.Text = string.Format("{0:C}", currentTour.TourPrice);
             }
             else
             {
@@ -51,20 +51,36 @@ namespace KoiKingdomPRN_WPF
             }
         }
 
-        private void BookNow_Click(object sender, RoutedEventArgs e)
-        {
-            // Handle book now action
-        }
-
         private void AddToCart_Click(object sender, RoutedEventArgs e)
         {
-            // Lấy tour hiện tại từ DataContext
-            var currentTour = (Tour)this.DataContext;
-            var tourId = currentTour.TourId; // Lấy ID của tour
+            if (currentTour != null)
+            {
+                try
+                {
+                    // Get the quantity entered by the user
+                    int quantity = Convert.ToInt32(QuantityDisplay.Text);
 
-            // Gọi dịch vụ giỏ hàng để thêm tour vào giỏ hàng
-            int quantity = Convert.ToInt32(QuantityDisplay.Text);
-            cartService.AddTourToCart(currentTour, quantity); // Sử dụng CartService
+                    if (quantity > 0)
+                    {
+                        // Add the tour to the cart using CartService
+                        cartService.AddTourToCart(currentTour, quantity);
+                        MessageBox.Show("Đã thêm vào giỏ hàng thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                        HeaderWindow headerWindow = new HeaderWindow(cartService, currentTour, quantity);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Số lượng phải lớn hơn 0.", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Vui lòng nhập số lượng hợp lệ.", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không có tour nào để thêm vào giỏ hàng.", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         private void IncreaseQuantity_Click(object sender, RoutedEventArgs e)
@@ -85,6 +101,11 @@ namespace KoiKingdomPRN_WPF
         private void BackToTourList_Click(object sender, RoutedEventArgs e)
         {
             this.Close(); // Close this window to go back
+        }
+
+        private void BookNow_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

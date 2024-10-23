@@ -55,16 +55,20 @@ namespace KoiKingdom_DAOs
         }
 
         // Xóa một mục khỏi giỏ hàng
-        public void RemoveCartItem(int tourId)
+        public void RemoveCartItem(Tour tour, int quantity)
         {
-            // Tìm kiếm mục để xóa theo TourId
-            var itemToRemove = cartItems.FirstOrDefault(item => item.tour.TourId == tourId);
+            // Tìm kiếm mục để xóa theo TourId và quantity
+            var itemToRemove = cartItems.FirstOrDefault(cartItem =>
+                cartItem.tour.TourId == tour.TourId && cartItem.numberOfPeople == quantity);
+
             if (itemToRemove != null)
             {
                 // Nếu tìm thấy, xóa mục đó
                 cartItems.Remove(itemToRemove);
             }
         }
+
+
 
         // Lấy danh sách tour và số lượng
         public List<(Tour tour, int quantity)> GetList()

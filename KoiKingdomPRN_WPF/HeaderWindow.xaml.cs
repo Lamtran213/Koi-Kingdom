@@ -1,4 +1,5 @@
-﻿using KoiKingdom_Service;
+﻿using KoiKingdom_BusinessObject;
+using KoiKingdom_Service;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -9,6 +10,9 @@ namespace KoiKingdomPRN_WPF
         private ITourService tourService;
         private IFarmService farmService;
         private ICartItemServices cartItemServices;
+        private CartItemServices cartService;
+        private Tour currentTour;
+        private int quantity;
 
         public HeaderWindow()
         {
@@ -16,6 +20,13 @@ namespace KoiKingdomPRN_WPF
             tourService = new TourService();
             farmService = new FarmService();
             cartItemServices = new CartItemServices();
+        }
+
+        public HeaderWindow(CartItemServices cartService, Tour currentTour, int quantity)
+        {
+            this.cartService = cartService;
+            this.currentTour = currentTour;
+            this.quantity = quantity;
         }
 
         private void Home_Click(object sender, RoutedEventArgs e)
@@ -72,7 +83,7 @@ namespace KoiKingdomPRN_WPF
         // Event handlers for button clicks
         private void AddToCart_Click(object sender, RoutedEventArgs e)
         {
-            MyCartWindow myCartWindow = new MyCartWindow(cartItemServices);
+            MyCartWindow myCartWindow = new MyCartWindow(cartItemServices, cartService, currentTour, quantity);
             myCartWindow.Show();
         }
 

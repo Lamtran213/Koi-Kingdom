@@ -11,6 +11,7 @@ namespace KoiKingdom_Repository
     {
         public void AddCartItem(Tour tour, int quantity);
         public List<CartItem> GetCartItems();
-        public void RemoveCartItem(int tourId);
+        public void RemoveCartItem(Tour tour, int quantity);
+        List<(Tour tour, int quantity)> GetList();
     }
 }

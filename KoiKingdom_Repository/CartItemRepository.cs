@@ -18,10 +18,10 @@ namespace KoiKingdom_Repository
         // Lấy tất cả các mục trong giỏ hàng
         public List<CartItem> GetCartItems() => CartItemDAO.Instance.GetCartItems();
 
-
+        public List<(Tour tour, int quantity)> GetList() => CartItemDAO.Instance.GetList();
 
         // Xóa một mục khỏi giỏ hàng
-        public void RemoveCartItem(int tourId) => CartItemDAO.Instance.RemoveCartItem(tourId);
+        public void RemoveCartItem(Tour tour, int quantity) => CartItemDAO.Instance.RemoveCartItem(tour, quantity);
 
 
 
