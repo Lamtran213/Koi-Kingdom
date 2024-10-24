@@ -45,24 +45,28 @@ namespace KoiKingdomPRN_WPF
 
         private void Employee_Click(object sender, RoutedEventArgs e)
         {
+            Window.GetWindow(this)?.Hide();
             EmployeeManagerWindow employeeManagerWindow = new EmployeeManagerWindow();
             employeeManagerWindow.Show();
         }
 
         private void Home_Click(object sender, RoutedEventArgs e)
         {
+            Window.GetWindow(this)?.Hide();
             ManagerWindow managerWindow = new ManagerWindow();
             managerWindow.Show();
         }
 
         private void Tour_Click(object sender, RoutedEventArgs e)
         {
+            Window.GetWindow(this)?.Hide();
             TourManagerWindow tourManagerWindow = new TourManagerWindow();
             tourManagerWindow.Show();
         }
 
         private void Addtour_Click(object sender, RoutedEventArgs e)
         {
+            Window.GetWindow(this)?.Hide();
             AddTourManagerWindow addTourManagerWindow = new AddTourManagerWindow(tourService, farmService, koitypeService, tourFarmService, tourKoitypeService);
             addTourManagerWindow.Show();
         }

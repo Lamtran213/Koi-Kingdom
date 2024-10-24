@@ -3,29 +3,54 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              Height="100" Width="800">
     <Grid Background="#F9F3E8">
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20">
-            <Image Source="img/logo.png" Width="50" Height="50" VerticalAlignment="Center" />
-            <TextBlock Text="KOI KINGDOM" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" Margin="10,0,0,0"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" MinWidth="265" />
+            <!-- For logo -->
+            <ColumnDefinition />
+            <!-- For menu (auto-expand) -->
+            <ColumnDefinition Width="auto" MinWidth="218" />
+            <!-- For buttons -->
+        </Grid.ColumnDefinitions>
 
-            <Menu HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,0,0,0">
-                <MenuItem Header="Home" Click="Home_Click"/>
-                <MenuItem Header="Booking" Click="Booking_Click">
-                    <MenuItem Header="Tour" Click="TourBooking_Click"/>
-                    <MenuItem Header="Custom Tour" Click="CustomTour_Click"/>
+        <!-- Logo Section -->
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="0" Height="50">
+            <TextBlock Text="KOI KINGDOM" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" Margin="10,0,0,0"/>
+        </StackPanel>
+
+        <TextBlock Text="KOI KINGDOM" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" Margin="10,0,0,0"/>
+
+        <Menu HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Height="18" Width="290">
+            <MenuItem Header="Home" Click="Home_Click"/>
+            <MenuItem Header="Booking" Click="Booking_Click">
+                <MenuItem Header="Tour" Click="TourBooking_Click"/>
+                <MenuItem Header="Custom Tour" Click="CustomTour_Click"/>
+            </MenuItem>
+            <MenuItem Header="Services" Click="Services_Click"/>
+            <MenuItem Header="Information" Click="MenuItem_Click_1">
+                <MenuItem Header="Farm" Click="Farm_Click"/>
+                <MenuItem Header="KoiType" Click="KoiType_Click"/>
+            </MenuItem>
+            <MenuItem Header="Contact" Click="Contact_Click"/>
+        </Menu>
+
+        <!-- Button Section -->
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" Height="20" Width="164">
+            <Button Content="AddToCart" Background="Transparent" BorderBrush="Transparent" Click="AddToCart_Click"/>
+            <Button Content="Button2" Background="Transparent" BorderBrush="Transparent" Margin="10,0,0,0" Click="Button2_Click"/>
+
+            <!-- Profile Menu -->
+            <Menu>
+                <MenuItem Header="Profile" VerticalAlignment="Center">
+                    <!-- Submenu for Profile -->
+                    <MenuItem Header="My Booking Tour" Click="MyBookingTour_Click"/>
                 </MenuItem>
-                <MenuItem Header="Services" Click="Services_Click"/>
-                <MenuItem Header="Information" Click="MenuItem_Click_1">
-                    <MenuItem Header="Farm" Click="Farm_Click"/>
-                    <MenuItem Header="KoiType" Click="KoiType_Click"/>
-                </MenuItem>
-                <MenuItem Header="Contact" Click="Contact_Click"/>
             </Menu>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,0,0,0">
-                <Button Content="AddToCart" Background="Transparent" BorderBrush="Transparent" Click="AddToCart_Click"/>
-                <Button Content="Button2" Background="Transparent" BorderBrush="Transparent" Margin="10,0,0,0" Click="Button2_Click"/>
-                <Button Content="Button3" Background="Transparent" BorderBrush="Transparent" Margin="10,0,0,0" Click="Button3_Click"/>
-            </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,0,0,0">
+            <Button Content="AddToCart" Background="Transparent" BorderBrush="Transparent" Click="AddToCart_Click"/>
+            <Button Content="Button2" Background="Transparent" BorderBrush="Transparent" Margin="10,0,0,0" Click="Button2_Click"/>
+            <Button Content="Button3" Background="Transparent" BorderBrush="Transparent" Margin="10,0,0,0" Click="Button3_Click"/>
+        </StackPanel>
         </StackPanel>
     </Grid>
 </UserControl>

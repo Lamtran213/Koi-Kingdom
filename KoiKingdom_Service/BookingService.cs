@@ -1,4 +1,5 @@
-﻿using KoiKingdom_Repository;
+﻿using KoiKingdom_BusinessObject;
+using KoiKingdom_Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,10 @@ namespace KoiKingdom_Service
         public BookingService()
         {
             iBookingRepo = new BookingRepo();
+        }
+        public List<Booking> GetBooking(int CustomerId)
+        {
+            return iBookingRepo.GetBooking(CustomerId);
         }
 
         public void AddBookingItem(int CustomerId, int TourId, string Name, string Email, DateTime BookingDate, string ShippingAddress, int Quantity, string Status, string? TourType)

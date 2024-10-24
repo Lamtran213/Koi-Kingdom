@@ -29,6 +29,13 @@ namespace KoiKingdom_DAOs
             }
         }
 
+        public List<Booking> GetBooking(int CustomerId)
+        {
+            return dbContext.Bookings
+                            .Where(b => b.CustomerId == CustomerId)  // Filter by CustomerId
+                            .ToList();
+        }
+
         public void AddBookingItem(int CustomerId, int TourId, string Name, string Email, DateTime BookingDate, string ShippingAddress, int Quantity, string Status, string? TourType)
         {
             // Directly add the new booking item to the database (without checking if the item already exists)

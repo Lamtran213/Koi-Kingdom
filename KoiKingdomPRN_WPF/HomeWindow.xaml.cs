@@ -22,6 +22,9 @@ namespace KoiKingdomPRN_WPF
     {
         private Customer customer;
 
+        public HomeWindow()
+        {
+        }
         public HomeWindow(Customer customer)
         {
             InitializeComponent();

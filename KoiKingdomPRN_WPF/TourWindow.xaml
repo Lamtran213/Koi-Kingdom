@@ -26,7 +26,6 @@
                                             <TextBlock Text="★" Foreground="Gold" FontSize="16"/>
                                             <TextBlock Text="{Binding Rating}" FontSize="14" Margin="5,0"/>
                                         </StackPanel>
-                                        <TextBlock Text="Tour ID: {Binding TourId}" Margin="0,5" FontWeight="Bold"/>
                                         <TextBlock Text="Duration: {Binding Duration}" Margin="0,5"/>
                                         <TextBlock Text="{Binding StartDate, StringFormat=Start Date: \{0:dd-MM-yyyy\}}" Margin="0,5"/>
                                         <TextBlock Text="{Binding EndDate, StringFormat=End Date: \{0:dd-MM-yyyy\}}" Margin="0,5"/>

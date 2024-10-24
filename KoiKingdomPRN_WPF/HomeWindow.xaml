@@ -44,7 +44,7 @@
                 <!-- Scrollable content -->
                 <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="0,50,0,0">
                     <StackPanel HorizontalAlignment="Center">
-                        <local:HeaderWindow RenderTransformOrigin="0.5,0.5" Loaded="HeaderWindow_Loaded">
+                        <local:HeaderWindow RenderTransformOrigin="0.5,0.5"  x:Name="headerWindowControl" >
                             <local:HeaderWindow.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform/>
