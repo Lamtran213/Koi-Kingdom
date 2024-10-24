@@ -56,8 +56,8 @@
         <!-- Right side: Summary -->
         <StackPanel Grid.Column="1" Margin="10,184,10,10">
             <TextBlock Text="Summary" FontSize="24" FontWeight="Bold" />
-            <TextBlock Text="Subtotal: $" FontSize="16" />
-            <TextBlock Text="Total: $" FontSize="16" />
+            <TextBlock x:Name="TotalPriceTextBlock" FontSize="16" />
+
             <Button Content="Proceed to checkout" Width="150" Height="30" Margin="10" />
             <TextBlock Text="24/7 Customer Service" FontSize="14" Margin="10,20,10,0" />
             <TextBlock Text="0931 339 228" FontSize="14" />

@@ -1,4 +1,5 @@
-﻿using KoiKingdom_Service;
+﻿using KoiKingdom_BusinessObject;
+using KoiKingdom_Service;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,12 +14,16 @@ namespace KoiKingdomPRN_WPF
     {
         private readonly ITourService tourService; // Giả định bạn có một interface cho tourService
         private readonly IFarmService farmService; // Giả định bạn có một interface cho farmService
-        
-        public TourWindow(ITourService tourService, IFarmService farmService)
+        private readonly IBookingService bookingService; // Giả định bạn có một interface cho farmService
+        public Customer Customer { get; set; }
+        public TourWindow(ITourService tourService, IFarmService farmService, IBookingService bookingService, Customer customer)
         {
             InitializeComponent();
             this.tourService = tourService;
+            this.bookingService = bookingService;
             this.farmService = farmService;
+            this.Customer = customer;
+
             LoadTourInformation(); // Gọi phương thức này tại đây
         }
 
@@ -36,7 +41,7 @@ namespace KoiKingdomPRN_WPF
                 if (int.TryParse(button.Tag.ToString(), out int selectedTourId))
                 {
                   
-                    TourDetailWindow tourDetailWindow = new TourDetailWindow(tourService, farmService, selectedTourId);
+                    TourDetailWindow tourDetailWindow = new TourDetailWindow(tourService, bookingService, farmService, selectedTourId, Customer);
                     tourDetailWindow.Show();
                 }
                 else

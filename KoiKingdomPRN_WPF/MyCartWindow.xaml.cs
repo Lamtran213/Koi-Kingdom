@@ -34,7 +34,7 @@ namespace KoiKingdomPRN_WPF
                 cartItemServices.AddTourToCart(currentTour, quantity);
             }
         }
-
+        private decimal totalPrice = 0;
         // Method to load cart items into the ListView
         private void LoadCartItems()
         {
@@ -43,22 +43,28 @@ namespace KoiKingdomPRN_WPF
                 MessageBox.Show("CartItemServices is not initialized.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-
-            // Load cart items and display them
-            var cartItems = cartItemServices.GetList();
+      
+        // Load cart items and display them
+        var cartItems = cartItemServices.GetList();
 
             string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
+            // Binding cart items to the ListView
             CartItemsListView.ItemsSource = cartItems.Select(item => new
             {
-                TourImage = new BitmapImage(new Uri(Path.Combine(currentDirectory, item.tour.Image), UriKind.Absolute)), // Corrected here
-                TourName = item.tour.TourName, // Assuming the Tour object has a TourName property
-                Quantity = item.quantity,
-                TourPrice = string.Format("{0:C}", item.tour.TourPrice), // Format price as currency
-                TotalPrice = string.Format("{0:C}", item.tour.TourPrice * item.quantity), // Calculate total price
-                Item = item // Keep a reference to the item for removal
+                // Ensure tour.Image provides a valid relative or absolute path
+                TourImage = new BitmapImage(new Uri(Path.Combine(currentDirectory, item.tour.Image), UriKind.Absolute)),
+                TourName = item.tour.TourName,  // Tour name property
+                Quantity = item.quantity,       // Quantity in the cart
+                TourPrice = string.Format("{0:C}", item.tour.TourPrice),  // Format as currency
+                TotalPrice = string.Format("{0:C}", item.tour.TourPrice * item.quantity),  // Total price
+                Item = item // Keep a reference to the item for further actions (e.g., removal)
             }).ToList();
+
+            totalPrice = (decimal)cartItems.Sum(item => item.tour.TourPrice * item.quantity);
+            TotalPriceTextBlock.Text = string.Format("Total: {0:C}", totalPrice);
         }
+
 
     }
 }

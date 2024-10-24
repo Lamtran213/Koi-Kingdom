@@ -12,18 +12,29 @@ namespace KoiKingdomPRN_WPF
     {
         private readonly ITourService tourService;
         private readonly IFarmService farmService;
+        private readonly IBookingService bookingService;
         private readonly CartItemServices cartService;
-        private Tour currentTour; // Store the current selected tour
+        private Tour currentTour;
+        public Customer Customer { get; set; }
 
-        public TourDetailWindow(ITourService tourService, IFarmService farmService, int selectedTourId)
+        public TourDetailWindow(ITourService tourService, IBookingService bookingService, IFarmService farmService, int selectedTourId, Customer customer)
         {
             InitializeComponent();
             this.tourService = tourService;
             this.farmService = farmService;
+            this.bookingService = bookingService;
+            this.Customer = customer;
             this.cartService = new CartItemServices(); // Initialize CartService
 
             LoadTourInformation(selectedTourId);
         }
+
+        public TourDetailWindow(Customer customer)
+        {
+            Customer = customer;
+            InitializeComponent(); // Đảm bảo gọi InitializeComponent()
+        }
+
 
         private void LoadTourInformation(int selectedTourId)
         {
@@ -105,7 +116,58 @@ namespace KoiKingdomPRN_WPF
 
         private void BookNow_Click(object sender, RoutedEventArgs e)
         {
+            if (currentTour != null)
+            {
+                try
+                {
+                    // Create a new Booking object and populate it with necessary information
+                    Booking newBooking = new Booking
+                    {
+                        TourId = currentTour.TourId, // Assuming you have TourId in the currentTour object
+                        CustomerId = Customer.CustomerId,
+                        Name = Customer.LastName + Customer.FirstName,
+                        Email = Customer.Email,
+                        BookingDate = DateTime.Now, // or use a date selected by the user
+                        ShippingAddress = Customer.Address,
+                        Quantity = Convert.ToInt32(QuantityDisplay.Text), // Assuming you have a QuantityDisplay TextBox
+                        Status = "Paid", // Set the initial status, adjust as needed
+                        TourType = "Available" // Assuming TourType is a property of currentTour
+                    };
 
+                    // Call the booking service to add the booking
+                    bookingService.AddBookingItem(
+                        newBooking.CustomerId,
+                        newBooking.TourId,
+                        newBooking.Name,
+                        newBooking.Email,
+                        newBooking.BookingDate,
+                        newBooking.ShippingAddress,
+                        newBooking.Quantity,
+                        newBooking.Status,
+                        newBooking.TourType
+                    );
+
+                    MessageBox.Show("Booking successful!", "Confirmation", MessageBoxButton.OK, MessageBoxImage.Information);
+                    this.Close(); // Close the window after booking
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Invalid input. Please check your entries.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    // Optionally log the error for debugging purposes
+                }
+            }
+            else
+            {
+                MessageBox.Show("No tour selected for booking.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
+
+
     }
+
 }
+

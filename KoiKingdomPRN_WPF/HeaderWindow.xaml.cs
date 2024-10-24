@@ -9,16 +9,26 @@ namespace KoiKingdomPRN_WPF
     {
         private ITourService tourService;
         private IFarmService farmService;
+        private IBookingService bookingService;
         private ICartItemServices cartItemServices;
         private CartItemServices cartService;
         private Tour currentTour;
         private int quantity;
+
+        public Customer Customer { get; set; }
+
+        public void SetCustomer(Customer customer)
+        {
+            Customer = customer;
+            // Ở đây bạn có thể sử dụng thông tin của Customer để cập nhật giao diện của HeaderWindow
+        }
 
         public HeaderWindow()
         {
             InitializeComponent();
             tourService = new TourService();
             farmService = new FarmService();
+            bookingService = new BookingService();  
             cartItemServices = new CartItemServices();
         }
 
@@ -71,7 +81,7 @@ namespace KoiKingdomPRN_WPF
 
         private void TourBooking_Click(object sender, RoutedEventArgs e)
         {
-            TourWindow tourWindow = new TourWindow(tourService, farmService);
+            TourWindow tourWindow = new TourWindow(tourService,  farmService, bookingService, Customer);
             tourWindow.Show();
         }
 

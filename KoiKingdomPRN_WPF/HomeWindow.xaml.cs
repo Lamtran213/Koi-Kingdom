@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KoiKingdom_BusinessObject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,17 @@ namespace KoiKingdomPRN_WPF
     /// </summary>
     public partial class HomeWindow : Window
     {
-        public HomeWindow()
+        private Customer customer;
+
+        public HomeWindow(Customer customer)
         {
             InitializeComponent();
+            this.customer = customer;
+            HeaderWindow headerWindow = (HeaderWindow)this.FindName("headerWindowControl");
+            if (headerWindow != null)
+            {
+                headerWindow.SetCustomer(customer);
+            }
         }
     }
 }

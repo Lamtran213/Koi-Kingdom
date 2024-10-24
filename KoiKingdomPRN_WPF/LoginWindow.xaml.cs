@@ -42,28 +42,36 @@ namespace KoiKingdomPRN_WPF
         {
             Employee employee = employeeService.GetEmployeeByEmail(txtEmail.Text);
             Customer customer = customerService.GetCustomerByEmail(txtEmail.Text);
+
+            // Xử lý khi Employee đăng nhập
             if (employee != null && txtPassword.Password.Equals(employee.Password) && employee.Role.Equals("Manager"))
             {
                 ManagerWindow managerWindow = new ManagerWindow();
                 managerWindow.Show();
+                this.Close();  // Đóng cửa sổ đăng nhập sau khi đăng nhập thành công
             }
+            // Xử lý khi Customer đăng nhập
             else if (customer != null && txtPassword.Password.Equals(customer.Password))
             {
                 if (customer.Status == true)
                 {
-                    HomeWindow homeWindow = new HomeWindow();
+                    // Chỉ cần khởi tạo HomeWindow một lần với đối tượng Customer
+                    HomeWindow homeWindow = new HomeWindow(customer);
                     homeWindow.Show();
-                } else 
-                {
-                    MessageBox.Show("Your account is blocked !");
+                    this.Close();  // Đóng cửa sổ đăng nhập sau khi đăng nhập thành công
                 }
-               
-            } else
-            {
-                MessageBox.Show("Your email or password is inconrrect");
+                else
+                {
+                    MessageBox.Show("Your account is blocked!");
+                }
             }
-                
+            // Nếu không đúng Email/Password
+            else
+            {
+                MessageBox.Show("Your email or password is incorrect.");
+            }
         }
+
 
         private void txtEmail_TextChanged(object sender, TextChangedEventArgs e)
         {
