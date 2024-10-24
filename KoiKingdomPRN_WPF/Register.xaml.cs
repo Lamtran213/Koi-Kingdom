@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using KoiKingdom_BusinessObject;
+using KoiKingdom_Service;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,22 +18,56 @@ namespace KoiKingdomPRN_WPF
     /// </summary>
     public partial class Register : Window
     {
+        private ICustomerService customerService;
         public Register()
         {
             InitializeComponent();
+            customerService = new CustomerService();
         }
-
-    
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
 
         private void btnSignup_Click(object sender, RoutedEventArgs e)
         {
+            string email = txtEmail.Text;
 
+            // Kiểm tra nếu email đã tồn tại
+            if (customerService.GetCustomerByEmail(email)!=null)
+            {
+                MessageBox.Show("Email already exists. Please use another email.");
+                return; // Dừng thực hiện nếu email đã tồn tại
+            }
+
+            // Tiếp tục nếu email chưa tồn tại
+            if (txtPassword.Password.Equals(txtConfirmPassword.Password))
+            {
+                Customer customer = new Customer();
+                customer.FirstName = txtFirstName.Text;
+                customer.LastName = txtLastName.Text;
+                customer.Email = email;
+                customer.Password = txtPassword.Password;
+
+                // Thêm khách hàng vào hệ thống
+                bool isSignUp = customerService.AddCustomerProfile(customer);
+                if (isSignUp)
+                {
+                    MessageBox.Show("Sign up successfully! Please return to login.");
+                }
+                else
+                {
+                    MessageBox.Show("Failed to sign up for some reason!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Password do not match. Please sign up again.");
+            }
         }
+
+
 
         private void btnSignIn_Click(object sender, RoutedEventArgs e)
         {
