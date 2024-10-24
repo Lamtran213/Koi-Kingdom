@@ -19,25 +19,53 @@
 
         <!-- Main Content -->
         <Grid Grid.Column="1" Margin="10">
-            <Label Content="EmployeeID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,40,0,0"/>
-            <TextBox x:Name="txtEmployeeID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,44,0,0" Width="122"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <!-- Dòng dành cho hàng đầu tiên -->
+                <RowDefinition Height="Auto"/>
+                <!-- Dòng dành cho hàng thứ 2 -->
+                <RowDefinition Height="Auto"/>
+                <!-- Dòng dành cho hàng thứ 3 -->
+                <RowDefinition Height="*"/>
+                <!-- Dòng dành cho DataGrid, chiếm không gian còn lại -->
+            </Grid.RowDefinitions>
 
-            <Label Content="Email" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,83,0,0"/>
-            <TextBox x:Name="txtEmail" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="346,87,0,0" Width="200"/>
+            <!-- EmployeeID, FullName và Status -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <!-- Label -->
+                <ColumnDefinition Width="*"/>
+                <!-- Input -->
+                <ColumnDefinition Width="150"/>
+                <!-- Label -->
+                <ColumnDefinition Width="*"/>
+                <!-- Input -->
+            </Grid.ColumnDefinitions>
 
-            <Label Content="Full Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,83,0,0"/>
-            <TextBox x:Name="txtFullName" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,83,0,0" Width="122" RenderTransformOrigin="1.817,0.386"/>
+            <Label Content="EmployeeID" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Margin="10,10,0,0"/>
+            <TextBox x:Name="txtEmployeeID" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10,10,0,0"/>
 
-            <Label Content="Address" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,126,0,0"/>
-            <TextBox x:Name="txtAddress" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,130,0,0" Width="122"/>
-            
-            <Label Content="Status" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="267,41,0,0"/>
-            <ComboBox x:Name="cmbStatus" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="346,50,0,0" Width="200" SelectionChanged="cmbStatus_SelectionChanged">
+            <Label Content="Status" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" Margin="10,10,0,0"/>
+            <ComboBox x:Name="cmbStatus" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Stretch" Margin="10,10,0,0" SelectionChanged="cmbStatus_SelectionChanged">
                 <ComboBoxItem Content="Active" Tag="True"/>
                 <ComboBoxItem Content="Blocked" Tag="False"/>
             </ComboBox>
 
-            <DataGrid x:Name="dtgEmployee" HorizontalAlignment="Center" Height="176" Margin="0,207,0,0" VerticalAlignment="Top" Width="560" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="dtgEmployee_SelectionChanged"/>
+            <!-- FullName và Email -->
+            <Label Content="Full Name" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="10,10,0,0"/>
+            <TextBox x:Name="txtFullName" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10,10,0,0"/>
+
+            <Label Content="Email" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" Margin="10,10,0,0"/>
+            <TextBox x:Name="txtEmail" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Stretch" Margin="10,10,0,0"/>
+
+            <!-- Address -->
+            <Label Content="Address" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Margin="10,10,0,0"/>
+            <TextBox x:Name="txtAddress" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10,10,0,0"/>
+
+            <!-- DataGrid -->
+            <DataGrid x:Name="dtgEmployee" Grid.Row="3" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Top" 
+                      Margin="10,20,10,0" Height="Auto" MaxHeight="200" Width="1000" 
+                      d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="dtgEmployee_SelectionChanged"/>
         </Grid>
     </Grid>
 </Window>
