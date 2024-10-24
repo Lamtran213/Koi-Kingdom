@@ -32,5 +32,19 @@ namespace KoiKingdomPRN_WPF
                 headerWindow.SetCustomer(customer);
             }
         }
+        private void HeaderWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PreviousImage_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

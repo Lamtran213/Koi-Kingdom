@@ -5,17 +5,78 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KoiKingdomPRN_WPF"
         mc:Ignorable="d"
-        Title="HomeWindow" Height="450" Width="800">
-    <Grid>
-        <local:HeaderWindow RenderTransformOrigin="0.5,0.5" Width="761" Margin="20,11,20,323" x:Name="headerWindowControl" >
-            <local:HeaderWindow.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleY="-0.114"/>
-                    <RotateTransform/>
-                    <TranslateTransform Y="-0.798"/>
-                </TransformGroup>
-            </local:HeaderWindow.RenderTransform>
-        </local:HeaderWindow>
-    </Grid>
+        Title="HomeWindow" Height="750" Width="800"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen">
+
+    <Border CornerRadius="30">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                <GradientStop Color="#FFB2A0" Offset="0.0"/>
+                <GradientStop Color="#FFD19C" Offset="1.0"/>
+            </LinearGradientBrush>
+        </Border.Background>
+
+        <Border CornerRadius="20" BorderThickness="5" Opacity="0.9">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#006600" Offset="0"/>
+                    <GradientStop Color="#007700" Offset="0.5"/>
+                    <GradientStop Color="#FF66CC" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Grid>
+                <Button Content="X" 
+                        HorizontalAlignment="Right" 
+                        VerticalAlignment="Top" 
+                        Width="30" Height="30" 
+                        Margin="0,10,10,0" 
+                        Background="#FF6666"
+                        Foreground="White"
+                        FontWeight="Bold"
+                        Cursor="Hand"
+                        BorderThickness="0"
+                        Click="Exit_Click"/>
+
+                <!-- Scrollable content -->
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="0,50,0,0">
+                    <StackPanel HorizontalAlignment="Center">
+                        <local:HeaderWindow RenderTransformOrigin="0.5,0.5" Loaded="HeaderWindow_Loaded">
+                            <local:HeaderWindow.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform AngleY="-0.114"/>
+                                    <RotateTransform/>
+                                    <TranslateTransform Y="-0.798"/>
+                                </TransformGroup>
+                            </local:HeaderWindow.RenderTransform>
+                        </local:HeaderWindow>
+
+                        <!-- Add more content to ensure scrolling -->
+                        <Image Source="/img/koibanner.gif" 
+                               Width="791" 
+                               Height="284"
+                               HorizontalAlignment="Center"
+                               Stretch="UniformToFill"
+                               Margin="0,20,0,20"/>
+
+                        <!-- Add more content here to enable scrolling -->
+                        <TextBlock Text="Welcome to Koi Kingdom" 
+                                   FontSize="25" 
+                                   Foreground="Black" 
+                                   HorizontalAlignment="Center"
+                                   Margin="0,20,0,20"
+                                   FontWeight="Bold"/>
+
+                        <!-- Extra content to force scrolling -->
+
+                    </StackPanel>
+                </ScrollViewer>
+                <Image Margin="348,594,-332,-370" Source="/img/koi-farm.jpg" Stretch="Fill"/>
+            </Grid>
+        </Border>
+    </Border>
 </Window>
