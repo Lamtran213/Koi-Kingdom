@@ -16,6 +16,7 @@ namespace KoiKingdomPRN_WPF
         private readonly IFarmService farmService; // Giả định bạn có một interface cho farmService
         private readonly IBookingService bookingService; // Giả định bạn có một interface cho farmService
         public Customer Customer { get; set; }
+
         public TourWindow(ITourService tourService, IFarmService farmService, IBookingService bookingService, Customer customer)
         {
             InitializeComponent();

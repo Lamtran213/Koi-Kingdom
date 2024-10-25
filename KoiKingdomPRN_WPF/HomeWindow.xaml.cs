@@ -1,4 +1,5 @@
 ﻿using KoiKingdom_BusinessObject;
+using KoiKingdom_DAOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,12 +30,15 @@ namespace KoiKingdomPRN_WPF
         {
             InitializeComponent();
             this.customer = customer;
+            CustomerDAO.Instance.CurrentCustomer = customer;
+            // Lấy HeaderWindow và truyền Customer
             HeaderWindow headerWindow = (HeaderWindow)this.FindName("headerWindowControl");
             if (headerWindow != null)
             {
                 headerWindow.SetCustomer(customer);
             }
         }
+        
         private void HeaderWindow_Loaded(object sender, RoutedEventArgs e)
         {
 

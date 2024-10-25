@@ -1,7 +1,8 @@
 ﻿<Window
+    x:Class="KoiKingdomPRN_WPF.TourWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:KoiKingdomPRN_WPF" x:Class="KoiKingdomPRN_WPF.TourWindow"
+    xmlns:local="clr-namespace:KoiKingdomPRN_WPF"
     Title="TourWindow" Height="500" Width="900">
 
     <Grid Background="White">

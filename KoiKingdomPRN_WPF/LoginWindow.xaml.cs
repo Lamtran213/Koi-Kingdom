@@ -71,11 +71,5 @@ namespace KoiKingdomPRN_WPF
                 MessageBox.Show("Your email or password is incorrect.");
             }
         }
-
-
-        private void txtEmail_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }

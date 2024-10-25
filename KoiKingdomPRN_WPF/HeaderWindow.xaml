@@ -1,7 +1,8 @@
 ﻿<UserControl x:Class="KoiKingdomPRN_WPF.HeaderWindow"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             Height="100" Width="800">
+             Height="100" Width="800" Loaded="HeaderWindow_Loaded"
+              >
     <Grid Background="#F9F3E8">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto" MinWidth="265" />

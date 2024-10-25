@@ -29,6 +29,9 @@ namespace KoiKingdom_DAOs
             }
         }
 
+        public Customer CurrentCustomer { get; set; }
+
+
         // Lấy khách hàng theo ID
         public Customer GetCustomerById(int id)
         {
