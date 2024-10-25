@@ -33,33 +33,28 @@ namespace KoiKingdomPRN_WPF
         {
             var booking = bookingService.GetBooking(customerId).ToList();
 
-            // Lấy đường dẫn thư mục hiện tại của ứng dụng (bỏ thư mục "Koi-Kingdom")
+            // Get current directory of the application
             string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
-            // Chuyển đổi thông tin tour thành danh sách đối tượng để binding
+            // Convert booking information into a binding list
             var bookingItems = booking.Select(booking =>
             {
                 var tour = tourService.GetTourById(booking.TourId);
                 return new
                 {
                     TourID = tour.TourId,
-                    TourImage = new BitmapImage(new Uri(Path.Combine(currentDirectory, tour.Image), UriKind.Absolute)),
+                    TourImage = GetTourImage(tour.Image, currentDirectory), // Use the GetTourImage method
                     TourName = tour.TourName ?? "Không có tên tour",
-                    Quantity = booking.Quantity, // Số lượng tour mà khách đã đặt
-                    TotalPrice = booking.Quantity * tour.TourPrice, // Tổng giá tiền cho booking
-                    TourPrice = tour.TourPrice, // Hiển thị giá theo định dạng tiền tệ
+                    Quantity = booking.Quantity, // Quantity booked
+                    TotalPrice = booking.Quantity * tour.TourPrice, // Total price for booking
+                    TourPrice = tour.TourPrice, // Display tour price
                 };
             }).ToList();
 
-            // Gán danh sách tour vào ListView (TourItemsListView)
-            TourItemsListView.ItemsSource = bookingItems;
-
-            // Tính tổng giá cho tất cả các tour đã booking
-            decimal totalPrice = (decimal)bookingItems.Sum(item => item.TotalPrice);
-
-            // Hiển thị tổng giá
-            TotalPriceTextBlock.Text = $"Total Price: {totalPrice.ToString("C")}";
+            // Set the list to ListView (TourItemsListView)
+            BookingItemsListView.ItemsSource = bookingItems;
         }
+
 
 
         private BitmapImage GetTourImage(string imagePath, string currentDirectory)

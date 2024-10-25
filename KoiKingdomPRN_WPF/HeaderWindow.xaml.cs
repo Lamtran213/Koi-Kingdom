@@ -1,4 +1,5 @@
 ﻿using KoiKingdom_BusinessObject;
+using KoiKingdom_DAOs;
 using KoiKingdom_Service;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,12 +20,6 @@ namespace KoiKingdomPRN_WPF
 
         public Customer Customer { get; set; }
 
-        public void SetCustomer(Customer customer)
-        {
-            Customer = customer;
-            // Ở đây bạn có thể sử dụng thông tin của Customer để cập nhật giao diện của HeaderWindow
-        }
-
         public HeaderWindow()
         {
             InitializeComponent();
@@ -32,8 +27,32 @@ namespace KoiKingdomPRN_WPF
             koitypeService = new KoitypeService();
             tourService = new TourService();
             farmService = new FarmService();
-            bookingService = new BookingService();  
+            bookingService = new BookingService();
             cartItemServices = new CartItemServices();
+            RefreshCustomer();
+
+
+
+        }
+        public void RefreshCustomer()
+        {
+            Customer = CustomerDAO.Instance.CurrentCustomer;
+            if (Customer != null)
+            {
+                // Cập nhật giao diện dựa trên thông tin Customer
+            }
+        }
+
+        private void HeaderWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            HomeWindow homeWindow = new HomeWindow();
+
+        }
+
+        public void SetCustomer(Customer customer)
+        {
+            Customer = customer;
+            // Cập nhật giao diện dựa trên thông tin Customer
         }
 
         public HeaderWindow(CartItemServices cartService, Tour currentTour, int quantity)
@@ -91,7 +110,6 @@ namespace KoiKingdomPRN_WPF
 
         private void TourBooking_Click(object sender, RoutedEventArgs e)
         {
-            Window.GetWindow(this)?.Hide();
             TourWindow tourWindow = new TourWindow(tourService,  farmService, bookingService, Customer);
             tourWindow.Show();
         }
@@ -104,7 +122,6 @@ namespace KoiKingdomPRN_WPF
         // Event handlers for button clicks
         private void AddToCart_Click(object sender, RoutedEventArgs e)
         {
-            Window.GetWindow(this)?.Hide();
             MyCartWindow myCartWindow = new MyCartWindow(cartItemServices, cartService, currentTour, quantity);
             myCartWindow.Show();
         }
@@ -120,10 +137,10 @@ namespace KoiKingdomPRN_WPF
         }
         private void MyBookingTour_Click(object sender, RoutedEventArgs e)
         {
-            Window.GetWindow(this)?.Hide();
             MyBookingTourWindow myBookingtWindow = new MyBookingTourWindow(tourService, bookingService, Customer);
             myBookingtWindow.Show();
         }
+
 
     }
 }
