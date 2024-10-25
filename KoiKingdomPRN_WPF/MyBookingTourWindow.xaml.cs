@@ -52,7 +52,7 @@ namespace KoiKingdomPRN_WPF
             }).ToList();
 
             // Set the list to ListView (TourItemsListView)
-            TourItemsListView.ItemsSource = bookingItems;
+            BookingItemsListView.ItemsSource = bookingItems;
         }
 
 
