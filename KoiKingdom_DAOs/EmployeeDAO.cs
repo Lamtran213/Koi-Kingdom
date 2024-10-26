@@ -73,5 +73,41 @@ namespace KoiKingdom_DAOs
             }
             return isSuccess;
         }
+
+        public Employee AddEmployeeProfile(string email, string password, string address, string role, string lastName, string firstName, bool status = true)
+        {
+            try
+            {
+                Employee existingEmployee = this.GetEmployeeByEmail(email);
+                if (existingEmployee == null) 
+                {
+                    // Create a new employee object
+                    Employee newEmployee = new Employee
+                    {
+                        Email = email,
+                        Password = password,
+                        Address = address,
+                        Role = role,
+                        LastName = lastName,
+                        FirstName = firstName,
+                        Status = status
+                    };
+
+                    // Add the new employee to the database
+                    dbContext.Employees.Add(newEmployee);
+                    dbContext.SaveChanges();
+                    return newEmployee;
+                }
+                else
+                {
+                    throw new Exception("Employee already exists.");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("An error occurred while adding the Employee: " + ex.Message);
+            }
+        }
+
     }
 }

@@ -26,6 +26,7 @@ namespace KoiKingdomPRN_WPF
         private IKoitypeService koitypeService;
         private ITourFarmService tourFarmService;
         private ITourKoitypeService tourKoitypeService;
+        private IEmployeeService employeeService;
 
         public HeaderManagerWindow()
         {
@@ -35,6 +36,7 @@ namespace KoiKingdomPRN_WPF
             koitypeService = new KoitypeService();
             tourFarmService = new TourFarmService();
             tourKoitypeService = new TourKoitypeService();
+            employeeService = new EmployeeService();
         }
 
         private void Customer_Click(object sender, RoutedEventArgs e)
@@ -69,6 +71,13 @@ namespace KoiKingdomPRN_WPF
             Window.GetWindow(this)?.Hide();
             AddTourManagerWindow addTourManagerWindow = new AddTourManagerWindow(tourService, farmService, koitypeService, tourFarmService, tourKoitypeService);
             addTourManagerWindow.Show();
+        }
+
+        private void AddEmployee_Click(object sender, RoutedEventArgs e)
+        {
+            Window.GetWindow(this)?.Hide();
+            AddEmployeeWindow addEmployeeWindow = new AddEmployeeWindow(employeeService);
+            addEmployeeWindow.Show();
         }
     }
 }

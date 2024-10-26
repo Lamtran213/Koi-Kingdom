@@ -18,6 +18,7 @@ namespace KoiKingdom_Repository
         public List<Employee> GetEmployees();
 
         public bool UpdateEmployeeProfile(Employee EmployeeProfile);
+        public Employee AddEmployeeProfile(string email, string password, string address, string role, string lastName, string firstName, bool status = true);
 
     }
 }

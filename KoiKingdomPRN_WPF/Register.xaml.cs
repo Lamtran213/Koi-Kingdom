@@ -32,13 +32,21 @@ namespace KoiKingdomPRN_WPF
 
         private void btnSignup_Click(object sender, RoutedEventArgs e)
         {
+            // Define an email pattern to validate
+            string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtEmail.Text, emailPattern))
+            {
+                MessageBox.Show("Invalid email format. Please enter a valid email.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return; 
+            }
             string email = txtEmail.Text;
 
             // Kiểm tra nếu email đã tồn tại
             if (customerService.GetCustomerByEmail(email)!=null)
             {
                 MessageBox.Show("Email already exists. Please use another email.");
-                return; // Dừng thực hiện nếu email đã tồn tại
+                return; 
             }
 
             // Tiếp tục nếu email chưa tồn tại

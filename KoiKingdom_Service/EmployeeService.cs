@@ -36,5 +36,9 @@ namespace KoiKingdom_Service
         {
             return iEmployeeRepo.UpdateEmployeeProfile(EmployeeProfile);
         }
+        public Employee AddEmployeeProfile(string email, string password, string address, string role, string lastName, string firstName, bool status = true)
+        {
+            return iEmployeeRepo.AddEmployeeProfile(email, password, address, role, lastName, firstName, status);
+        }
     }
 }
