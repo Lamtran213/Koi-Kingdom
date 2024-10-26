@@ -75,7 +75,6 @@
 
                     </StackPanel>
                 </ScrollViewer>
-                <Image Margin="348,594,-332,-370" Source="/img/koi-farm.jpg" Stretch="Fill"/>
             </Grid>
         </Border>
     </Border>
