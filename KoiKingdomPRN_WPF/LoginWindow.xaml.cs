@@ -71,5 +71,12 @@ namespace KoiKingdomPRN_WPF
                 MessageBox.Show("Your email or password is incorrect.");
             }
         }
+
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        {
+            Register registerindow = new Register();
+            registerindow.Show();
+            this.Close();
+        }
     }
 }

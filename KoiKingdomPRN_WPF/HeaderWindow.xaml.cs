@@ -110,6 +110,7 @@ namespace KoiKingdomPRN_WPF
 
         private void TourBooking_Click(object sender, RoutedEventArgs e)
         {
+            Window.GetWindow(this)?.Hide();
             TourWindow tourWindow = new TourWindow(tourService,  farmService, bookingService, Customer);
             tourWindow.Show();
         }
@@ -122,6 +123,7 @@ namespace KoiKingdomPRN_WPF
         // Event handlers for button clicks
         private void AddToCart_Click(object sender, RoutedEventArgs e)
         {
+            Window.GetWindow(this)?.Hide();
             MyCartWindow myCartWindow = new MyCartWindow(cartItemServices, cartService, currentTour, quantity);
             myCartWindow.Show();
         }
@@ -137,6 +139,7 @@ namespace KoiKingdomPRN_WPF
         }
         private void MyBookingTour_Click(object sender, RoutedEventArgs e)
         {
+            Window.GetWindow(this)?.Hide();
             MyBookingTourWindow myBookingtWindow = new MyBookingTourWindow(tourService, bookingService, Customer);
             myBookingtWindow.Show();
         }

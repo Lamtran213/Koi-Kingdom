@@ -172,6 +172,8 @@
                         FontFamily="Meiryo"
                         Cursor="Hand"
                         FontWeight="Bold">
+                    
+
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border Background="{TemplateBinding Background}" 
@@ -185,6 +187,8 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
+                <Label Content="You don't have account yet" HorizontalAlignment="Left" Margin="215,367,0,0" VerticalAlignment="Top" Grid.Column="3" Grid.ColumnSpan="2"/>
+                <Button x:Name="btnRegister" Content="Register" HorizontalAlignment="Center" Margin="0,359,0,0" VerticalAlignment="Top" Width="122" Click="btnRegister_Click" Grid.Column="4" Height="41"/>
 
                 <Image Grid.Column="4" Margin="1,156,489,254" Source="/img/email.jpg" Stretch="Fill"/>
                 <Image Margin="0,205,490,205" Source="/img/lock.jpg" Stretch="Fill" Grid.Column="4"/>
