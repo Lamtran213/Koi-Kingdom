@@ -9,21 +9,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="img\koibanner.gif" />
+    <Compile Remove="img\**" />
+    <EmbeddedResource Remove="img\**" />
+    <None Remove="img\**" />
+    <Page Remove="img\**" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="FontAwesome" Version="4.7.0" />
     <PackageReference Include="FontAwesome.Sharp" Version="6.3.0" />
+    <PackageReference Include="MaterialDesignThemes" Version="5.1.0" />
     <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\KoiKingdom_Service\KoiKingdom_Service.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="img\koibanner.gif" />
   </ItemGroup>
 
   <ItemGroup>
