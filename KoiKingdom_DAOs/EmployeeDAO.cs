@@ -12,6 +12,7 @@ namespace KoiKingdom_DAOs
     {
         private KOI_PRNContext dbContext;
 
+        public Employee CurrentEmployee { get; set; }
         // Singleton instance
         private static EmployeeDAO instance = null;
 
@@ -108,6 +109,46 @@ namespace KoiKingdom_DAOs
                 throw new Exception("An error occurred while adding the Employee: " + ex.Message);
             }
         }
+
+        public bool UpdateProfile(int EmployeeId, string Email, string Password, string Role, string LastName, string FirstName, string? Address, bool? Status)
+        {
+            bool isSuccess = false;
+            try
+            {
+                // Create a new Employee object with the updated values
+                Employee updatedEmployee = new Employee
+                {
+                    EmployeeId = EmployeeId,
+                    Email = Email,
+                    Password = Password,
+                    Role = Role,
+                    LastName = LastName,
+                    FirstName = FirstName,
+                    Address = Address,
+                    Status = Status,
+                };
+
+                // Retrieve the existing employee from the database
+                Employee existingEmployee = this.GetEmployeeById(updatedEmployee.EmployeeId);
+                if (existingEmployee != null)
+                {
+                    // Update the existing employee's properties with the new values
+                    dbContext.Entry(existingEmployee).CurrentValues.SetValues(updatedEmployee);
+                    dbContext.SaveChanges();
+                    isSuccess = true;
+                }
+                else
+                {
+                    throw new Exception("Employee not found.");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("An error occurred while updating the employee: " + ex.Message);
+            }
+            return isSuccess;
+        }
+
 
     }
 }

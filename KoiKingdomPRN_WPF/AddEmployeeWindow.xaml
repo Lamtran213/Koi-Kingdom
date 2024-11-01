@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:KoiKingdomPRN_WPF"
         mc:Ignorable="d"
         Title="AddEmployeeWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Margin="186,0,0,0">
         <Label Content="Add Employee&#xD;&#xA;" HorizontalAlignment="Center" Margin="0,49,0,0" VerticalAlignment="Top" Width="140" FontSize="20"/>
         <Button Content="Add employee&#xD;&#xA;" HorizontalAlignment="Center" Margin="0,361,0,0" VerticalAlignment="Top" Width="116" Height="27" Click="AddEmployee_Click"/>
         <TextBox x:Name="txtEmailEmployee" HorizontalAlignment="Left" Margin="209,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
@@ -26,6 +26,7 @@
         <TextBox x:Name="txtLastNameEmployee" HorizontalAlignment="Left" Margin="606,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Margin="491,231,0,0" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top"/>
         <TextBox x:Name="txtAddressEmployee" HorizontalAlignment="Left" Margin="606,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <local:HeaderManagerWindow Grid.Column="0" Margin="-198,-15,612,-11"/>
 
     </Grid>
 </Window>

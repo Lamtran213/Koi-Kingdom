@@ -1,4 +1,6 @@
-﻿using System;
+﻿using KoiKingdom_BusinessObject;
+using KoiKingdom_DAOs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,23 @@ namespace KoiKingdomPRN_WPF
     /// </summary>
     public partial class ManagerWindow : Window
     {
+        
+        private Employee employee;
+
         public ManagerWindow()
         {
+        }
+
+        public ManagerWindow(KoiKingdom_BusinessObject.Employee employee)
+        {
             InitializeComponent();
+            EmployeeDAO.Instance.CurrentEmployee = employee;
+            HeaderManagerWindow headerManagerWindow = (HeaderManagerWindow)this.FindName("headerManagerWindowControl");
+            this.employee = employee;
+            if (headerManagerWindow != null)
+            {
+                headerManagerWindow.SetEmployee(employee);
+            }
         }
     }
 }

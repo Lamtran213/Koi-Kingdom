@@ -46,7 +46,7 @@ namespace KoiKingdomPRN_WPF
             // Xử lý khi Employee đăng nhập
             if (employee != null && txtPassword.Password.Equals(employee.Password) && employee.Role.Equals("Manager"))
             {
-                ManagerWindow managerWindow = new ManagerWindow();
+                ManagerWindow managerWindow = new ManagerWindow(employee);
                 managerWindow.Show();
                 this.Close();  // Đóng cửa sổ đăng nhập sau khi đăng nhập thành công
             }

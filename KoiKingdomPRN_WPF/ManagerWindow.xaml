@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="ManagerWindow" Height="450" Width="800">
     <Grid>
-        <local:HeaderManagerWindow Grid.Column="0"/>
+        <local:HeaderManagerWindow Grid.Column="0" x:Name="headerManagerWindowControl"/>
     </Grid>
 </Window>

@@ -17,5 +17,7 @@ namespace KoiKingdom_Service
 
         public bool UpdateEmployeeProfile(Employee EmployeeProfile);
         public Employee AddEmployeeProfile(string email, string password, string address, string role, string lastName, string firstName, bool status = true);
+
+        public bool UpdateProfile(int EmployeeId, string Email, string Password, string Role, string LastName, string FirstName, string? Address, bool? Status);
     }
 }

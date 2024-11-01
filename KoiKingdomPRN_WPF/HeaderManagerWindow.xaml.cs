@@ -1,4 +1,5 @@
-﻿using KoiKingdom_Service;
+﻿using KoiKingdom_BusinessObject;
+using KoiKingdom_Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +38,14 @@ namespace KoiKingdomPRN_WPF
             tourFarmService = new TourFarmService();
             tourKoitypeService = new TourKoitypeService();
             employeeService = new EmployeeService();
+        }
+
+        public Employee employee { get; set; }
+
+        public void SetEmployee(Employee employee)
+        {
+           this.employee = employee;
+            // Cập nhật giao diện dựa trên thông tin Customer
         }
 
         private void Customer_Click(object sender, RoutedEventArgs e)
@@ -78,6 +87,13 @@ namespace KoiKingdomPRN_WPF
             Window.GetWindow(this)?.Hide();
             AddEmployeeWindow addEmployeeWindow = new AddEmployeeWindow(employeeService);
             addEmployeeWindow.Show();
+        }
+
+        private void ProfileEmployee_Click(object sender, RoutedEventArgs e)
+        {
+            Window.GetWindow(this)?.Hide();
+            ManagerProfileWindow managerProfileWindow = new ManagerProfileWindow(employee, employeeService);
+            managerProfileWindow.Show();
         }
     }
 }
