@@ -47,6 +47,11 @@ namespace KoiKingdom_Service
             return customerRepo.UpdateCustomerProfile(customerProfile); 
         }
 
-     
+
+        public bool UpdateProfile(int CustomerId, string Email, string Password, string LastName, string FirstName, string? Address, string? AccountType, bool? Status)
+        {
+            return customerRepo.UpdateProfile(CustomerId, Email, Password, LastName, FirstName, Address, AccountType, Status);
+        }
+
     }
 }

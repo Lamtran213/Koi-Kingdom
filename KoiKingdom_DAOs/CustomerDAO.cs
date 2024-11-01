@@ -128,5 +128,41 @@ namespace KoiKingdom_DAOs
             }
             return isSuccess;
         }
+
+        public bool UpdateProfile(int CustomerId, string Email, string Password, string LastName, string FirstName, string? Address, string? AccountType, bool? Status)
+        {
+            bool isSuccess = false;
+            try
+            {
+                Customer updatedCustomer = new Customer
+                {
+                    CustomerId = CustomerId,
+                    Email = Email,
+                    Password = Password,
+                    LastName = LastName,
+                    FirstName = FirstName,
+                    Address = Address,
+                    AccountType = AccountType,
+                    Status = Status,
+                };
+
+                Customer existingCustomer = this.GetCustomerById(updatedCustomer.CustomerId);
+                if (existingCustomer != null)
+                {
+                    dbContext.Entry(existingCustomer).CurrentValues.SetValues(updatedCustomer);
+                    dbContext.SaveChanges();
+                    isSuccess = true;
+                }
+                else
+                {
+                    throw new Exception("Customer not found.");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("An error occurred while updating the customer: " + ex.Message);
+            }
+            return isSuccess;
+        }
     }
 }

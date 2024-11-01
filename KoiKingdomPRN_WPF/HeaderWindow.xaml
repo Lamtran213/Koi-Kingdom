@@ -48,6 +48,7 @@
                 <MenuItem Header="Profile" VerticalAlignment="Center">
                     <!-- Submenu for Profile -->
                     <MenuItem Header="My Booking Tour" Click="MyBookingTour_Click"/>
+                    <MenuItem Header="My Profile" Click="MyProfile_Click"/>
                 </MenuItem>
             </Menu>
 

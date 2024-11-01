@@ -20,5 +20,7 @@ namespace KoiKingdom_Repository
         public bool DeleteCustomerProfile(int customerID);
 
         public bool UpdateCustomerProfile(Customer customerProfile);
+
+        public bool UpdateProfile(int CustomerId, string Email, string Password, string LastName, string FirstName, string? Address, string? AccountType, bool? Status);
     }
 }

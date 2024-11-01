@@ -21,5 +21,7 @@ namespace KoiKingdom_Repository
         public List<Customer> GetCustomers() =>CustomerDAO.Instance.GetCustomers();
    
         public bool UpdateCustomerProfile(Customer customerProfile) => CustomerDAO.Instance.UpdateCustomerProfile(customerProfile);
+
+        public bool UpdateProfile(int CustomerId, string Email, string Password, string LastName, string FirstName, string? Address, string? AccountType, bool? Status) => CustomerDAO.Instance.UpdateProfile(CustomerId, Email, Password, LastName, FirstName, Address, AccountType, Status);
     }
 }

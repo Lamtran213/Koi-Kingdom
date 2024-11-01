@@ -14,6 +14,7 @@ namespace KoiKingdomPRN_WPF
         private ICartItemServices cartItemServices;
         private IKoitypeService koitypeService;
         private IFarmService farmSerivce;
+        private ICustomerService customerService;
         private CartItemServices cartService;
         private Tour currentTour;
         private int quantity;
@@ -26,12 +27,11 @@ namespace KoiKingdomPRN_WPF
             farmSerivce = new FarmService();
             koitypeService = new KoitypeService();
             tourService = new TourService();
+            customerService = new CustomerService();
             farmService = new FarmService();
             bookingService = new BookingService();
             cartItemServices = new CartItemServices();
             RefreshCustomer();
-
-
 
         }
         public void RefreshCustomer()
@@ -144,6 +144,12 @@ namespace KoiKingdomPRN_WPF
             myBookingtWindow.Show();
         }
 
+        private void MyProfile_Click(object sender, RoutedEventArgs e)
+        {
+            Window.GetWindow(this)?.Hide();
+            MyProfileModalWindow myBookingtWindow = new MyProfileModalWindow(Customer, customerService);
+            myBookingtWindow.Show();
+        }
 
     }
 }
