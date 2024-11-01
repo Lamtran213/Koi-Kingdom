@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="ManagerProfileWindow" Height="450" Width="800">
     <Grid Margin="0,0,0,-264">
-        <Grid Margin="0,20,0,305">
+        <Grid Margin="176,20,0,305">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="23*"/>
                 <ColumnDefinition Width="22*"/>
@@ -47,5 +47,6 @@
 
             <Button Content="Update" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="120" Margin="382,0,0,-40" FontSize="16" Click="Button_Update" Grid.ColumnSpan="2" Height="25"/>
         </Grid>
+        <local:HeaderManagerWindow Grid.Column="0" Margin="-9,4,609,260"/>
     </Grid>
 </Window>
