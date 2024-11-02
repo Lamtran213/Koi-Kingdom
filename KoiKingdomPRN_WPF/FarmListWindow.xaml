@@ -5,53 +5,78 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KoiKingdomPRN_WPF" x:Class="KoiKingdomPRN_WPF.FarmListWindow"
         Title="Farm List" Height="450" Width="800"
-        mc:Ignorable="d">
-    <Grid>
-        <!-- Title Label -->
-        <Label Content="Farm List" HorizontalAlignment="Center" Margin="0,127,0,0" VerticalAlignment="Top" 
-               FontSize="20" FontWeight="SemiBold"/>
+        mc:Ignorable="d"
+        Background="Transparent"
+        WindowStyle="None">
+    <Border CornerRadius="30">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                <GradientStop Color="LightGreen" Offset="0"/>
+                <GradientStop Color="MediumSeaGreen" Offset="0.75"/>
+            </LinearGradientBrush>
+        </Border.Background>
 
-        <!-- Farm ListBox -->
-        <ListBox x:Name="FarmListBox" Margin="10,169,10,10">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Border BorderBrush="#E0E0E0" BorderThickness="1" Padding="10" Margin="5" CornerRadius="10" Background="White">
-                        <Border.Effect>
-                            <DropShadowEffect Color="Gray" BlurRadius="8" ShadowDepth="4"/>
-                        </Border.Effect>
-                        <Border.Style>
-                            <Style TargetType="{x:Type Border}">
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#F0F8FF"/>
-                                        <Setter Property="BorderBrush" Value="#87CEFA"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Border.Style>
-                        <StackPanel Orientation="Horizontal">
-                            <!-- Image Display -->
-                            <Image Source="{Binding Image}" Width="80" Height="80" Stretch="UniformToFill" Margin="5"/>
-                            <!-- Farm Details -->
-                            <StackPanel VerticalAlignment="Center">
-                                <TextBlock Text="{Binding FarmName}" FontWeight="Bold" FontSize="16" Foreground="#333"/>
-                                <TextBlock Text="{Binding Location}" FontStyle="Italic" Foreground="#777"/>
-                                <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Width="400" Foreground="#555"/>
-                            </StackPanel>
-                        </StackPanel>
-                    </Border>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-        <local:HeaderWindow RenderTransformOrigin="0.5,0.5"  x:Name="headerWindowControl" Margin="0,0,0,334" >
-            <local:HeaderWindow.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleY="-0.114"/>
-                    <RotateTransform/>
-                    <TranslateTransform Y="-0.798"/>
-                </TransformGroup>
-            </local:HeaderWindow.RenderTransform>
-        </local:HeaderWindow>
-    </Grid>
+        <Border CornerRadius="20" BorderThickness="5" Opacity="0.9">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#006600" Offset="0"/>
+                    <GradientStop Color="#007700" Offset="0"/>
+                    <GradientStop Color="#FF66CC" Offset="0"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Grid>
+                <!-- Title Label -->
+                <Label Content="Farm List" HorizontalAlignment="Center" Margin="0,127,0,0" VerticalAlignment="Top" 
+                       FontSize="30" FontWeight="Bold"
+                       FontFamily="Meiryo">
+                    <Label.Effect>
+                        <DropShadowEffect Color="Black" BlurRadius="4" ShadowDepth="2"/>
+                    </Label.Effect>
+                </Label>
+
+                <!-- Farm ListBox -->
+                <ListBox x:Name="FarmListBox" Margin="10,169,10,10">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="#E0E0E0" BorderThickness="1" Padding="10" Margin="5" CornerRadius="10" Background="White">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="Gray" BlurRadius="8" ShadowDepth="4"/>
+                                </Border.Effect>
+                                <Border.Style>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#F0F8FF"/>
+                                                <Setter Property="BorderBrush" Value="#87CEFA"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <StackPanel Orientation="Horizontal">
+                                    <!-- Image Display -->
+                                    <Image Source="{Binding Image}" Width="80" Height="80" Stretch="UniformToFill" Margin="5"/>
+                                    <!-- Farm Details -->
+                                    <StackPanel VerticalAlignment="Center">
+                                        <TextBlock Text="{Binding FarmName}" FontWeight="Bold" FontSize="16" Foreground="#333"/>
+                                        <TextBlock Text="{Binding Location}" FontStyle="Italic" Foreground="#777"/>
+                                        <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Width="400" Foreground="#555"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <local:HeaderWindow RenderTransformOrigin="0.5,0.5"  x:Name="headerWindowControl" Margin="0,13,1,327" >
+                    <local:HeaderWindow.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleY="-0.114"/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="-0.798"/>
+                        </TransformGroup>
+                    </local:HeaderWindow.RenderTransform>
+                </local:HeaderWindow>
+            </Grid>
+        </Border>
+    </Border>
 </Window>

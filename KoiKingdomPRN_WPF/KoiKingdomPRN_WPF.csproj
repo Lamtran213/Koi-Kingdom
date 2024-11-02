@@ -16,6 +16,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="doctor-appointment.png" />
+    <None Remove="koi-farm.jpg" />
+    <None Remove="koibanner.gif" />
+    <None Remove="kyoto.jpg" />
+    <None Remove="lock.jpg" />
+    <None Remove="mail.png" />
+    <None Remove="nagoya.jpg" />
+    <None Remove="osaka.jpg" />
+    <None Remove="quality.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FontAwesome" Version="4.7.0" />
     <PackageReference Include="FontAwesome.Sharp" Version="6.3.0" />
     <PackageReference Include="MaterialDesignThemes" Version="5.1.0" />
@@ -24,6 +36,18 @@
 
   <ItemGroup>
     <ProjectReference Include="..\KoiKingdom_Service\KoiKingdom_Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="doctor-appointment.png" />
+    <Resource Include="koi-farm.jpg" />
+    <Resource Include="koibanner.gif" />
+    <Resource Include="kyoto.jpg" />
+    <Resource Include="lock.jpg" />
+    <Resource Include="mail.png" />
+    <Resource Include="nagoya.jpg" />
+    <Resource Include="osaka.jpg" />
+    <Resource Include="quality.png" />
   </ItemGroup>
 
   <ItemGroup>

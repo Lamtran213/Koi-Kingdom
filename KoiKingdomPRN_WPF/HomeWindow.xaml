@@ -3,19 +3,20 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:KoiKingdomPRN_WPF"
         mc:Ignorable="d"
-        Title="HomeWindow" Height="750" Width="800"
+        Title="HomeWindow" Height="3000" Width="800"
         Background="Transparent"
         AllowsTransparency="True"
         WindowStyle="None"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterOwner">
 
     <Border CornerRadius="30">
         <Border.Background>
             <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
-                <GradientStop Color="#FFB2A0" Offset="0.0"/>
-                <GradientStop Color="#FFD19C" Offset="1.0"/>
+                <GradientStop Color="#FFCCCC" Offset="0.0"/>
+                <GradientStop Color="White" Offset="1.0"/>
             </LinearGradientBrush>
         </Border.Background>
 
@@ -34,17 +35,16 @@
                         VerticalAlignment="Top" 
                         Width="30" Height="30" 
                         Margin="0,10,10,0" 
-                        Background="#FF6666"
+                        Background="#FF9966"
                         Foreground="White"
                         FontWeight="Bold"
                         Cursor="Hand"
                         BorderThickness="0"
                         Click="Exit_Click"/>
 
-                <!-- Scrollable content -->
                 <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="0,50,0,0">
                     <StackPanel HorizontalAlignment="Center">
-                        <local:HeaderWindow RenderTransformOrigin="0.5,0.5"  x:Name="headerWindowControl" >
+                        <local:HeaderWindow RenderTransformOrigin="0.5,0.5" x:Name="headerWindowControl" Height="102">
                             <local:HeaderWindow.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform/>
@@ -55,26 +55,102 @@
                             </local:HeaderWindow.RenderTransform>
                         </local:HeaderWindow>
 
-                        <!-- Add more content to ensure scrolling -->
-                        <Image Source="/img/koibanner.gif" 
+                        <Image Source="/koibanner.gif" 
                                Width="791" 
-                               Height="284"
+                               Height="271"
                                HorizontalAlignment="Center"
                                Stretch="UniformToFill"
-                               Margin="0,20,0,20"/>
+                               Margin="0,0,0,20"/>
 
-                        <!-- Add more content here to enable scrolling -->
-                        <TextBlock Text="Welcome to Koi Kingdom" 
-                                   FontSize="25" 
-                                   Foreground="Black" 
-                                   HorizontalAlignment="Center"
-                                   Margin="0,20,0,20"
-                                   FontWeight="Bold"/>
+                        <StackPanel x:Name="Content1">
+                            <TextBlock Text="Welcome to Koi Kingdom" 
+                                       FontSize="25" 
+                                       Foreground="Black" 
+                                       HorizontalAlignment="Center"
+                                       Margin="0,20,0,20"
+                                       FontWeight="Bold"
+                                       FontFamily="Meiryo"/>
+                            <TextBlock TextWrapping="Wrap" Width="269" TextAlignment="Left" Margin="-360,15,6,0"
+                                       FontSize="15" FontFamily="Meiryo">
+                                <Run Language="ja-jp" Text="- Explore the world of Koi with our exclusive farm tours."/>
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" Width="285" TextAlignment="Left" Margin="10,20,360,0"
+                                       FontSize="15" FontFamily="Meiryo">
+                                <Run Language="ja-jp" Text="- Experience Japan's top Koi farms, learn from experts, and see stunning fish up close."/>
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" Width="260" Height="100" TextAlignment="Left" Margin="-20,20,360,0"
+                                       FontSize="15" FontFamily="Meiryo">
+                                <Run Language="ja-jp" Text="- Whether you're a Koi enthusiast or new to the hobby, our tours offer an unforgettable glimpse into Koi culture."/>
+                            </TextBlock>
+                            <Rectangle Width="341" Height="228" RadiusX="30" RadiusY="30" Margin="370,-250,59,450">
+                                <Rectangle.Fill>
+                                    <ImageBrush ImageSource="/koi-farm.jpg" Stretch="None"/>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                        </StackPanel>
 
-                        <!-- Extra content to force scrolling -->
+                        <StackPanel x:Name="Content2">
+                            <TextBlock TextWrapping="Wrap" Text="Where do you want to go?" 
+                                       Margin="225,-350,0,20"
+                                       FontSize="25" 
+                                       Foreground="Black" 
+                                       FontWeight="Bold"
+                                       FontFamily="Meiryo"/>
+                            <Image Margin="70,-250,510,835" Source="/kyoto.jpg" Stretch="Fill" Width="200" Height="211"/>
+                            <Image Margin="296,-1050,284,835" Source="/nagoya.jpg" Stretch="Fill" Height="212" Width="191"/>
+                            <Image Margin="524,-1050,56,835" Source="/osaka.jpg" Stretch="Fill" Height="213"/>
 
+                        </StackPanel>
+                        <StackPanel x:Name="Content3">
+                            <TextBlock TextWrapping="Wrap" Text="Popular tour" 
+                                       Margin="320,-750,0,20"
+                                       FontSize="25" 
+                                       Foreground="Black" 
+                                       FontWeight="Bold"
+                                       FontFamily="Meiryo"/>
+                            <Image Margin="70,-650,510,835" Source="/kyoto.jpg" Stretch="Fill" Width="200" Height="211"/>
+                            <Image Margin="296,-1050,284,835" Source="/nagoya.jpg" Stretch="Fill" Height="212" Width="191"/>
+                            <Image Margin="524,-1050,56,835" Source="/osaka.jpg" Stretch="Fill" Height="213"/>
+                        </StackPanel>
+                        <StackPanel x:Name="Content4">
+                            <TextBlock TextWrapping="Wrap" Text="Popular Koi fish breeds" 
+                                       Margin="250,-750,0,20"
+                                       FontSize="25" 
+                                       Foreground="Black" 
+                                       FontWeight="Bold"
+                                       FontFamily="Meiryo"/>
+                            <Image Margin="59,-1050,521,51" Source="/Kohaku.jpg" Stretch="Fill" Height="220"/>
+                            <Image Margin="306,-1050,274,51" Source="/Kohaku.jpg" Stretch="Fill" Height="219"/>
+                            <Image Margin="555,-1050,25,51" Source="/Kohaku.jpg" Stretch="Fill" Height="219"/>
+                            <StackPanel x:Name="Content5">
+                                <TextBlock TextWrapping="Wrap" Text="Why should you choose Koi Kingdom?" 
+                                           Margin="150,-350,0,20"
+                                           FontSize="25" 
+                                           Foreground="Black" 
+                                           FontWeight="Bold"
+                                           FontFamily="Meiryo" Width="615"/>
+                                <TextBlock x:Name="b" TextWrapping="Wrap" Text="Expert Care: Our team has extensive experience                                            in Koi care, ensuring the health and viality of                                            every fish."
+                                           Width="255"/>
+                                <Image Margin="-50,-250,437,630" Source="/quality.png" Stretch="Fill" Height="115" Width="125"/>
+                                <TextBlock x:Name="a" TextWrapping="Wrap" Text="Quality Koi Selection: We offer carefully selected,
+                                           high-quality Koi fish from top breeders in Japan,"
+                                           Margin="10,-580,437,630" Width="264"></TextBlock>
+                                <Image Margin="-310,-1100,-349,424" Source="/doctor-appointment.png" Stretch="Fill" Height="112" Width="126"/>
+                                <Image Margin="170,-1200,-339,559" Source="/comprehension.png" Stretch="Fill" Height="109" Width="121"/>
+                                <TextBlock x:Name="c" TextWrapping="Wrap" Text="Comprehensive Services: From purchasing
+                                           shipping, we provide full support for a seam Koi buying"
+                                           Margin="100,-480,437,630" Width="255"></TextBlock>
+                            </StackPanel>
+                        </StackPanel>
                     </StackPanel>
                 </ScrollViewer>
+
+
+
+
+
+
+
             </Grid>
         </Border>
     </Border>

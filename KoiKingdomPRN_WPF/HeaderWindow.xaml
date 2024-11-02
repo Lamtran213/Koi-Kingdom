@@ -7,7 +7,7 @@
              mc:Ignorable="d"
              Height="100" Width="800" Loaded="HeaderWindow_Loaded">
 
-    <Grid Background="{DynamicResource MaterialDesignPaper}">
+    <Grid Background="#FFCC99">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto" MinWidth="136" />
             <ColumnDefinition />
