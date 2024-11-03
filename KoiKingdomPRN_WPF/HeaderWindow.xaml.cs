@@ -124,7 +124,7 @@ namespace KoiKingdomPRN_WPF
         private void AddToCart_Click(object sender, RoutedEventArgs e)
         {
             Window.GetWindow(this)?.Hide();
-            MyCartWindow myCartWindow = new MyCartWindow(cartItemServices, cartService, currentTour, quantity);
+            MyCartWindow myCartWindow = new MyCartWindow(cartItemServices, cartService, currentTour, quantity, Customer);
             myCartWindow.Show();
         }
 

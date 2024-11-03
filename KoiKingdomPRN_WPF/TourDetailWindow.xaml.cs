@@ -120,6 +120,11 @@ namespace KoiKingdomPRN_WPF
             {
                 try
                 {
+                    if (string.IsNullOrWhiteSpace(Customer.Address))
+                    {
+                        MessageBox.Show("Error: You must enter an address!");
+                        return;
+                    }
                     // Create a new Booking object and populate it with necessary information
                     Booking newBooking = new Booking
                     {

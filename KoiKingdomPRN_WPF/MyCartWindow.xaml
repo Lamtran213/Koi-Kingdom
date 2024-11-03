@@ -58,9 +58,9 @@
             <TextBlock Text="Summary" FontSize="24" FontWeight="Bold" />
             <TextBlock x:Name="TotalPriceTextBlock" FontSize="16" />
 
-            <Button Content="Proceed to checkout" Width="150" Height="30" Margin="10" />
+            <Button x:Name="btnCheckout" Content="Checkout" Width="150" Height="30" Margin="10" Click="btnCheckout_Click"/>
             <TextBlock Text="24/7 Customer Service" FontSize="14" Margin="10,20,10,0" />
-            <TextBlock Text="0931 339 228" FontSize="14" />
+            <TextBlock Text="&#x9;0931 339 228" FontSize="14" />
         </StackPanel>
     </Grid>
 </Window>

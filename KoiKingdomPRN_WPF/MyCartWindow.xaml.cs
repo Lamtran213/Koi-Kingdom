@@ -14,9 +14,10 @@ namespace KoiKingdomPRN_WPF
         private readonly Tour currentTour; // Store the current tour
         private readonly int quantity; // Store the quantity
         private CartItemServices cartService;
+        public Customer Customer { get; set; }
 
 
-        public MyCartWindow(ICartItemServices cartItemServices, CartItemServices cartService, Tour currentTour, int quantity)
+        public MyCartWindow(ICartItemServices cartItemServices, CartItemServices cartService, Tour currentTour, int quantity, Customer customer)
         {
             InitializeComponent();
             this.cartItemServices = cartItemServices ?? throw new ArgumentNullException(nameof(cartItemServices), "CartItemServices cannot be null.");
@@ -24,6 +25,7 @@ namespace KoiKingdomPRN_WPF
             this.quantity = quantity;
             LoadCartItems();
             UpdateCartWithSelectedTour(); // Update cart with selected tour
+            Customer = customer;
         }
 
 
@@ -65,6 +67,10 @@ namespace KoiKingdomPRN_WPF
             TotalPriceTextBlock.Text = string.Format("Total: {0:C}", totalPrice);
         }
 
-
+        private void btnCheckout_Click(object sender, RoutedEventArgs e)
+        {
+            CheckoutWindow checkoutWindow = new CheckoutWindow(Customer);
+            checkoutWindow.Show();
+        }
     }
 }
