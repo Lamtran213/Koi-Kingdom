@@ -51,6 +51,11 @@ namespace KoiKingdom_DAOs
             return dbContext.Employees.ToList();
         }
 
+       public Customer GetCustomer(int customerId)
+        {
+            return dbContext.Customers.SingleOrDefault(e => e.CustomerId == customerId);
+        }
+
         public bool UpdateEmployeeProfile(Employee EmployeeProfile)
         {
             bool isSuccess = false;

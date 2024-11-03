@@ -76,7 +76,7 @@ namespace KoiKingdomPRN_WPF
                         // Add the tour to the cart using CartService
                         cartService.AddTourToCart(currentTour, quantity);
                         MessageBox.Show("Đã thêm vào giỏ hàng thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
-                        HeaderWindow headerWindow = new HeaderWindow(cartService, currentTour, quantity);
+                        HomeWindow homeWindow = new HomeWindow(cartService, currentTour, quantity);
                     }
                     else
                     {

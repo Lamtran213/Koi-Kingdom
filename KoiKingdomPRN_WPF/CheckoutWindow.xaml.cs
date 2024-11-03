@@ -20,11 +20,12 @@ namespace KoiKingdomPRN_WPF
 
         public Customer Customer { get; set; }
 
-        public CheckoutWindow(Customer customer)
+        public CheckoutWindow(Customer customer, Tour currentTour)
         {
             InitializeComponent();
             cartItemServices = new CartItemServices();
             Customer = customer;
+            this.currentTour = currentTour;
             bookingService = new BookingService();
             customerService = new CustomerService();
             LoadCartItems();
@@ -88,57 +89,49 @@ namespace KoiKingdomPRN_WPF
 
         private void btnPurchase_Click(object sender, RoutedEventArgs e)
         {
+
+        }
+
+        private void btnPurchase_Click_1(object sender, RoutedEventArgs e)
+        {
             if (currentTour != null)
             {
                 try
                 {
                     if (string.IsNullOrWhiteSpace(Customer.Address))
                     {
-                        MessageBox.Show("Error: You must enter an address!");
-                        return;
+                        MessageBox.Show("Error: You must enter an address!", "Input Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return; // Exit the method if there's no address
                     }
 
-                    foreach (var item in CartItemsListView.Items)
+                    // Create a new Booking
+                    Booking newBooking = new Booking
                     {
-                        var cartItem = item as CartItem; // Sử dụng dynamic để lấy thuộc tính trực tiếp
+                        TourId = currentTour.TourId,
+                        CustomerId = Customer.CustomerId,
+                        Name = $"{Customer.LastName} {Customer.FirstName}",
+                        Email = Customer.Email,
+                        BookingDate = DateTime.Now,
+                        ShippingAddress = Customer.Address,
+                        Quantity = 2,
+                        Status = "Paid",
+                        TourType = "Available"
+                    };
 
-                        // Kiểm tra Quantity đã được cập nhật
-                        if (cartItem != null && cartItem.numberOfPeople > 0)
-                        {
-                            // Tạo Booking như trước đó
-                            Booking newBooking = new Booking
-                            {
-                                TourId = currentTour.TourId,
-                                CustomerId = Customer.CustomerId,
-                                Name = Customer.LastName + " " + Customer.FirstName,
-                                Email = Customer.Email,
-                                BookingDate = DateTime.Now,
-                                ShippingAddress = Customer.Address,
-                                Quantity = cartItem.numberOfPeople, // Sử dụng Quantity đã được cập nhật
-                                Status = "Paid",
-                                TourType = "Available"
-                            };
+                    // Call service to add booking
+                    bookingService.AddBookingItem(
+                        newBooking.CustomerId,
+                        newBooking.TourId,
+                        newBooking.Name,
+                        newBooking.Email,
+                        newBooking.BookingDate,
+                        newBooking.ShippingAddress,
+                        newBooking.Quantity,
+                        newBooking.Status,
+                        newBooking.TourType
+                    );
 
-                            // Gọi dịch vụ để thêm booking
-                            bookingService.AddBookingItem(
-                                newBooking.CustomerId,
-                                newBooking.TourId,
-                                newBooking.Name,
-                                newBooking.Email,
-                                newBooking.BookingDate,
-                                newBooking.ShippingAddress,
-                                newBooking.Quantity,
-                                newBooking.Status,
-                                newBooking.TourType
-                            );
-                        }
-                        else
-                        {
-                            MessageBox.Show("Please enter a valid quantity for each item.");
-                            return;
-                        }
-                    }
-
+                    // Show success message and close window only after successful booking
                     MessageBox.Show("Booking successful!", "Confirmation", MessageBoxButton.OK, MessageBoxImage.Information);
                     this.Close();
                 }
@@ -151,7 +144,12 @@ namespace KoiKingdomPRN_WPF
                     MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
+            else
+            {
+                MessageBox.Show("Error: Current tour is not set. Please select a tour.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
     }
+
 }

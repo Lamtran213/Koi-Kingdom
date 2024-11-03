@@ -16,10 +16,11 @@ namespace KoiKingdomPRN_WPF
         private IFarmService farmSerivce;
         private ICustomerService customerService;
         private CartItemServices cartService;
-        private Tour currentTour;
         private int quantity;
 
         public Customer Customer { get; set; }
+
+        public Tour Tour { get; set; }
 
         public HeaderWindow()
         {
@@ -32,6 +33,7 @@ namespace KoiKingdomPRN_WPF
             bookingService = new BookingService();
             cartItemServices = new CartItemServices();
             RefreshCustomer();
+            RefreshTour();
 
         }
         public void RefreshCustomer()
@@ -40,6 +42,15 @@ namespace KoiKingdomPRN_WPF
             if (Customer != null)
             {
                 // Cập nhật giao diện dựa trên thông tin Customer
+            }
+        }
+
+        public void RefreshTour()
+        {
+            Tour  = TourDAO.Instance.CurrentTour;
+            if (Tour != null)
+            {
+                this.Tour= TourDAO.Instance.CurrentTour;
             }
         }
 
@@ -55,12 +66,12 @@ namespace KoiKingdomPRN_WPF
             // Cập nhật giao diện dựa trên thông tin Customer
         }
 
-        public HeaderWindow(CartItemServices cartService, Tour currentTour, int quantity)
+        public void SetTour(Tour tour)
         {
-            this.cartService = cartService;
-            this.currentTour = currentTour;
-            this.quantity = quantity;
+            Tour = tour;
+            // Cập nhật giao diện dựa trên thông tin Customer
         }
+
 
         private void Home_Click(object sender, RoutedEventArgs e)
         {
@@ -124,7 +135,8 @@ namespace KoiKingdomPRN_WPF
         private void AddToCart_Click(object sender, RoutedEventArgs e)
         {
             Window.GetWindow(this)?.Hide();
-            MyCartWindow myCartWindow = new MyCartWindow(cartItemServices, cartService, currentTour, quantity, Customer);
+            RefreshTour();
+            MyCartWindow myCartWindow = new MyCartWindow(cartItemServices, cartService, Tour, quantity, Customer);
             myCartWindow.Show();
         }
 
@@ -151,5 +163,6 @@ namespace KoiKingdomPRN_WPF
             myBookingtWindow.Show();
         }
 
+  
     }
 }

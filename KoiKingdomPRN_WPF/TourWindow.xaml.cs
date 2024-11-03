@@ -66,8 +66,7 @@ namespace KoiKingdomPRN_WPF
                 var tourItems = tours.Select(tour => new
                 {
                     TourID = tour.TourId,
-                    ImageSource = new BitmapImage(new Uri(Path.Combine(currentDirectory, tour.Image), UriKind.Absolute)), // Không có thư mục "Koi-Kingdom"
-                    TourName = tour.TourName ?? "Không có tên tour",
+                    ImageSource = new BitmapImage(new Uri(Path.Combine(currentDirectory, tour.Image), UriKind.Absolute)), 
                     Rating = "4.0", // Thay đổi giá trị xếp hạng theo yêu cầu
                     Duration = $"Duration: {tour.Duration ?? "N/A"}",
                     StartDate = tour.StartDate,

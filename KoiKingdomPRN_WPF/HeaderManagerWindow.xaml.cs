@@ -1,4 +1,5 @@
 ﻿using KoiKingdom_BusinessObject;
+using KoiKingdom_Repository;
 using KoiKingdom_Service;
 using System;
 using System.Collections.Generic;
@@ -28,11 +29,14 @@ namespace KoiKingdomPRN_WPF
         private ITourFarmService tourFarmService;
         private ITourKoitypeService tourKoitypeService;
         private IEmployeeService employeeService;
+        private IKoiOrderService koiOrderService;
+        private ICustomerService customerService;
 
         public HeaderManagerWindow()
         {
             InitializeComponent();
             tourService = new TourService();
+            koiOrderService = new KoiOrderService();
             farmService = new FarmService();
             koitypeService = new KoitypeService();
             tourFarmService = new TourFarmService();
@@ -94,6 +98,13 @@ namespace KoiKingdomPRN_WPF
             Window.GetWindow(this)?.Hide();
             ManagerProfileWindow managerProfileWindow = new ManagerProfileWindow(employee, employeeService);
             managerProfileWindow.Show();
+        }
+
+        private void KoiOrder_Click(object sender, RoutedEventArgs e)
+        {
+            Window.GetWindow(this)?.Hide();
+            KoiOrderWindow koiOrderWindow = new KoiOrderWindow(koiOrderService, employeeService);
+            koiOrderWindow.Show();
         }
     }
 }

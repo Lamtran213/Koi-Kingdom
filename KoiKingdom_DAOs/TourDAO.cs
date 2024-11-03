@@ -31,6 +31,8 @@ namespace KoiKingdom_DAOs
             }
         }
 
+        public Tour CurrentTour { get; set; }
+
         // Lấy tour theo ID
         public Tour GetTourById(int id)
         {

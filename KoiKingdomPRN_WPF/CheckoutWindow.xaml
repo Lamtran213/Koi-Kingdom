@@ -36,13 +36,7 @@
                         </GridViewColumn>
                         <GridViewColumn Header="Tour Details" Width="200" DisplayMemberBinding="{Binding TourName}"/>
                         <GridViewColumn Header="Tour Price" Width="120" DisplayMemberBinding="{Binding TourPrice}"/>
-                        <GridViewColumn Header="Quantity" Width="120">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBox Text="{Binding Quantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100" />
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
+                        <GridViewColumn Header="Quantity" Width="120" DisplayMemberBinding="{Binding Quantity}"/>
                         <GridViewColumn Header="Total Price" Width="120" DisplayMemberBinding="{Binding TotalPrice}"/>
                     </GridView>
                 </ListView.View>
@@ -73,7 +67,7 @@
 
         <!-- Payment and Cancel Buttons -->
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="5" Grid.Column="1" Margin="0,20,0,0">
-            <Button x:Name="btnPurchase" Content="Payment" Width="100" Margin="0,0,10,0"/>
+            <Button x:Name="btnPurchase" Content="Payment" Width="100" Margin="0,0,10,0" Click="btnPurchase_Click_1"/>
             <Button Content="Cancel" Width="100"/>
         </StackPanel>
     </Grid>

@@ -45,5 +45,10 @@ namespace KoiKingdom_Service
         {
             return iEmployeeRepo.UpdateProfile(EmployeeId, Email, Password, Role, LastName, FirstName, Address, Status);
         }
+
+        public List<Customer> GetCustomer()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

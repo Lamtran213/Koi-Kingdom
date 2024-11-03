@@ -20,6 +20,7 @@
             <Button Content="Tour" Margin="5" FontSize="16" Click="Tour_Click"/>
             <Button Content="Add Tour" Margin="5" FontSize="16" Click="Addtour_Click"/>
             <Button Content="Add Employee" Margin="5" FontSize="16" Click="AddEmployee_Click"/>
+            <Button Content="Koi Order" Margin="5" FontSize="16" Click="KoiOrder_Click"/>
             <Button Content="Profile" Margin="5" FontSize="16" Click="ProfileEmployee_Click"/>
             <Button Content="Logout" Margin="5" FontSize="16"/>
         </StackPanel>

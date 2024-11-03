@@ -69,7 +69,7 @@ namespace KoiKingdomPRN_WPF
 
         private void btnCheckout_Click(object sender, RoutedEventArgs e)
         {
-            CheckoutWindow checkoutWindow = new CheckoutWindow(Customer);
+            CheckoutWindow checkoutWindow = new CheckoutWindow(Customer, currentTour);
             checkoutWindow.Show();
         }
     }

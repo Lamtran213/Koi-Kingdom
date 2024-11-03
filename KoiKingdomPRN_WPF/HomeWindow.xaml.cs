@@ -1,5 +1,6 @@
 ﻿using KoiKingdom_BusinessObject;
 using KoiKingdom_DAOs;
+using KoiKingdom_Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,10 +23,9 @@ namespace KoiKingdomPRN_WPF
     public partial class HomeWindow : Window
     {
         private Customer customer;
+        private Tour tour;
+        private int quantity;
 
-        public HomeWindow()
-        {
-        }
         public HomeWindow(Customer customer)
         {
             InitializeComponent();
@@ -38,7 +38,25 @@ namespace KoiKingdomPRN_WPF
                 headerWindow.SetCustomer(customer);
             }
         }
-        
+
+        public HomeWindow(CartItemServices cartService, Tour currentTour, int quantity) 
+        {
+            InitializeComponent();
+            this.tour = currentTour;
+            this.quantity = quantity;
+            TourDAO.Instance.CurrentTour = tour;
+            // Lấy HeaderWindow và truyền Customer
+            HeaderWindow headerWindow = (HeaderWindow)this.FindName("headerWindowControl");
+            if (headerWindow != null)
+            {
+                headerWindow.SetTour(currentTour);
+            }
+        }
+
+        public HomeWindow()
+        {
+        }
+
         private void HeaderWindow_Loaded(object sender, RoutedEventArgs e)
         {
 
