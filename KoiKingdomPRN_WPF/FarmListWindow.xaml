@@ -4,11 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KoiKingdomPRN_WPF" x:Class="KoiKingdomPRN_WPF.FarmListWindow"
-        Title="Farm List" Height="450" Width="800"
+        Title="Farm List" Height="800" Width="1000"
         mc:Ignorable="d"
         Background="Transparent"
-        WindowStyle="None">
-    <Border CornerRadius="30">
+        WindowStyle="None" ResizeMode="NoResize">
+    <Border CornerRadius="30" MouseDown="Window_MouseDown">
         <Border.Background>
             <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
                 <GradientStop Color="LightGreen" Offset="0"/>
@@ -26,7 +26,7 @@
             </Border.BorderBrush>
             <Grid>
                 <!-- Title Label -->
-                <Label Content="Farm List" HorizontalAlignment="Center" Margin="0,127,0,0" VerticalAlignment="Top" 
+                <Label Content="Farm List" HorizontalAlignment="Left" Margin="458,111,0,0" VerticalAlignment="Top" 
                        FontSize="30" FontWeight="Bold"
                        FontFamily="Meiryo">
                     <Label.Effect>
@@ -66,7 +66,7 @@
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
-                <local:HeaderWindow RenderTransformOrigin="0.5,0.5"  x:Name="headerWindowControl" Margin="0,13,1,327" >
+                <local:HeaderWindow RenderTransformOrigin="0.5,0.5"  x:Name="headerWindowControl" Margin="10,7,17,683" >
                     <local:HeaderWindow.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -76,6 +76,7 @@
                         </TransformGroup>
                     </local:HeaderWindow.RenderTransform>
                 </local:HeaderWindow>
+                <local:Footer Margin="0,585,0,0"/>
             </Grid>
         </Border>
     </Border>

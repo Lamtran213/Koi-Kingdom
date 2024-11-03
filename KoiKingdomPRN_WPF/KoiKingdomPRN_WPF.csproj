@@ -16,7 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="comprehension.png" />
     <None Remove="doctor-appointment.png" />
+    <None Remove="Kohaku.jpg" />
     <None Remove="koi-farm.jpg" />
     <None Remove="koibanner.gif" />
     <None Remove="kyoto.jpg" />
@@ -39,7 +41,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="comprehension.png" />
     <Resource Include="doctor-appointment.png" />
+    <Resource Include="Kohaku.jpg" />
     <Resource Include="koi-farm.jpg" />
     <Resource Include="koibanner.gif" />
     <Resource Include="kyoto.jpg" />

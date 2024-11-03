@@ -5,59 +5,75 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KoiKingdomPRN_WPF"
         mc:Ignorable="d"
-        Title="Koi Type List" Height="450" Width="800">
-    <Grid>
-        <!-- Header Control -->
-        <local:HeaderWindow RenderTransformOrigin="0.5,0.5" x:Name="headerWindowControl" Margin="0,0,0,334">
-            <local:HeaderWindow.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleY="-0.114"/>
-                    <RotateTransform/>
-                    <TranslateTransform Y="-0.798"/>
-                </TransformGroup>
-            </local:HeaderWindow.RenderTransform>
-        </local:HeaderWindow>
-        <Label Content="KoiType List" HorizontalAlignment="Center" Margin="0,110,0,0" VerticalAlignment="Top" 
-               FontSize="20" FontWeight="SemiBold"/>
+        Title="Koi Type List" Height="800" Width="1000"
+        Background="Transparent"
+        WindowStyle="None" ResizeMode="NoResize">
+        
+    <Border CornerRadius="30" MouseDown="Window_MouseDown">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                <GradientStop Color="#FF71EFED" Offset="0"/>
+                <GradientStop Color="#FF2B48BD" Offset="0.75"/>
+            </LinearGradientBrush>
+        </Border.Background>
 
-        <!-- Title Label -->
+        <Border CornerRadius="20" BorderThickness="5" Opacity="0.9">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#FF2496D2" Offset="0"/>
+                    <GradientStop Color="#FF2496D2" Offset="0"/>
+                    <GradientStop Color="#FFC50E48" Offset="0"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="189*"/>
+                    <ColumnDefinition Width="601*"/>
+                </Grid.ColumnDefinitions>
+                <!-- Title Label -->
+                <Label Content="Koi Type List" HorizontalAlignment="Left"  VerticalAlignment="Top" 
+                       FontSize="30" FontWeight="Bold" FontFamily="Meiryo" Grid.Column="1" Margin="154,100,0,0">
+                    <Label.Effect>
+                        <DropShadowEffect Color="Black" BlurRadius="4" ShadowDepth="2"/>
+                    </Label.Effect>
+                </Label>
 
-        <!-- KoiType ListBox -->
-        <ListBox x:Name="koiTypeListBox" Margin="10,165,10,10">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Border BorderBrush="#E0E0E0" BorderThickness="1" Padding="10" Margin="5" CornerRadius="10">
-                        <Border.Background>
-                            <SolidColorBrush Color="White"/>
-                        </Border.Background>
-                        <Border.Effect>
-                            <!-- Shadow Effect for Depth -->
-                            <DropShadowEffect Color="Gray" BlurRadius="10" ShadowDepth="4"/>
-                        </Border.Effect>
-                        <Border.Style>
-                            <!-- Hover Style -->
-                            <Style TargetType="Border">
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#F0F8FF"/>
-                                        <Setter Property="BorderBrush" Value="#87CEFA"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Border.Style>
-                        <StackPanel Orientation="Horizontal">
-                            <!-- Image Display -->
-                            <Image Source="{Binding Image}" Width="80" Height="80" Stretch="UniformToFill" Margin="5"/>
-                            <!-- KoiType Details -->
-                            <StackPanel VerticalAlignment="Center">
-                                <TextBlock Text="{Binding TypeName}" FontWeight="Bold" FontSize="16" Foreground="#333"/>
-                                <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Width="400" Foreground="#555"/>
-                            </StackPanel>
-                        </StackPanel>
-                    </Border>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-    </Grid>
+                <!-- Koi Type ListBox -->
+                <ListBox x:Name="koiTypeListBox" Margin="10,169,10,10" Grid.ColumnSpan="2">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="#E0E0E0" BorderThickness="1" Padding="10" Margin="5" CornerRadius="10" Background="White">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="Gray" BlurRadius="8" ShadowDepth="4"/>
+                                </Border.Effect>
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#F0F8FF"/>
+                                                <Setter Property="BorderBrush" Value="#87CEFA"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <StackPanel Orientation="Horizontal">
+                                    <!-- Image Display -->
+                                    <Image Source="{Binding Image}" Width="80" Height="80" Stretch="UniformToFill" Margin="5"/>
+                                    <!-- Koi Type Details -->
+                                    <StackPanel VerticalAlignment="Center">
+                                        <TextBlock Text="{Binding TypeName}" FontWeight="Bold" FontSize="16" Foreground="#333"/>
+                                        <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Width="400" Foreground="#555"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <local:HeaderWindow Grid.ColumnSpan="2" Margin="20,0,20,690"/>
+                <local:Footer Grid.ColumnSpan="2" Margin="0,592,10,0"/>
+
+                <!-- Header Control -->
+            </Grid>
+        </Border>
+    </Border>
 </Window>

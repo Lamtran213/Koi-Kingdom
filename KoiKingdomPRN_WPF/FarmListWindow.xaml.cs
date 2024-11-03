@@ -3,6 +3,7 @@ using System;
 using System.IO; // Thêm dòng này để sử dụng Path.Combine
 using System.Linq;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media.Imaging;
 
 namespace KoiKingdomPRN_WPF
@@ -41,6 +42,13 @@ namespace KoiKingdomPRN_WPF
             catch (Exception ex)
             {
                 MessageBox.Show("Cannot load information for some reason!!");
+            }
+        }
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
             }
         }
     }
