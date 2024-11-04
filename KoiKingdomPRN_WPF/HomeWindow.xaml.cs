@@ -45,11 +45,12 @@ namespace KoiKingdomPRN_WPF
             this.tour = currentTour;
             this.quantity = quantity;
             TourDAO.Instance.CurrentTour = tour;
+            TourDAO.Instance.Quantity = quantity;
             // Lấy HeaderWindow và truyền Customer
             HeaderWindow headerWindow = (HeaderWindow)this.FindName("headerWindowControl");
             if (headerWindow != null)
             {
-                headerWindow.SetTour(currentTour);
+                headerWindow.SetTour(currentTour, quantity);
             }
         }
 

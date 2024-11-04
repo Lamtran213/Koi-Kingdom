@@ -17,14 +17,15 @@ namespace KoiKingdomPRN_WPF
         private readonly ICustomerService customerService;
         private readonly IBookingService bookingService;
         private Tour currentTour;
-
+        private readonly int quantity;
         public Customer Customer { get; set; }
 
-        public CheckoutWindow(Customer customer, Tour currentTour)
+        public CheckoutWindow(Customer customer, Tour currentTour, int quantity)
         {
             InitializeComponent();
             cartItemServices = new CartItemServices();
             Customer = customer;
+            this.quantity = quantity;
             this.currentTour = currentTour;
             bookingService = new BookingService();
             customerService = new CustomerService();
@@ -113,7 +114,7 @@ namespace KoiKingdomPRN_WPF
                         Email = Customer.Email,
                         BookingDate = DateTime.Now,
                         ShippingAddress = Customer.Address,
-                        Quantity = 2,
+                        Quantity = quantity,
                         Status = "Paid",
                         TourType = "Available"
                     };

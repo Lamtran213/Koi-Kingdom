@@ -48,9 +48,11 @@ namespace KoiKingdomPRN_WPF
         public void RefreshTour()
         {
             Tour  = TourDAO.Instance.CurrentTour;
+            quantity = TourDAO.Instance.Quantity;
             if (Tour != null)
             {
                 this.Tour= TourDAO.Instance.CurrentTour;
+                this.quantity = TourDAO.Instance.Quantity;
             }
         }
 
@@ -66,9 +68,10 @@ namespace KoiKingdomPRN_WPF
             // Cập nhật giao diện dựa trên thông tin Customer
         }
 
-        public void SetTour(Tour tour)
+        public void SetTour(Tour tour, int quantity)
         {
             Tour = tour;
+            this.quantity = quantity;
             // Cập nhật giao diện dựa trên thông tin Customer
         }
 
