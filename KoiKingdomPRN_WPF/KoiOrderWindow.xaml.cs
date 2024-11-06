@@ -51,7 +51,7 @@ namespace KoiKingdomPRN_WPF
             if (dtgKoiOrder.SelectedItem is Koiorder selectedOrder)
             {
                 // Lấy thông tin khách hàng dựa trên ID khách hàng từ đơn hàng đã chọn
-                List<Customer> customerProfile = employeeService.GetCustomer();
+                List<Customer> customerProfile = employeeService.GetCustomerByList();
 
                 // Tìm khách hàng dựa trên ID khách hàng của đơn hàng đã chọn
                 var customer = customerProfile.FirstOrDefault(c => c.CustomerId == selectedOrder.CustomerId);
@@ -78,7 +78,7 @@ namespace KoiKingdomPRN_WPF
         {
             // Load KoiOrder data and display without requiring a selection.
             var orders = koiOrderService.GetKoiOrder();
-            var customerProfile = employeeService.GetCustomer();
+            var customerProfile = employeeService.GetCustomerByList();
 
             this.dtgKoiOrder.ItemsSource = orders.Select(a => new
             {

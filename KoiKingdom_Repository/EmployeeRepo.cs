@@ -21,5 +21,6 @@ namespace KoiKingdom_Repository
 
         public bool UpdateProfile(int EmployeeId, string Email, string Password, string Role, string LastName, string FirstName, string? Address, bool? Status) => EmployeeDAO.Instance.UpdateProfile( EmployeeId,  Email,  Password,  Role,  LastName,  FirstName,   Address,   Status);
 
+        public List<Customer> GetCustomerByList()=>EmployeeDAO.Instance.GetCustomerByList();
     }
 }

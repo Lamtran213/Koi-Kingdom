@@ -17,6 +17,8 @@ namespace KoiKingdom_Service
 
         public List<Farm> GetFarms() => FarmDAO.Instance.GetFarms();
 
+        public List<string> GetFarmsName();
+
         public bool AddFarmProfile(Farm customerProfile) => FarmDAO.Instance.AddFarmProfile(customerProfile);
 
         public bool DeleteFarmProfile(int customerID) => FarmDAO.Instance.DeleteFarmProfile(customerID);

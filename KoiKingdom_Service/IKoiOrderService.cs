@@ -19,5 +19,6 @@ namespace KoiKingdom_Service
 
         public bool UpdateKoi(Koiorder koiOrder);
 
+        public int AddKoiReturnId(int CustomerId, DateTime deliveryDate, bool status, DateTime? EstimatedDelivery);
     }
 }

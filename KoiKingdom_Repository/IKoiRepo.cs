@@ -20,6 +20,8 @@ namespace KoiKingdom_Repository
         // Delete Koi profile by ID
         public bool DeleteKoi(int koiID);
 
+        public List<string> GetKoisName();
+
         // Update Koi profile
         public bool UpdateKoi(Koi koiProfile); // Added missing semicolon
     }

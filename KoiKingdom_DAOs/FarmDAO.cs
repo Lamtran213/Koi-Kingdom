@@ -47,6 +47,12 @@ namespace KoiKingdom_DAOs
             return dbContext.Farms.ToList();
         }
 
+        public List<string> GetFarmsName()
+        {
+            return dbContext.Farms.Select(f => f.FarmName).ToList();
+        }
+
+
         // Add farm profile
         public bool AddFarmProfile(Farm farmProfile)
         {

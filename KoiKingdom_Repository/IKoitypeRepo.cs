@@ -21,6 +21,9 @@ namespace KoiKingdom_Repository
         bool DeleteKoitypeProfile(int koitypeID); 
 
         // Cập nhật hồ sơ koitype
-        bool UpdateKoitypeProfile(Koitype koitypeProfile); 
+        bool UpdateKoitypeProfile(Koitype koitypeProfile);
+
+       List<string> GetKoitypesName();
+
     }
 }

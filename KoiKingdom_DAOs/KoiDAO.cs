@@ -42,6 +42,12 @@ namespace KoiKingdom_DAOs
             return dbContext.Kois.ToList();
         }
 
+        public List<string> GetKoisName()
+        {
+            return dbContext.Kois.Select(k => k.KoiName).ToList();
+        }
+
+
         // Thêm hồ sơ koi
         public bool AddKoi(Koi koi)
         {

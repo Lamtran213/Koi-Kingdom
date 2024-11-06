@@ -272,9 +272,9 @@ namespace KoiKingdom_DAOs
             modelBuilder.Entity<Koi>(entity =>
             {
                 entity.HasKey(e => e.KoiId)
-                    .HasName("PK__KOI_PRN__E03435B828ABE075");
+                    .HasName("PK__KOI__E03435B828ABE075");
 
-                entity.ToTable("KOI_PRN");
+                entity.ToTable("KOI");
 
                 entity.Property(e => e.KoiId).HasColumnName("KoiID");
 
@@ -296,7 +296,10 @@ namespace KoiKingdom_DAOs
                     .WithMany(p => p.KoiPrns)
                     .HasForeignKey(d => d.KoiTypeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__KOI_PRN__KoiType__73BA3083");
+                    .HasConstraintName("FK__KOI" +
+                    "" +
+                    "" +
+                    "__KoiType__73BA3083");
             });
 
             modelBuilder.Entity<Koiorder>(entity =>

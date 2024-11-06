@@ -11,6 +11,9 @@ namespace KoiKingdom_Service
     {
         public Employee GetEmployeeById(int id);
 
+
+        public List<Customer> GetCustomerByList();
+
         public Employee GetEmployeeByEmail(string email);
 
         public List<Employee> GetEmployees();
@@ -20,6 +23,5 @@ namespace KoiKingdom_Service
 
         public bool UpdateProfile(int EmployeeId, string Email, string Password, string Role, string LastName, string FirstName, string? Address, bool? Status);
 
-        public List<Customer> GetCustomer();
     }
 }

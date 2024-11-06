@@ -1,4 +1,5 @@
 ﻿using KoiKingdom_BusinessObject;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,10 +43,17 @@ namespace KoiKingdom_DAOs
         }
 
         // Lấy danh sách tất cả koitype
-        public List<Koitype> GetKoitypes() // Changed method name and return type
+        public List<Koitype> GetKoitypes()
         {
-            return dbContext.Koitypes.ToList(); // Updated to use Koitypes
+            // Retrieve only the TypeName as a list of strings
+            return dbContext.Koitypes.ToList();
         }
+
+        public List<string> GetKoitypesName()
+        {
+            return dbContext.Koitypes.Select(k => k.TypeName).ToList();
+        }
+
 
         // Thêm hồ sơ koitype
         public bool AddKoitype(Koitype koitype) // Changed method name and parameter type

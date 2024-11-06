@@ -41,5 +41,10 @@ namespace KoiKingdom_Service
         {
             return iFarmRepo.DeleteFarmProfile(farmId);
         }
+
+        public List<string> GetFarmsName()
+        {
+            return iFarmRepo.GetFarmsName();
+        }
     }
 }

@@ -43,5 +43,10 @@ namespace KoiKingdom_Repository
         {
             return iKoiOrderRepo.UpdateKoi(koiOrder);
         }
+
+        public int AddKoiReturnId(int CustomerId, DateTime deliveryDate, bool status, DateTime? EstimatedDelivery)
+        {
+            return iKoiOrderRepo.AddKoiReturnId(CustomerId, deliveryDate, status, EstimatedDelivery);
+        }
     }
 }

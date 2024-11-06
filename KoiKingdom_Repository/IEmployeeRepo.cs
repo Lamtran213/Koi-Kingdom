@@ -14,6 +14,8 @@ namespace KoiKingdom_Repository
 
         public Employee GetEmployeeById(int id);
 
+        public List<Customer> GetCustomerByList();
+
         public Employee GetEmployeeByEmail(string email);
 
         public List<Employee> GetEmployees();

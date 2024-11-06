@@ -49,6 +49,11 @@ namespace KoiKingdom_Service
         {
             return iKoitypeRepo.GetKoitypeByName(name);
         }
+
+        public List<string> GetKoitypesName()
+        {
+            return iKoitypeRepo.GetKoitypesName();
+        }
     }
 
 }

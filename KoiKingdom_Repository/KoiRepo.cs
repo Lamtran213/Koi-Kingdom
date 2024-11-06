@@ -22,6 +22,8 @@ namespace KoiKingdom_Repository
         // Lấy danh sách tất cả các Koi
         public List<Koi> GetKois() => KoiDAO.Instance.GetKois();
 
+        public List<string> GetKoisName()=>KoiDAO.Instance.GetKoisName();
+
         // Cập nhật hồ sơ Koi
         public bool UpdateKoi(Koi koi) => KoiDAO.Instance.UpdateKoi(koi);
     }

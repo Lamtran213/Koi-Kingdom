@@ -21,6 +21,8 @@ namespace KoiKingdom_Repository
         public List<Farm> GetFarms() => FarmDAO.Instance.GetFarms();
 
         public bool UpdateFarmProfile(Farm farmProfile) => FarmDAO.Instance.UpdateFarmProfile(farmProfile);
+
+        public List<string> GetFarmsName()=>FarmDAO.Instance.GetFarmsName();
     }
 }
     

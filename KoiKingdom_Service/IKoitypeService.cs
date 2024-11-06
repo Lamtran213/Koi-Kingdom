@@ -25,5 +25,7 @@ namespace KoiKingdom_Service
 
         // Cập nhật hồ sơ koitype
         bool UpdateKoitypeProfile(Koitype koitypeProfile);
+
+        List<string> GetKoitypesName();
     }
 }

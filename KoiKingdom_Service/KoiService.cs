@@ -27,7 +27,7 @@ namespace KoiKingdom_Service
         // Lấy danh sách tất cả Koi
         public List<Koi> GetKois()
         {
-            return iKoiRepo.GetKois();
+            return iKoiRepo.GetKois().ToList();
         }
 
         // Thêm Koi
@@ -46,6 +46,11 @@ namespace KoiKingdom_Service
         public bool DeleteKoi(int koiId)
         {
             return iKoiRepo.DeleteKoi(koiId);
+        }
+
+        public List<string> GetKoisName()
+        {
+            return iKoiRepo.GetKoisName().ToList();
         }
     }
 }

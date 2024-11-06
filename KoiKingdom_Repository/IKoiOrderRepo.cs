@@ -15,6 +15,8 @@ namespace KoiKingdom_Repository
 
         public bool AddKoi(int CustomerId, DateTime DeliveryDate, bool Status, DateTime? EstimatedDelivery);
 
+        public int AddKoiReturnId(int CustomerId, DateTime deliveryDate, bool status, DateTime? EstimatedDelivery);
+
         public bool DeleteKoi(int koiOrderId);
 
         public bool UpdateKoi(Koiorder koiOrder);

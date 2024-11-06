@@ -10,14 +10,16 @@ namespace KoiKingdom_Service
 {
     public interface IKoiService
     {
-        public bool AddKoi(Koi koi) => KoiDAO.Instance.AddKoi(koi);
+        public bool AddKoi(Koi koi);
 
-        public bool DeleteKoi(int koiId) => KoiDAO.Instance.DeleteKoi(koiId);
+        public bool DeleteKoi(int koiId);
 
-        public Koi GetKoiById(int id) => KoiDAO.Instance.GetKoiById(id);
+        public Koi GetKoiById(int id);
 
-        public List<Koi> GetKois() => KoiDAO.Instance.GetKois();
+        public List<Koi> GetKois();
 
-        public bool UpdateKoi(Koi koi) => KoiDAO.Instance.UpdateKoi(koi);
+        public bool UpdateKoi(Koi koi) ;
+
+        public List<string> GetKoisName();
     }
 }

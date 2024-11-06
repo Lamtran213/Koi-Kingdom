@@ -24,5 +24,7 @@ namespace KoiKingdom_Repository
         public bool DeleteFarmProfile(int farmID);
         // Update farm profile
         public bool UpdateFarmProfile(Farm farmProfile);
+
+        public List<string> GetFarmsName();
     }
 }

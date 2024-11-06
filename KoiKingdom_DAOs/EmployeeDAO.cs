@@ -51,6 +51,11 @@ namespace KoiKingdom_DAOs
             return dbContext.Employees.ToList();
         }
 
+        public List<Customer> GetCustomerByList()
+        {
+            return dbContext.Customers.ToList();
+        }
+
        public Customer GetCustomer(int customerId)
         {
             return dbContext.Customers.SingleOrDefault(e => e.CustomerId == customerId);

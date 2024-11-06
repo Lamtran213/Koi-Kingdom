@@ -21,6 +21,8 @@ namespace KoiKingdom_Repository
         public List<Koitype> GetKoitypes()=> KoitypeDAO.Instance.GetKoitypes(); // Implemented
 
         public bool UpdateKoitypeProfile(Koitype koitypeProfile) => KoitypeDAO.Instance.UpdateKoitype(koitypeProfile); // Implemented
+
+        public List<string> GetKoitypesName() => KoitypeDAO.Instance.GetKoitypesName();
     }
 
 }

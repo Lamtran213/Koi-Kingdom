@@ -64,7 +64,13 @@ namespace KoiKingdomPRN_WPF
                 {
                     MessageBox.Show("Your account is blocked!");
                 }
+            } else if (employee != null && txtPassword.Password.Equals(employee.Password) && employee.Role.Equals("Consulting"))
+            {
+                HomeConsultingWindow homeConsultingWindow = new HomeConsultingWindow(employee);
+                homeConsultingWindow.Show();
+                this.Close();
             }
+
             // Nếu không đúng Email/Password
             else
             {

@@ -17,5 +17,7 @@ namespace KoiKingdom_Repository
 
         public List<Koiorder> GetKoiOrder() => KoiorderDAO.Instance.GetKoiOrder();
         public bool UpdateKoi(Koiorder koiOrder) => KoiorderDAO.Instance.UpdateKoi(koiOrder);
+
+        public int AddKoiReturnId(int CustomerId, DateTime deliveryDate, bool status, DateTime? EstimatedDelivery) => KoiorderDAO.Instance.AddKoiReturnId(CustomerId, deliveryDate, status, EstimatedDelivery);
     }
 }

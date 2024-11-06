@@ -42,6 +42,32 @@ namespace KoiKingdom_DAOs
             return dbContext.Koiorders.ToList();
         }
 
+
+        public int AddKoiReturnId(int CustomerId, DateTime deliveryDate, bool status, DateTime? EstimatedDelivery)
+        {
+            try
+            {
+                Koiorder koiOrder = new Koiorder
+                {
+                    CustomerId = CustomerId,
+                    DeliveryDate = deliveryDate,
+                    Status = status,
+                    EstimatedDelivery = EstimatedDelivery,
+                };
+
+                dbContext.Koiorders.Add(koiOrder);
+                dbContext.SaveChanges();
+
+                return koiOrder.KoiOrderId;  // Return the KoiOrderId of the inserted order
+            }
+            catch (Exception ex)
+            {
+                // Handle exception (log it, rethrow, or return an error status)
+                throw new Exception("Error occurred while adding Koi order: " + ex.Message);
+            }
+        }
+
+
         public bool AddKoi(int CustomerId, DateTime DeliveryDate, bool Status, DateTime? EstimatedDelivery)
         {
             bool isSuccess = false;
