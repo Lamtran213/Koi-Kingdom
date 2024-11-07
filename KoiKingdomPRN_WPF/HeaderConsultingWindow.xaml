@@ -15,6 +15,12 @@
         <!-- Sidebar -->
         <StackPanel Grid.Column="0" Background="#FF2D2D30" Margin="10">
             <Button Content="Home" Margin="5" FontSize="16" Click="Home_Click"/>
+            <Button Margin="5" FontSize="16" Click="Tour_Detail_Management_Click" Height="54">
+                <StackPanel>
+                    <TextBlock Text="Tour Detail" TextAlignment="Center"/>
+                    <TextBlock Text="Management" TextAlignment="Center"/>
+                </StackPanel>
+            </Button>
             <Button Content="Create Koi Order" Margin="5" FontSize="16" Click="Create_Koi_Order_Click"/>
             <Button Content="Logout" Margin="5" FontSize="16" Click="Button_Click"/>
         </StackPanel>

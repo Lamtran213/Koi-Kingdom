@@ -25,11 +25,12 @@ namespace KoiKingdomPRN_WPF
     {
         private Employee employee;
         private IFarmService farmService;
+        private ICustomerService customerService;
         private IKoitypeService koitypeService;
         private IKoiService koiService; 
         private IKoiOrderService orderService;
         private IKoiorderdetailService orderdetailService;
-
+        private ITourbookingdetailService tourbookingdetailService;
         public HeaderConsultingWindow()
         {
             InitializeComponent();
@@ -37,7 +38,9 @@ namespace KoiKingdomPRN_WPF
             this.koiService = new KoiService();
             this.orderdetailService = new KoiorderdetailService();
             this.orderService = new KoiOrderService();
+            this.customerService = new CustomerService();
             this.koitypeService = new KoitypeService();
+            this.tourbookingdetailService = new TourbookingdetailService();
         }
         public void SetEmployee(Employee employee)
         {
@@ -61,6 +64,13 @@ namespace KoiKingdomPRN_WPF
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Tour_Detail_Management_Click(object sender, RoutedEventArgs e)
+        {
+            Window.GetWindow(this)?.Hide();
+            TourDetailManagementWindow tourDetailManagementWindow = new TourDetailManagementWindow(tourbookingdetailService, customerService);
+            tourDetailManagementWindow.Show();
         }
     }
 }

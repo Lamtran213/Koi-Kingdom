@@ -34,9 +34,5 @@ namespace KoiKingdomPRN_WPF
             }
         }
 
-        private void HeaderConsultingWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

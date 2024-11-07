@@ -8,6 +8,6 @@
         Title="HomeConsultingWindow" Height="450" Width="800">
 
     <Grid>
-        <local:HeaderConsultingWindow Grid.Column="0" Loaded="HeaderConsultingWindow_Loaded" x:Name="headerConsultingWindowControl"/>
+        <local:HeaderConsultingWindow Grid.Column="0" x:Name="headerConsultingWindowControl"/>
     </Grid>
 </Window>
