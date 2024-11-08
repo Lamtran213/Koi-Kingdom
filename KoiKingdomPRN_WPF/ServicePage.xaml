@@ -1,0 +1,47 @@
+﻿<Window x:Class="KoiKingdomPRN_WPF.ServicePage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KoiKingdomPRN_WPF"
+        mc:Ignorable="d"
+        Title="ServicePage" Width="1200" MinHeight="1200"
+        WindowStyle="None" ResizeMode="NoResize">
+    <Border CornerRadius="30" MouseDown="Window_MouseDown" Background="White">
+
+        <Border CornerRadius="20" BorderThickness="5" Opacity="0.9">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#FF2496D2" Offset="0"/>
+                    <GradientStop Color="#FF2496D2" Offset="0"/>
+                    <GradientStop Color="#FFC50E48" Offset="0"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Grid>
+                <!-- Header Section -->
+                <local:HeaderWindow HorizontalAlignment="Stretch" VerticalAlignment="Top" Width="1200"/>
+
+                <!-- Main Content Section -->
+
+                <!-- Footer Section -->
+                <local:Footer VerticalAlignment="Top" Height="208" Width="1200" Margin="0,976,0,0"/>
+                <Grid HorizontalAlignment="Center" Height="210" Margin="0,114,0,0" VerticalAlignment="Top" Width="1180" Background="#FFFFE1D0">
+                    <TextBox HorizontalAlignment="Left" Height="41" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" Text="Category" TextAlignment="Center" FontFamily="Comic Sans MS" FontSize="24" FontWeight="Bold" Foreground="#FFE6BE32" IsEnabled="False"/>
+                    <TextBox HorizontalAlignment="Left" Height="159" Margin="10,51,0,0" TextWrapping="Wrap" Text="Our Services" VerticalAlignment="Top" Width="203" TextAlignment="Center" FontFamily="Times New Roman" FontSize="48" IsEnabled="False"/>
+                    <Image HorizontalAlignment="Left" Height="178" Margin="474,0,0,0" VerticalAlignment="Center" Width="170" Source="/kyoto.jpg"/>
+                    <Image HorizontalAlignment="Left" Height="178" Margin="714,0,0,0" VerticalAlignment="Center" Width="170" Source="/kyoto.jpg"/>
+                    <Image HorizontalAlignment="Left" Height="178" Margin="950,0,0,0" VerticalAlignment="Center" Width="170" Source="/kyoto.jpg"/>
+                </Grid>
+                <TextBox HorizontalAlignment="Left" Height="42" Margin="555,344,0,0" TextWrapping="Wrap" Text="About Us" VerticalAlignment="Top" Width="166" TextAlignment="Center" FontSize="20" FontFamily="Comic Sans MS" FontWeight="Bold" IsEnabled="False"/>
+                <TextBlock HorizontalAlignment="Center" Height="106" Margin="0,391,0,0" VerticalAlignment="Top" Width="1032" FontSize="16" TextWrapping="Wrap" IsEnabled="False"><Run Text="Koi Kingdom is the premier destination for koi fish lovers in Vietnam. We specialize in providing quality koi fish purchasing services from Japan.  With our team of experts and many years of experience, we are committed to delivering healthy and beautiful koi to our customers."/><LineBreak/><Run/><LineBreak/><Run Text="We offer both pre-arranged tours and customized services, ensuring a"/><Run Text=" delightful and unique experience when selecting your favorite koi."/></TextBlock>
+                <Image HorizontalAlignment="Center" Height="234" Margin="0,518,0,0" VerticalAlignment="Top" Width="1180" Source="/koibanner.gif" Stretch="Fill" StretchDirection="UpOnly"/>
+                <TextBox HorizontalAlignment="Left" Height="44" Margin="458,590,0,0" TextWrapping="Wrap" Text="Purchase Koi Fish From Japan" VerticalAlignment="Top" Width="360" Foreground="White" FontFamily="Times New Roman" FontSize="24" IsEnabled="False"/>
+                <TextBox HorizontalAlignment="Left" Height="38" Margin="555,768,0,0" TextWrapping="Wrap" Text="Our Services" VerticalAlignment="Top" Width="166"  TextAlignment="Center" FontFamily="Comic Sans MS" FontSize="20" FontWeight="Bold" IsEnabled="False"/>
+                <TextBlock HorizontalAlignment="Left" Height="110" Margin="42,832,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312" TextAlignment="Center" FontSize="16" IsEnabled="False"><Run FontWeight="Bold" Text="Order Tour"/><LineBreak/><Run Text="Join our Koi fish ordering tours in Japan with professional guides.&#x9;  "/><LineBreak/><Run/></TextBlock>
+                <TextBlock HorizontalAlignment="Center" Height="110" Margin="0,832,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312" TextAlignment="Center" FontSize="16" IsEnabled="False"><Run FontWeight="Bold" Text="Customized Tour"/><LineBreak/><Run Text="We help you design a  personalized&#x9;tour based on yours need  and preferences.&#x9;  "/><LineBreak/><Run/></TextBlock>
+                <TextBlock HorizontalAlignment="Left" Height="110" Margin="835,832,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="321" FontSize="16" TextAlignment="Center" IsEnabled="False"><Run FontWeight="Bold" Text="Koi Consulting"/><LineBreak/><Run Text="Our teams except ready to advise you on koi care and selection.&#x9;  "/><LineBreak/><Run/></TextBlock>
+            </Grid>
+        </Border>
+    </Border>
+</Window>
+
