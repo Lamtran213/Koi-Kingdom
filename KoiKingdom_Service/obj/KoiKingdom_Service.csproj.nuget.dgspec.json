@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\acer\\Desktop\\123\\Cn5\\PRN212\\Koi\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj": {}
+    "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj": {}
   },
   "projects": {
-    "C:\\Users\\acer\\Desktop\\123\\Cn5\\PRN212\\Koi\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj": {
+    "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\acer\\Desktop\\123\\Cn5\\PRN212\\Koi\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj",
+        "projectUniqueName": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj",
         "projectName": "KoiKingdom_BusinessObject",
-        "projectPath": "C:\\Users\\acer\\Desktop\\123\\Cn5\\PRN212\\Koi\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj",
-        "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\acer\\Desktop\\123\\Cn5\\PRN212\\Koi\\Koi-Kingdom\\KoiKingdom_BusinessObject\\obj\\",
+        "projectPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,8 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\acer\\.nuget\\packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -83,44 +77,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.29, 6.0.29]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.29, 6.0.29]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.29, 6.0.29]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\acer\\Desktop\\123\\Cn5\\PRN212\\Koi\\Koi-Kingdom\\KoiKingdom_DAOs\\KoiKingdom_DAOs.csproj": {
+    "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_DAOs\\KoiKingdom_DAOs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\acer\\Desktop\\123\\Cn5\\PRN212\\Koi\\Koi-Kingdom\\KoiKingdom_DAOs\\KoiKingdom_DAOs.csproj",
+        "projectUniqueName": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_DAOs\\KoiKingdom_DAOs.csproj",
         "projectName": "KoiKingdom_DAOs",
-        "projectPath": "C:\\Users\\acer\\Desktop\\123\\Cn5\\PRN212\\Koi\\Koi-Kingdom\\KoiKingdom_DAOs\\KoiKingdom_DAOs.csproj",
-        "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\acer\\Desktop\\123\\Cn5\\PRN212\\Koi\\Koi-Kingdom\\KoiKingdom_DAOs\\obj\\",
+        "projectPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_DAOs\\KoiKingdom_DAOs.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_DAOs\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -128,16 +104,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\acer\\.nuget\\packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\acer\\Desktop\\123\\Cn5\\PRN212\\Koi\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj": {
-                "projectPath": "C:\\Users\\acer\\Desktop\\123\\Cn5\\PRN212\\Koi\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj"
+              "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj": {
+                "projectPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj"
               }
             }
           }
@@ -167,44 +141,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.29, 6.0.29]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.29, 6.0.29]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.29, 6.0.29]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\acer\\Desktop\\123\\Cn5\\PRN212\\Koi\\Koi-Kingdom\\KoiKingdom_Repository\\KoiKingdom_Repository.csproj": {
+    "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Repository\\KoiKingdom_Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\acer\\Desktop\\123\\Cn5\\PRN212\\Koi\\Koi-Kingdom\\KoiKingdom_Repository\\KoiKingdom_Repository.csproj",
+        "projectUniqueName": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Repository\\KoiKingdom_Repository.csproj",
         "projectName": "KoiKingdom_Repository",
-        "projectPath": "C:\\Users\\acer\\Desktop\\123\\Cn5\\PRN212\\Koi\\Koi-Kingdom\\KoiKingdom_Repository\\KoiKingdom_Repository.csproj",
-        "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\acer\\Desktop\\123\\Cn5\\PRN212\\Koi\\Koi-Kingdom\\KoiKingdom_Repository\\obj\\",
+        "projectPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Repository\\KoiKingdom_Repository.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Repository\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -212,16 +168,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\acer\\.nuget\\packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\acer\\Desktop\\123\\Cn5\\PRN212\\Koi\\Koi-Kingdom\\KoiKingdom_DAOs\\KoiKingdom_DAOs.csproj": {
-                "projectPath": "C:\\Users\\acer\\Desktop\\123\\Cn5\\PRN212\\Koi\\Koi-Kingdom\\KoiKingdom_DAOs\\KoiKingdom_DAOs.csproj"
+              "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_DAOs\\KoiKingdom_DAOs.csproj": {
+                "projectPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_DAOs\\KoiKingdom_DAOs.csproj"
               }
             }
           }
@@ -251,44 +205,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.29, 6.0.29]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.29, 6.0.29]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.29, 6.0.29]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\acer\\Desktop\\123\\Cn5\\PRN212\\Koi\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj": {
+    "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\acer\\Desktop\\123\\Cn5\\PRN212\\Koi\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj",
+        "projectUniqueName": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj",
         "projectName": "KoiKingdom_Service",
-        "projectPath": "C:\\Users\\acer\\Desktop\\123\\Cn5\\PRN212\\Koi\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj",
-        "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\acer\\Desktop\\123\\Cn5\\PRN212\\Koi\\Koi-Kingdom\\KoiKingdom_Service\\obj\\",
+        "projectPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Service\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -296,16 +232,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\acer\\.nuget\\packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\acer\\Desktop\\123\\Cn5\\PRN212\\Koi\\Koi-Kingdom\\KoiKingdom_Repository\\KoiKingdom_Repository.csproj": {
-                "projectPath": "C:\\Users\\acer\\Desktop\\123\\Cn5\\PRN212\\Koi\\Koi-Kingdom\\KoiKingdom_Repository\\KoiKingdom_Repository.csproj"
+              "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Repository\\KoiKingdom_Repository.csproj": {
+                "projectPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Repository\\KoiKingdom_Repository.csproj"
               }
             }
           }
@@ -335,26 +269,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.29, 6.0.29]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.29, 6.0.29]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.29, 6.0.29]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

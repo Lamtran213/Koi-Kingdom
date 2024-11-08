@@ -69,12 +69,11 @@ namespace KoiKingdomPRN_WPF
                     ImageSource = new BitmapImage(new Uri(Path.Combine(currentDirectory, tour.Image), UriKind.Absolute)),
                     Rating = "4.0", // Thay đổi giá trị xếp hạng theo yêu cầu
                     Duration = $"Duration: {tour.Duration ?? "N/A"}",
-                    StartDate = tour.StartDate,
-                    EndDate = tour.EndDate,
+                    StartDate = tour.StartDate.ToString(),
+                    EndDate = tour.EndDate.ToString(),
                     Farms = $"Farm: {string.Join(", ", farms)}",
-                    KoiTypes = $"Koi Type: {(tour.TourKoitypes != null && tour.TourKoitypes.Any() ? string.Join(", ", tour.TourKoitypes.Select(k => k.KoiType)) : "N/A")}",
-                    DepartureLocation = $"Departure Location: {tour.DepartureLocation ?? "N/A"}",
-                    TourPrice = tour.TourPrice
+                    DepartureLocation = tour.DepartureLocation.ToString(),
+                    TourPrice = tour.TourPrice.ToString()
                 }).ToList();
 
                 // Gán danh sách tour vào ItemsControl
