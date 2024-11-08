@@ -1,7 +1,6 @@
 ﻿using KoiKingdom_BusinessObject;
 using KoiKingdom_DAOs;
 using KoiKingdom_Service;
-using MaterialDesignThemes.Wpf;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -80,15 +79,12 @@ namespace KoiKingdomPRN_WPF
         private void Home_Click(object sender, RoutedEventArgs e)
         {
             // Implement logic for Home menu item click
-            HomeWindow homewindow = new HomeWindow();
-            homewindow.Show();
         }
 
         private void Services_Click(object sender, RoutedEventArgs e)
         {
-            // Implement logic for Services menu item click
-            ServicePage service= new ServicePage();
-            service.Show();
+            ServicePage servicePage = new ServicePage();
+            servicePage.Show();
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -171,6 +167,9 @@ namespace KoiKingdomPRN_WPF
             myBookingtWindow.Show();
         }
 
-  
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
