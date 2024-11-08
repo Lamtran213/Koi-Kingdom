@@ -39,7 +39,7 @@ namespace KoiKingdomPRN_WPF
             }
         }
 
-        public HomeWindow(CartItemServices cartService, Tour currentTour, int quantity) 
+        public HomeWindow(CartItemServices cartService, Tour currentTour, int quantity)
         {
             InitializeComponent();
             this.tour = currentTour;
@@ -68,10 +68,7 @@ namespace KoiKingdomPRN_WPF
 
         }
 
-        private void Exit_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
+
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)

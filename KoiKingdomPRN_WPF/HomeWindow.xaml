@@ -6,11 +6,12 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:KoiKingdomPRN_WPF"
         mc:Ignorable="d"
-        Title="HomeWindow" Height="2200" Width="1000"
+        Title="HomeWindow" Height="2300" Width="1200"
         Background="Transparent"
         AllowsTransparency="True"
         WindowStyle="None"
-        WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+        WindowStartupLocation="CenterOwner" 
+        ResizeMode="NoResize">
 
     <Border CornerRadius="30" MouseDown="Window_MouseDown">
         <Border.Background>
@@ -30,28 +31,17 @@
             </Border.BorderBrush>
 
             <Grid>
-                <!-- Close Button -->
-                <Button Content="X" 
-                        HorizontalAlignment="Right" 
-                        VerticalAlignment="Top" 
-                        Width="30" Height="30" 
-                        Margin="0,10,10,0" 
-                        Background="#FF9966"
-                        Foreground="White"
-                        FontWeight="Bold"
-                        Cursor="Hand"
-                        BorderThickness="0"
-                        Click="Exit_Click"/>
+
 
                 <!-- Scrollable Content -->
                 <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="0,50,0,0">
                     <StackPanel HorizontalAlignment="Center">
 
                         <!-- Header Section -->
-                        <local:HeaderWindow x:Name="headerWindowControl" Height="102" Margin="0,0,0,20"/>
+                        <local:HeaderWindow x:Name="headerWindowControl" Height="102" Margin="0,0,0,20" Width="1192"/>
+                        <Image Source="/koibanner.gif" Width="1190" Height="406" Stretch="UniformToFill"/>
 
                         <!-- Welcome Section -->
-                        <Image Source="/koibanner.gif" Width="953" Height="319" HorizontalAlignment="Center" Stretch="UniformToFill" Margin="0,0,0,20"/>
                         <TextBlock Text="Welcome to Koi Kingdom" FontSize="25" FontWeight="Bold" FontFamily="Meiryo" Foreground="Black" HorizontalAlignment="Center" Margin="0,20,0,20"/>
                         <TextBlock Text="- Explore the world of Koi with our exclusive farm tours." FontSize="15" FontFamily="Meiryo" TextWrapping="Wrap" Margin="0,0,0,10"/>
                         <TextBlock Text="- Experience Japan's top Koi farms, learn from experts, and see stunning fish up close." FontSize="15" FontFamily="Meiryo" TextWrapping="Wrap" Margin="0,0,0,10"/>
@@ -106,7 +96,7 @@
                    FontSize="15" TextWrapping="Wrap" Width="200" TextAlignment="Center"/>
                             </StackPanel>
                         </StackPanel>
-                        <local:Footer Height="162"/>
+                        <local:Footer Height="203"/>
 
 
                     </StackPanel>

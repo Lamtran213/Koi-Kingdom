@@ -3,6 +3,7 @@ using KoiKingdom_Service;
 using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace KoiKingdomPRN_WPF
 {
@@ -156,7 +157,7 @@ namespace KoiKingdomPRN_WPF
                         int selectedFarmId = (int)checkBox.Tag;
                         if (selectedFarmId != null)
                         {
-                           TourFarm addedTourFarm= tourFarmService.AddTourFarm(addedTour.TourId, selectedFarmId); // Add relation between tour and farm
+                            TourFarm addedTourFarm = tourFarmService.AddTourFarm(addedTour.TourId, selectedFarmId); // Add relation between tour and farm
                         }
                     }
                 }
@@ -170,7 +171,7 @@ namespace KoiKingdomPRN_WPF
 
                         if (selectedKoiTypeId != null)
                         {
-                            TourKoitype addedTourFarm =  tourKoitypeService.AddTourKoitype(addedTour.TourId, selectedKoiTypeId); // Add relation between tour and koi type
+                            TourKoitype addedTourFarm = tourKoitypeService.AddTourKoitype(addedTour.TourId, selectedKoiTypeId); // Add relation between tour and koi type
                         }
                     }
                 }
@@ -251,7 +252,13 @@ namespace KoiKingdomPRN_WPF
         {
             // Add validation for the tour price input if necessary.
         }
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
+        }
 
-       
     }
 }

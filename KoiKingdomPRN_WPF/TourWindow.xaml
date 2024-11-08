@@ -6,12 +6,12 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:KoiKingdomPRN_WPF"
     mc:Ignorable="d"
-    Title="TourWindow" Height="500" Width="900">
+    Title="TourWindow" Height="800" Width="1200">
 
     <Grid Background="White">
 
         <!-- Header Section -->
-        <local:HeaderWindow HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="100" Margin="10,10,10,0"/>
+        <local:HeaderWindow VerticalAlignment="Top" Height="100" Width="1200" Margin="0,20,0,0"/>
 
         <!-- Tour Items Section -->
         <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="10,120,10,10">
@@ -24,10 +24,10 @@
 
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Border BorderBrush="LightGray" BorderThickness="1" CornerRadius="10" Margin="10">
+                        <Border BorderBrush="LightGray" BorderThickness="1" CornerRadius="10" Margin="10" Height="300">
                             <Button Background="Transparent" Tag="{Binding TourID}" BorderThickness="0" Padding="0" Click="TourButton_Click">
                                 <StackPanel>
-                                    <Image Source="{Binding ImageSource}" Height="150" Stretch="UniformToFill" Margin="5"/>
+                                    <Image Source="{Binding ImageSource}" Height="500" Stretch="UniformToFill" Margin="5"/>
                                     <!-- Details Section -->
                                     <StackPanel Margin="10">
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,5">

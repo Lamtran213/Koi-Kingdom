@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media.Imaging;
 
 namespace KoiKingdomPRN_WPF
@@ -45,9 +46,9 @@ namespace KoiKingdomPRN_WPF
                 MessageBox.Show("CartItemServices is not initialized.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-      
-        // Load cart items and display them
-        var cartItems = cartItemServices.GetList();
+
+            // Load cart items and display them
+            var cartItems = cartItemServices.GetList();
 
             string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
@@ -71,6 +72,13 @@ namespace KoiKingdomPRN_WPF
         {
             CheckoutWindow checkoutWindow = new CheckoutWindow(Customer, currentTour, quantity);
             checkoutWindow.Show();
+        }
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
         }
     }
 }

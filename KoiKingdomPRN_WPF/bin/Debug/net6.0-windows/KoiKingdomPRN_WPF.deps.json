@@ -527,10 +527,7 @@
           "Microsoft.Extensions.Configuration.Json": "6.0.0"
         },
         "runtime": {
-          "KoiKingdom_BusinessObject.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "KoiKingdom_BusinessObject.dll": {}
         }
       },
       "KoiKingdom_DAOs/1.0.0": {
@@ -538,10 +535,7 @@
           "KoiKingdom_BusinessObject": "1.0.0"
         },
         "runtime": {
-          "KoiKingdom_DAOs.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "KoiKingdom_DAOs.dll": {}
         }
       },
       "KoiKingdom_Repository/1.0.0": {
@@ -549,10 +543,7 @@
           "KoiKingdom_DAOs": "1.0.0"
         },
         "runtime": {
-          "KoiKingdom_Repository.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "KoiKingdom_Repository.dll": {}
         }
       },
       "KoiKingdom_Service/1.0.0": {
@@ -560,10 +551,7 @@
           "KoiKingdom_Repository": "1.0.0"
         },
         "runtime": {
-          "KoiKingdom_Service.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "KoiKingdom_Service.dll": {}
         }
       }
     }

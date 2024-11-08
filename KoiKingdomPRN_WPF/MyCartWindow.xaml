@@ -5,62 +5,169 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KoiKingdomPRN_WPF"
         mc:Ignorable="d"
-        Title="My Cart" Height="450" Width="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*" />
-            <ColumnDefinition Width="2*" />
-        </Grid.ColumnDefinitions>
+        Title="My Cart" Height="800" Width="1200"
+        Background="Transparent"
+        WindowStyle="None"
+        ResizeMode="NoResize">
+    <Border CornerRadius="30" MouseDown="Window_MouseDown">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                <GradientStop Color="LightGoldenrodYellow" Offset="0.0"/>
+                <GradientStop Color="Khaki" Offset="1.0"/>
+            </LinearGradientBrush>
+        </Border.Background>
 
-        <local:HeaderWindow RenderTransformOrigin="0.5,0.5" Width="761" Grid.ColumnSpan="2" Margin="24,3,15,331">
-            <local:HeaderWindow.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleY="-0.114"/>
-                    <RotateTransform/>
-                    <TranslateTransform Y="-0.798"/>
-                </TransformGroup>
-            </local:HeaderWindow.RenderTransform>
-        </local:HeaderWindow>
+        <Border CornerRadius="20" BorderThickness="5" Opacity="0.9">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#006600" Offset="0"/>
+                    <GradientStop Color="#007700" Offset="0.5"/>
+                    <GradientStop Color="#FF66CC" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3.5*" />
+                    <ColumnDefinition Width="1.5*" />
+                </Grid.ColumnDefinitions>
 
-        <!-- Left side: Cart items -->
-        <StackPanel Grid.Column="0" Margin="10,143,10,10">
-            <TextBlock Text="My Cart" FontSize="24" FontWeight="Bold" />
-            <ListView Name="CartItemsListView">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn Header="Tour Image" Width="100">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Image Source="{Binding TourImage}" Width="80" Height="80" />
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn Header="Tour Details" Width="200" DisplayMemberBinding="{Binding TourName}" />
-                        <GridViewColumn Header="Number of People" Width="100" DisplayMemberBinding="{Binding Quantity}" />
-                        <GridViewColumn Header="Tour Price" Width="100" DisplayMemberBinding="{Binding TourPrice}" />
-                        <GridViewColumn Header="Total" Width="100" DisplayMemberBinding="{Binding TotalPrice}" />
-                        <GridViewColumn Header="Action" Width="100">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                   
+                <local:HeaderWindow RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" Margin="1,33,1,657">
+                    <local:HeaderWindow.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleY="-0.114"/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="-0.798"/>
+                        </TransformGroup>
+                    </local:HeaderWindow.RenderTransform>
+                </local:HeaderWindow>
 
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                    </GridView>
-                </ListView.View>
-            </ListView>
-        </StackPanel>
+                <!-- Left side: Cart items -->
+                <StackPanel Grid.Column="0" Margin="0,210,192,270" RenderTransformOrigin="0.5,0.5">
+                    <StackPanel.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleY="-0.112"/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="-0.798"/>
+                        </TransformGroup>
+                    </StackPanel.RenderTransform>
+                    <TextBlock Text="My Cart" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" />
+                    <ListView x:Name="CartItemsListView" Width="814">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Tour Image" Width="130">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding TourImage}" Width="80" Height="80" />
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Tour Details" Width="140" DisplayMemberBinding="{Binding TourName}" />
+                                <GridViewColumn Header="Number of People" Width="175" DisplayMemberBinding="{Binding Quantity}" />
+                                <GridViewColumn Header="Tour Price" Width="125" DisplayMemberBinding="{Binding TourPrice}" />
+                                <GridViewColumn Header="Total" Width="100" DisplayMemberBinding="{Binding TotalPrice}" />
+                                <GridViewColumn Header="Action" Width="105">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate/>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </StackPanel>
 
-        <!-- Right side: Summary -->
-        <StackPanel Grid.Column="1" Margin="10,184,10,10">
-            <TextBlock Text="Summary" FontSize="24" FontWeight="Bold" />
-            <TextBlock x:Name="TotalPriceTextBlock" FontSize="16" />
+                <!-- Right side: Summary -->
+                <StackPanel Margin="0,210,0,272" Grid.Column="1">
+                    <TextBlock Text="Summary" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="TotalPriceTextBlock" FontSize="16" />
 
-            <Button x:Name="btnCheckout" Content="Checkout" Width="150" Height="30" Margin="10" Click="btnCheckout_Click"/>
-            <TextBlock Text="24/7 Customer Service" FontSize="14" Margin="10,20,10,0" />
-            <TextBlock Text="&#x9;0931 339 228" FontSize="14" />
-        </StackPanel>
-    </Grid>
+                    <Button x:Name="btnCheckout" Content="Checkout" Width="150" Height="30" Margin="10" Click="btnCheckout_Click"/>
+                    <TextBlock Text="24/7 Customer Service" FontSize="14" Margin="10,20,10,0" HorizontalAlignment="Center"/>
+                    <TextBlock Text="&#x9;0931 339 228" FontSize="14" HorizontalAlignment="Center" />
+                </StackPanel>
+                <Grid Background="#F8EDEB" Grid.ColumnSpan="2" Margin="0,556,0,22">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Contact Section -->
+                    <StackPanel Grid.Column="0" Margin="20">
+                        <Image Source="/logo-web.png" Width="47" RenderTransformOrigin="0.5,0.5" Height="49">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="-0.357"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
+                        <TextBlock Text="Contact us for support" FontWeight="Bold" FontSize="14"/>
+                        <TextBlock Text="📞 0931 339 228" FontSize="12" Margin="0,8,0,0"/>
+                        <TextBlock Text="📧 koikingdomsystem@gmail.com" FontSize="12" Margin="0,8,0,0"/>
+                    </StackPanel>
+
+                    <!-- Categories Section -->
+                    <StackPanel Grid.Column="1" Margin="20">
+                        <TextBlock Text="Categories" FontWeight="Bold" FontSize="14" Margin="0,0,0,10"/>
+                        <TextBlock Text="Famous Tours" FontSize="12" Margin="0,4,0,0"/>
+                        <TextBlock Text="Available Tours" FontSize="12" Margin="0,4,0,0"/>
+                        <TextBlock Text="Koi Farms" FontSize="12" Margin="0,4,0,0"/>
+                        <TextBlock Text="Popular Koi Breeds" FontSize="12" Margin="0,4,0,0"/>
+                        <TextBlock Text="Koi Species" FontSize="12" Margin="0,4,0,0"/>
+                    </StackPanel>
+
+                    <!-- Services Section -->
+                    <StackPanel Grid.Column="2" Margin="20">
+                        <TextBlock Text="Services" FontWeight="Bold" FontSize="14" Margin="0,0,0,10"/>
+                        <TextBlock Text="My Profile" FontSize="12" Margin="0,4,0,0"/>
+                        <TextBlock Text="Order history" FontSize="12" Margin="0,4,0,0"/>
+                        <TextBlock Text="Notifications" FontSize="12" Margin="0,4,0,0"/>
+                        <TextBlock Text="Shopping cart" FontSize="12" Margin="0,4,0,0"/>
+                        <TextBlock Text="Chat with us" FontSize="12" Margin="0,4,0,0"/>
+                    </StackPanel>
+
+                    <!-- Information Section -->
+                    <StackPanel Grid.Column="3" Margin="20">
+                        <TextBlock Text="Information" FontWeight="Bold" FontSize="14" Margin="0,0,0,10"/>
+                        <TextBlock Text="FAQs" FontSize="12" Margin="0,4,0,0"/>
+                        <TextBlock Text="Articles" FontSize="12" Margin="0,4,0,0"/>
+                        <TextBlock Text="About us" FontSize="12" Margin="0,4,0,0"/>
+                        <TextBlock Text="Contact us" FontSize="12" Margin="0,4,0,0"/>
+                        <TextBlock Text="Tour price" FontSize="12" Margin="0,4,0,0"/>
+                    </StackPanel>
+
+                    <!-- Social & Payment Section -->
+                    <StackPanel Grid.Column="4" Margin="20">
+                        <TextBlock Text="Connect with us" FontWeight="Bold" FontSize="14" Margin="0,0,0,10"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,4,0,10">
+                            <TextBlock Text="📘" FontSize="20" Margin="0,0,8,0"/>
+                            <TextBlock Text="📷" FontSize="20" Margin="0,0,8,0"/>
+                            <TextBlock Text="🎶" FontSize="20" Margin="0,0,8,0"/>
+                            <TextBlock Text="🟢" FontSize="20"/>
+                        </StackPanel>
+                        <TextBlock Text="Secure payment" FontWeight="Bold" FontSize="14" Margin="0,10,0,10"/>
+                        <StackPanel Orientation="Horizontal" Width="126">
+                            <Image Source="/Icon-VNPAY-QR.jpg" Width="24" Margin="0,0,8,0" Height="20"/>
+                            <Image Source="/mastercard.png" Width="26" Height="22" Margin="10,10,10,10"/>
+                            <Image Source="/visa.jpg" Width="24"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <!-- Footer Bottom -->
+                    <TextBlock Grid.Row="1" Grid.ColumnSpan="5" TextAlignment="Center" FontSize="12" Foreground="#777" Margin="0,20,0,0"><Run Text="© Copyright 2024 by Koi Kingdom | "/><Hyperlink><Run Text="Terms of Service"/></Hyperlink><Run Text=" ; "/><Hyperlink><Run Text="Privacy Policy"/></Hyperlink></TextBlock>
+                </Grid>
+            </Grid>
+        </Border>
+    </Border>
 </Window>

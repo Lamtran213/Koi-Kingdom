@@ -4,6 +4,7 @@ using KoiKingdom_Service;
 using System;
 using System.Linq;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media.Imaging;
 
 namespace KoiKingdomPRN_WPF
@@ -150,7 +151,18 @@ namespace KoiKingdomPRN_WPF
                 MessageBox.Show("Error: Current tour is not set. Please select a tour.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
+        }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 
 }

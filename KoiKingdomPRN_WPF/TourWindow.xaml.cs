@@ -41,7 +41,7 @@ namespace KoiKingdomPRN_WPF
                 // Kiểm tra và chuyển đổi Tag sang int
                 if (int.TryParse(button.Tag.ToString(), out int selectedTourId))
                 {
-                  
+
                     TourDetailWindow tourDetailWindow = new TourDetailWindow(tourService, bookingService, farmService, selectedTourId, Customer);
                     tourDetailWindow.Show();
                 }
@@ -66,7 +66,7 @@ namespace KoiKingdomPRN_WPF
                 var tourItems = tours.Select(tour => new
                 {
                     TourID = tour.TourId,
-                    ImageSource = new BitmapImage(new Uri(Path.Combine(currentDirectory, tour.Image), UriKind.Absolute)), 
+                    ImageSource = new BitmapImage(new Uri(Path.Combine(currentDirectory, tour.Image), UriKind.Absolute)),
                     Rating = "4.0", // Thay đổi giá trị xếp hạng theo yêu cầu
                     Duration = $"Duration: {tour.Duration ?? "N/A"}",
                     StartDate = tour.StartDate,

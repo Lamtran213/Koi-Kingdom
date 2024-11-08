@@ -16,3 +16,21 @@ C:\Users\ADMIN LAM\OneDrive\Documents\Visual Studio 2022\PRN212_Project\Koi-King
 C:\Users\ADMIN LAM\OneDrive\Documents\Visual Studio 2022\PRN212_Project\Koi-Kingdom\KoiKingdom_Repository\obj\Debug\net6.0\refint\KoiKingdom_Repository.dll
 C:\Users\ADMIN LAM\OneDrive\Documents\Visual Studio 2022\PRN212_Project\Koi-Kingdom\KoiKingdom_Repository\obj\Debug\net6.0\KoiKingdom_Repository.pdb
 C:\Users\ADMIN LAM\OneDrive\Documents\Visual Studio 2022\PRN212_Project\Koi-Kingdom\KoiKingdom_Repository\obj\Debug\net6.0\ref\KoiKingdom_Repository.dll
+C:\Users\acer\Desktop\123\Cn5\PRN212\Koi\Koi-Kingdom\KoiKingdom_Repository\bin\Debug\net6.0\KoiKingdom_Repository.deps.json
+C:\Users\acer\Desktop\123\Cn5\PRN212\Koi\Koi-Kingdom\KoiKingdom_Repository\bin\Debug\net6.0\KoiKingdom_Repository.dll
+C:\Users\acer\Desktop\123\Cn5\PRN212\Koi\Koi-Kingdom\KoiKingdom_Repository\bin\Debug\net6.0\KoiKingdom_Repository.pdb
+C:\Users\acer\Desktop\123\Cn5\PRN212\Koi\Koi-Kingdom\KoiKingdom_Repository\bin\Debug\net6.0\KoiKingdom_BusinessObject.dll
+C:\Users\acer\Desktop\123\Cn5\PRN212\Koi\Koi-Kingdom\KoiKingdom_Repository\bin\Debug\net6.0\KoiKingdom_DAOs.dll
+C:\Users\acer\Desktop\123\Cn5\PRN212\Koi\Koi-Kingdom\KoiKingdom_Repository\bin\Debug\net6.0\KoiKingdom_DAOs.pdb
+C:\Users\acer\Desktop\123\Cn5\PRN212\Koi\Koi-Kingdom\KoiKingdom_Repository\bin\Debug\net6.0\KoiKingdom_BusinessObject.pdb
+C:\Users\acer\Desktop\123\Cn5\PRN212\Koi\Koi-Kingdom\KoiKingdom_Repository\obj\Debug\net6.0\KoiKingdom_Repository.csproj.AssemblyReference.cache
+C:\Users\acer\Desktop\123\Cn5\PRN212\Koi\Koi-Kingdom\KoiKingdom_Repository\obj\Debug\net6.0\KoiKingdom_Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\acer\Desktop\123\Cn5\PRN212\Koi\Koi-Kingdom\KoiKingdom_Repository\obj\Debug\net6.0\KoiKingdom_Repository.AssemblyInfoInputs.cache
+C:\Users\acer\Desktop\123\Cn5\PRN212\Koi\Koi-Kingdom\KoiKingdom_Repository\obj\Debug\net6.0\KoiKingdom_Repository.AssemblyInfo.cs
+C:\Users\acer\Desktop\123\Cn5\PRN212\Koi\Koi-Kingdom\KoiKingdom_Repository\obj\Debug\net6.0\KoiKingdom_Repository.csproj.CoreCompileInputs.cache
+C:\Users\acer\Desktop\123\Cn5\PRN212\Koi\Koi-Kingdom\KoiKingdom_Repository\obj\Debug\net6.0\KoiKingdom_Repository.sourcelink.json
+C:\Users\acer\Desktop\123\Cn5\PRN212\Koi\Koi-Kingdom\KoiKingdom_Repository\obj\Debug\net6.0\KoiKingd.54309828.Up2Date
+C:\Users\acer\Desktop\123\Cn5\PRN212\Koi\Koi-Kingdom\KoiKingdom_Repository\obj\Debug\net6.0\KoiKingdom_Repository.dll
+C:\Users\acer\Desktop\123\Cn5\PRN212\Koi\Koi-Kingdom\KoiKingdom_Repository\obj\Debug\net6.0\refint\KoiKingdom_Repository.dll
+C:\Users\acer\Desktop\123\Cn5\PRN212\Koi\Koi-Kingdom\KoiKingdom_Repository\obj\Debug\net6.0\KoiKingdom_Repository.pdb
+C:\Users\acer\Desktop\123\Cn5\PRN212\Koi\Koi-Kingdom\KoiKingdom_Repository\obj\Debug\net6.0\ref\KoiKingdom_Repository.dll

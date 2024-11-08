@@ -8,6 +8,7 @@ using System.Net.Http.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using System.Xml.Linq;
 
@@ -17,6 +18,7 @@ namespace KoiKingdomPRN_WPF
     {
         private readonly HttpClient _httpClient = new HttpClient();
         private readonly ICustomerService customerService;
+
 
         public MyProfileModalWindow(Customer customer, ICustomerService customerService)
         {
@@ -30,7 +32,7 @@ namespace KoiKingdomPRN_WPF
 
         public Customer Customer { get; set; }
 
-  
+
 
         // Load province list
         private async Task LoadProvincesAsync()
@@ -168,7 +170,7 @@ namespace KoiKingdomPRN_WPF
         {
             try
             {
-                
+
 
                 // Retrieve the list of customers
                 var customers = customerService.GetCustomers();
@@ -263,8 +265,18 @@ namespace KoiKingdomPRN_WPF
                 LoadList(Customer.CustomerId);
             }
         }
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
+        }
 
-
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 
     // Model classes for API responses
@@ -287,4 +299,6 @@ namespace KoiKingdomPRN_WPF
         public int Code { get; set; }
         public string Name { get; set; }
     }
+
+
 }

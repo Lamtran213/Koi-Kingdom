@@ -47,11 +47,11 @@ namespace KoiKingdomPRN_WPF
 
         public void RefreshTour()
         {
-            Tour  = TourDAO.Instance.CurrentTour;
+            Tour = TourDAO.Instance.CurrentTour;
             quantity = TourDAO.Instance.Quantity;
             if (Tour != null)
             {
-                this.Tour= TourDAO.Instance.CurrentTour;
+                this.Tour = TourDAO.Instance.CurrentTour;
                 this.quantity = TourDAO.Instance.Quantity;
             }
         }
@@ -76,15 +76,11 @@ namespace KoiKingdomPRN_WPF
         }
 
 
-        private void Home_Click(object sender, RoutedEventArgs e)
-        {
-            // Implement logic for Home menu item click
-        }
 
         private void Services_Click(object sender, RoutedEventArgs e)
         {
-            ServicePage servicePage = new ServicePage();
-            servicePage.Show();
+            ServicePage service = new ServicePage();
+            service.Show();
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -92,10 +88,6 @@ namespace KoiKingdomPRN_WPF
             // Implement logic for Information menu item click
         }
 
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
-        {
-            // Implement logic for another Information menu item click
-        }
 
         private void Contact_Click(object sender, RoutedEventArgs e)
         {
@@ -126,14 +118,11 @@ namespace KoiKingdomPRN_WPF
         private void TourBooking_Click(object sender, RoutedEventArgs e)
         {
             Window.GetWindow(this)?.Hide();
-            TourWindow tourWindow = new TourWindow(tourService,  farmService, bookingService, Customer);
+            TourWindow tourWindow = new TourWindow(tourService, farmService, bookingService, Customer);
             tourWindow.Show();
         }
 
-        private void CustomTour_Click(object sender, RoutedEventArgs e)
-        {
-            // Implement logic for Custom Tour menu item click
-        }
+
 
         // Event handlers for button clicks
         private void AddToCart_Click(object sender, RoutedEventArgs e)
@@ -144,14 +133,10 @@ namespace KoiKingdomPRN_WPF
             myCartWindow.Show();
         }
 
-        private void Button2_Click(object sender, RoutedEventArgs e)
-        {
-            // Logic for Button2
-        }
+
 
         private void Button3_Click(object sender, RoutedEventArgs e)
         {
-            // Logic for Button3
         }
         private void MyBookingTour_Click(object sender, RoutedEventArgs e)
         {
@@ -166,10 +151,34 @@ namespace KoiKingdomPRN_WPF
             MyProfileModalWindow myBookingtWindow = new MyProfileModalWindow(Customer, customerService);
             myBookingtWindow.Show();
         }
-
-        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        private void Logout_Click(object sender, RoutedEventArgs e)
         {
 
+            Window.GetWindow(this)?.Close();
+
+
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
         }
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+
+            Window.GetWindow(this)?.Hide();
+
+
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window is HomeWindow)
+                {
+                    window.Show();
+                    return;
+                }
+            }
+
+
+            HomeWindow homeWindow = new HomeWindow();
+            homeWindow.Show();
+        }
+
     }
 }

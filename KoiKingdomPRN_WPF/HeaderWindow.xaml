@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d"
-             Height="100" Width="950" Loaded="HeaderWindow_Loaded">
+             Height="100" Width="1200" Loaded="HeaderWindow_Loaded">
 
     <Grid Background="#FFCC99">
         <Grid.ColumnDefinitions>
@@ -25,7 +25,7 @@
             <MenuItem Header="Home" Style="{StaticResource MaterialDesignMenuItem}" Click="Home_Click"/>
             <MenuItem Header="Booking" Style="{StaticResource MaterialDesignMenuItem}">
                 <MenuItem Header="Tour" Click="TourBooking_Click"/>
-                <MenuItem Header="Custom Tour" Click="CustomTour_Click"/>
+
             </MenuItem>
             <MenuItem Header="Services" Style="{StaticResource MaterialDesignMenuItem}" Click="Services_Click"/>
             <MenuItem Header="Information" Style="{StaticResource MaterialDesignMenuItem}">
@@ -39,10 +39,11 @@
         <Menu HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="2" Height="40" Width="276"
               Style="{StaticResource MaterialDesignMenu}">
             <MenuItem Header="Add to Cart" Style="{StaticResource MaterialDesignMenuItem}" Click="AddToCart_Click"/>
-            <MenuItem Header="Option 2" Style="{StaticResource MaterialDesignMenuItem}" Click="Button2_Click"/>
+
             <MenuItem Header="Profile" Style="{StaticResource MaterialDesignMenuItem}">
-                <MenuItem Header="My Booking Tour" Click="MyBookingTour_Click" Style="{StaticResource MaterialDesignMenuItem}"/>
+                <MenuItem Header="My Booking Tour" Click="MyBookingTour_Click" Style="{StaticResource MaterialDesignMenuItem}" />
                 <MenuItem Header="My Profile" Click="MyProfile_Click" Style="{StaticResource MaterialDesignMenuItem}"/>
+                <MenuItem Header="Log out" Click="Logout_Click"/>
             </MenuItem>
         </Menu>
     </Grid>

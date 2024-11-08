@@ -5,70 +5,90 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KoiKingdomPRN_WPF"
         mc:Ignorable="d"
-        Title="MyProfileModalWindow" Height="600" Width="900">
+        Title="MyProfileModalWindow" Height="800" Width="1200"
+        Background="Transparent"
+        WindowStyle="None"
+        ResizeMode="NoResize">
+    <Border CornerRadius="30" MouseDown="Window_MouseDown">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                <GradientStop Color="LightCoral" Offset="0.0"/>
+                <GradientStop Color="LightGreen" Offset="1.0"/>
+            </LinearGradientBrush>
+        </Border.Background>
 
-    <ScrollViewer VerticalScrollBarVisibility="Auto">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <!-- Header Row -->
-                <RowDefinition Height="*"/>
-                <!-- Content Row -->
-            </Grid.RowDefinitions>
+        <Border CornerRadius="20" BorderThickness="5" Opacity="0.9">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#006600" Offset="0"/>
+                    <GradientStop Color="#007700" Offset="0.5"/>
+                    <GradientStop Color="#FF66CC" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <!-- Header Row -->
+                        <RowDefinition Height="*"/>
+                        <!-- Content Row -->
+                    </Grid.RowDefinitions>
 
-            <!-- Header Section -->
-            <local:HeaderWindow HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="100">
-                <local:HeaderWindow.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform AngleY="0"/>
-                        <RotateTransform/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </local:HeaderWindow.RenderTransform>
-            </local:HeaderWindow>
+                    <!-- Header Section -->
+                    <local:HeaderWindow VerticalAlignment="Top" Height="100" Margin="0,20,0,0" Grid.RowSpan="2">
+                        <local:HeaderWindow.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleY="0"/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </local:HeaderWindow.RenderTransform>
+                    </local:HeaderWindow>
 
-            <!-- Content Section -->
-            <Grid Grid.Row="1" Margin="0,20,0,93">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="23*"/>
-                    <ColumnDefinition Width="22*"/>
-                </Grid.ColumnDefinitions>
+                    <!-- Content Section -->
+                    <Grid Grid.Row="1" Margin="0,20,0,93">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="23*"/>
+                            <ColumnDefinition Width="22*"/>
+                        </Grid.ColumnDefinitions>
 
-                <TextBlock Text="Update Profile" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,20,0,0" Width="200" Grid.ColumnSpan="2"/>
-                <Button Content="X" HorizontalAlignment="Right" VerticalAlignment="Top" Width="35" Height="35" Margin="0,15,15,0" Grid.Column="1"/>
-                <Ellipse Width="100" Height="100" Fill="Gray" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,70,0,0" Grid.ColumnSpan="2"/>
-                <TextBlock Text="M" FontSize="60" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,70,0,0" Grid.ColumnSpan="2"/>
+                        <TextBlock Text="Update Profile" FontSize="24" FontWeight="Bold" HorizontalAlignment="Left" Margin="507,222,0,-202" Width="200" Grid.ColumnSpan="2"/>
+                        <Button Content="X" HorizontalAlignment="Right" VerticalAlignment="Top" Width="45" Height="40" Margin="0,120,23,0" Grid.Column="1" Click="Button_Click"/>
+                        <Ellipse Width="100" Height="100" Fill="Gray" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="545,110,0,0" Grid.ColumnSpan="2"/>
+                        <TextBlock Text="M" FontSize="60" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="566,120,0,0" Grid.ColumnSpan="2"/>
 
-                <!-- File Selection Section -->
-                <Button Content="Choose File" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,180,0,0" Width="120"/>
-                <TextBlock Text="No file chosen" VerticalAlignment="Top" Margin="150,185,0,0" FontSize="14" Grid.ColumnSpan="2"/>
+                        <!-- File Selection Section -->
+                        <Button Content="Choose File" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="184,262,0,0" Width="120"/>
+                        <TextBlock Text="No file chosen" VerticalAlignment="Top" Margin="326,269,-176,0" FontSize="14" Grid.ColumnSpan="2"/>
 
-                <!-- Profile Fields -->
-                <TextBlock Text="Email:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,230,0,0" FontSize="16"/>
-                <TextBox Name="EmailTextBox" Width="720" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,233,0,0" FontSize="16" Grid.ColumnSpan="2"/>
+                        <!-- Profile Fields -->
+                        <TextBlock Text="Email:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="41,354,0,0" FontSize="16"/>
+                        <TextBox Name="EmailTextBox" Width="703" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="184,345,0,0" FontSize="16" Grid.ColumnSpan="2"/>
 
-                <TextBlock Text="First Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,300,0,0" FontSize="16"/>
-                <TextBox Name="FirstNameTextBox" Width="724" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="144,310,0,0" FontSize="16" Grid.ColumnSpan="2"/>
+                        <TextBlock Text="First Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="41,415,0,0" FontSize="16"/>
+                        <TextBox Name="FirstNameTextBox" Width="703" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="184,406,0,0" FontSize="16" Grid.ColumnSpan="2"/>
 
-                <TextBlock Text="Last Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,370,0,0" FontSize="16"/>
-                <TextBox Name="LastNameTextBox" Width="737" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="136,373,0,0" FontSize="16" Grid.ColumnSpan="2"/>
+                        <TextBlock Text="Last Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="41,483,0,0" FontSize="16"/>
+                        <TextBox Name="LastNameTextBox" Width="703" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="184,474,0,0" FontSize="16" Grid.ColumnSpan="2"/>
 
-                <TextBlock Text="Default Address:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,440,0,0" FontSize="16"/>
-                <TextBox Name="AddressTextBox" Width="660" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="148,438,0,0" FontSize="16" Grid.ColumnSpan="2"/>
+                        <TextBlock Text="Default Address:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="41,544,0,0" FontSize="16"/>
+                        <TextBox Name="AddressTextBox" Width="703" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="184,535,0,0" FontSize="16" Grid.ColumnSpan="2"/>
 
-                <TextBlock Text="Home Address:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,484,0,0" FontSize="16"/>
+                        <TextBlock Text="Home Address:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="41,609,0,0" FontSize="16"/>
 
-                <ComboBox x:Name="ProvinceComboBox" Width="180" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="209,500,0,0" FontSize="16" SelectionChanged="ProvinceComboBox_SelectionChanged"/>
-                <ComboBox x:Name="DistrictComboBox" Width="180" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="428,500,0,0" FontSize="16" SelectionChanged="DistrictComboBox_SelectionChanged" Grid.ColumnSpan="2">
-                    <ComboBoxItem Content="Select District" IsEnabled="False" IsSelected="True"/>
-                </ComboBox>
-                <ComboBox x:Name="WardComboBox" Width="180" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="204,497,0,0" FontSize="16" Grid.Column="1">
-                    <ComboBoxItem Content="Select Ward" IsEnabled="False" IsSelected="True"/>
-                </ComboBox>
+                        <ComboBox x:Name="ProvinceComboBox" Width="180" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="184,598,0,0" FontSize="16" SelectionChanged="ProvinceComboBox_SelectionChanged"/>
+                        <ComboBox x:Name="DistrictComboBox" Width="180" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="444,598,0,0" FontSize="16" SelectionChanged="DistrictComboBox_SelectionChanged" Grid.ColumnSpan="2">
+                            <ComboBoxItem Content="Select District" IsEnabled="False" IsSelected="True"/>
+                        </ComboBox>
+                        <ComboBox x:Name="WardComboBox" Width="180" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="99,598,0,0" FontSize="16" Grid.Column="1">
+                            <ComboBoxItem Content="Select Ward" IsEnabled="False" IsSelected="True"/>
+                        </ComboBox>
 
-                <Button Content="Update" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="120" Margin="382,0,0,-40" FontSize="16" Click="Button_Update" Grid.ColumnSpan="2" Height="25"/>
-            </Grid>
-        </Grid>
-    </ScrollViewer>
+                        <Button Content="Update" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="180" Margin="184,0,0,-36" FontSize="16" Click="Button_Update" Height="33"/>
+                    </Grid>
+                </Grid>
+            </ScrollViewer>
+        </Border>
+    </Border>
 </Window>

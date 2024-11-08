@@ -19,6 +19,13 @@ namespace KoiKingdomPRN_WPF
         private Customer customer;
         private ITourService tourService;
         private decimal totalPrice;
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
+        }
 
         public MyBookingTourWindow(ITourService tourService, IBookingService bookingService, Customer customer)
         {
@@ -58,28 +65,28 @@ namespace KoiKingdomPRN_WPF
 
 
         private BitmapImage GetTourImage(string imagePath, string currentDirectory)
-    {
-        try
         {
-            // Construct absolute path from the current directory
-            string fullPath = Path.Combine(currentDirectory, imagePath);
+            try
+            {
+                // Construct absolute path from the current directory
+                string fullPath = Path.Combine(currentDirectory, imagePath);
 
-            // Ensure the path exists before trying to load the image
-            if (File.Exists(fullPath))
-            {
-                return new BitmapImage(new Uri(fullPath, UriKind.Absolute));
+                // Ensure the path exists before trying to load the image
+                if (File.Exists(fullPath))
+                {
+                    return new BitmapImage(new Uri(fullPath, UriKind.Absolute));
+                }
+                else
+                {
+                    // Return a placeholder image if the file doesn't exist
+                    return new BitmapImage(new Uri(Path.Combine(currentDirectory, "img/placeholder.png"), UriKind.Absolute));
+                }
             }
-            else
+            catch (Exception ex)
             {
-                // Return a placeholder image if the file doesn't exist
-                return new BitmapImage(new Uri(Path.Combine(currentDirectory, "img/placeholder.png"), UriKind.Absolute));
+                MessageBox.Show($"Error loading image: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return null;
             }
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show($"Error loading image: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            return null;
         }
     }
-}
 }
