@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KoiKingdom_BusinessObject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6625027d4197bc4729630aa143d9751f278e66d3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bec545f00ff46277c0a27b1d8831cd476108f28c")]
 [assembly: System.Reflection.AssemblyProductAttribute("KoiKingdom_BusinessObject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KoiKingdom_BusinessObject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

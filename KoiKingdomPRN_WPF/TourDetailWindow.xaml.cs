@@ -4,6 +4,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media.Imaging;
 
 namespace KoiKingdomPRN_WPF
@@ -170,7 +171,13 @@ namespace KoiKingdomPRN_WPF
                 MessageBox.Show("No tour selected for booking.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
-
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
+        }
 
     }
 

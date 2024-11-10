@@ -2332,19 +2332,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\ADMIN LAM\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj",
+      "projectUniqueName": "C:\\Users\\ADMIN LAM\\OneDrive\\Documents\\Visual Studio 2022\\PRN212_Project\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj",
       "projectName": "KoiKingdom_Service",
-      "projectPath": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Service\\obj\\",
+      "projectPath": "C:\\Users\\ADMIN LAM\\OneDrive\\Documents\\Visual Studio 2022\\PRN212_Project\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj",
+      "packagesPath": "C:\\Users\\ADMIN LAM\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ADMIN LAM\\OneDrive\\Documents\\Visual Studio 2022\\PRN212_Project\\Koi-Kingdom\\KoiKingdom_Service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ADMIN LAM\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2352,14 +2352,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Repository\\KoiKingdom_Repository.csproj": {
-              "projectPath": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Repository\\KoiKingdom_Repository.csproj"
+            "C:\\Users\\ADMIN LAM\\OneDrive\\Documents\\Visual Studio 2022\\PRN212_Project\\Koi-Kingdom\\KoiKingdom_Repository\\KoiKingdom_Repository.csproj": {
+              "projectPath": "C:\\Users\\ADMIN LAM\\OneDrive\\Documents\\Visual Studio 2022\\PRN212_Project\\Koi-Kingdom\\KoiKingdom_Repository\\KoiKingdom_Repository.csproj"
             }
           }
         }
