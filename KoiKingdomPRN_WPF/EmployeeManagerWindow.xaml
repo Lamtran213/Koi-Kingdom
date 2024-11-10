@@ -5,67 +5,89 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KoiKingdomPRN_WPF"
         mc:Ignorable="d"
-        Title="EmployeeManagerWindow" Height="450" Width="800" Loaded="WindowLoaded">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
-            <!-- Sidebar width -->
-            <ColumnDefinition Width="*"/>
-            <!-- Main content takes the remaining space -->
-        </Grid.ColumnDefinitions>
+        Title="EmployeeManagerWindow" Height="450" Width="1200" Loaded="WindowLoaded"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        Background="Transparent">
+    <Border CornerRadius="30" MouseDown="Window_MouseDown">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                <GradientStop Color="OldLace" Offset="0"/>
+                <GradientStop Color="BlueViolet" Offset="0.75"/>
+            </LinearGradientBrush>
+        </Border.Background>
 
-        <!-- Sidebar -->
-        <local:HeaderManagerWindow Grid.Column="0"/>
+        <Border CornerRadius="20" BorderThickness="5" Opacity="0.9">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#006600" Offset="0"/>
+                    <GradientStop Color="#007700" Offset="0"/>
+                    <GradientStop Color="#FF66CC" Offset="0"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <!-- Sidebar width -->
+                    <ColumnDefinition Width="*"/>
+                    <!-- Main content takes the remaining space -->
+                </Grid.ColumnDefinitions>
 
-        <!-- Main Content -->
-        <Grid Grid.Column="1" Margin="10">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <!-- Dòng dành cho hàng đầu tiên -->
-                <RowDefinition Height="Auto"/>
-                <!-- Dòng dành cho hàng thứ 2 -->
-                <RowDefinition Height="Auto"/>
-                <!-- Dòng dành cho hàng thứ 3 -->
-                <RowDefinition Height="*"/>
-                <!-- Dòng dành cho DataGrid, chiếm không gian còn lại -->
-            </Grid.RowDefinitions>
+                <!-- Sidebar -->
+                <local:HeaderManagerWindow Grid.Column="0"/>
 
-            <!-- EmployeeID, FullName và Status -->
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="150"/>
-                <!-- Label -->
-                <ColumnDefinition Width="*"/>
-                <!-- Input -->
-                <ColumnDefinition Width="150"/>
-                <!-- Label -->
-                <ColumnDefinition Width="*"/>
-                <!-- Input -->
-            </Grid.ColumnDefinitions>
+                <!-- Main Content -->
+                <Grid Grid.Column="1" Margin="10,81,10,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <!-- Dòng dành cho hàng đầu tiên -->
+                        <RowDefinition Height="Auto"/>
+                        <!-- Dòng dành cho hàng thứ 2 -->
+                        <RowDefinition Height="Auto"/>
+                        <!-- Dòng dành cho hàng thứ 3 -->
+                        <RowDefinition Height="*"/>
+                        <!-- Dòng dành cho DataGrid, chiếm không gian còn lại -->
+                    </Grid.RowDefinitions>
 
-            <Label Content="EmployeeID" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Margin="10,10,0,0"/>
-            <TextBox x:Name="txtEmployeeID" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10,10,0,0"/>
+                    <!-- EmployeeID, FullName và Status -->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <!-- Label -->
+                        <ColumnDefinition Width="*"/>
+                        <!-- Input -->
+                        <ColumnDefinition Width="150"/>
+                        <!-- Label -->
+                        <ColumnDefinition Width="*"/>
+                        <!-- Input -->
+                    </Grid.ColumnDefinitions>
 
-            <Label Content="Status" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" Margin="10,10,0,0"/>
-            <ComboBox x:Name="cmbStatus" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Stretch" Margin="10,10,0,0" SelectionChanged="cmbStatus_SelectionChanged">
-                <ComboBoxItem Content="Active" Tag="True"/>
-                <ComboBoxItem Content="Blocked" Tag="False"/>
-            </ComboBox>
+                    <Label Content="EmployeeID" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Margin="10,10,0,0"/>
+                    <TextBox x:Name="txtEmployeeID" Grid.Row="0" Grid.Column="1" Margin="10,5,0,5"/>
 
-            <!-- FullName và Email -->
-            <Label Content="Full Name" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="10,10,0,0"/>
-            <TextBox x:Name="txtFullName" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10,10,0,0"/>
+                    <Label Content="Status" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" Margin="10,10,0,0"/>
+                    <ComboBox x:Name="cmbStatus" Grid.Column="3" Margin="5,0,5,0" SelectionChanged="cmbStatus_SelectionChanged">
+                        <ComboBoxItem Content="Active" Tag="True"/>
+                        <ComboBoxItem Content="Blocked" Tag="False"/>
+                    </ComboBox>
 
-            <Label Content="Email" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" Margin="10,10,0,0"/>
-            <TextBox x:Name="txtEmail" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Stretch" Margin="10,10,0,0"/>
+                    <!-- FullName và Email -->
+                    <Label Content="Full Name" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="0,10,10,0"/>
+                    <TextBox x:Name="txtFullName" Grid.Row="1" Grid.Column="1" Margin="10,5,0,5"/>
 
-            <!-- Address -->
-            <Label Content="Address" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Margin="10,10,0,0"/>
-            <TextBox x:Name="txtAddress" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10,10,0,0"/>
+                    <Label Content="Email" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" Margin="10,10,0,0"/>
+                    <TextBox x:Name="txtEmail" Grid.Row="1" Grid.Column="3" Margin="5,5,5,5"/>
 
-            <!-- DataGrid -->
-            <DataGrid x:Name="dtgEmployee" Grid.Row="3" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Top" 
-                      Margin="10,20,10,0" Height="Auto" MaxHeight="200" Width="1000" 
+                    <!-- Address -->
+                    <Label Content="Address" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Margin="0,10,21,0"/>
+                    <TextBox x:Name="txtAddress" Grid.Row="2" Grid.Column="1" Margin="10,5,0,5"/>
+
+                    <!-- DataGrid -->
+                    <DataGrid x:Name="dtgEmployee" Grid.Row="3" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Top" 
+                      Margin="0,34,0,0" Height="206" MaxHeight="200" Width="922" 
                       d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="dtgEmployee_SelectionChanged"/>
-        </Grid>
-    </Grid>
+                </Grid>
+            </Grid>
+        </Border>
+    </Border>
 </Window>

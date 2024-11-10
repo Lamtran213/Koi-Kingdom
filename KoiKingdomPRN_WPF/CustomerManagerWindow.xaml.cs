@@ -29,7 +29,13 @@ namespace KoiKingdomPRN_WPF
             InitializeComponent();
             customerService = new CustomerService();
         }
-
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
+        }
         private void ReloadCustomerData()
         {
             this.dtgCustomer.ItemsSource = customerService.GetCustomers().Select(a => new

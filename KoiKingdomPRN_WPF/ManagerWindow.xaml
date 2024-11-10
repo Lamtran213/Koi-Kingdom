@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KoiKingdomPRN_WPF"
         mc:Ignorable="d"
-        Title="ManagerWindow" Height="450" Width="800">
-    <Grid>
-        <local:HeaderManagerWindow Grid.Column="0" x:Name="headerManagerWindowControl"/>
-    </Grid>
+        Title="ManagerWindow" Height="600" Width="1200"
+        Background="Transparent"
+        WindowStyle="None"
+        ResizeMode="NoResize">
+    <Border CornerRadius="30" MouseDown="Window_MouseDown">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                <GradientStop Color="LightCoral" Offset="0.0"/>
+                <GradientStop Color="LightGreen" Offset="1.0"/>
+            </LinearGradientBrush>
+        </Border.Background>
+
+        <Border CornerRadius="20" BorderThickness="5" Opacity="0.9">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#006600" Offset="0"/>
+                    <GradientStop Color="#007700" Offset="0.5"/>
+                    <GradientStop Color="#FF66CC" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Grid>
+                <local:HeaderManagerWindow Grid.Column="0" x:Name="headerManagerWindowControl"/>
+            </Grid>
+        </Border>
+    </Border>
 </Window>

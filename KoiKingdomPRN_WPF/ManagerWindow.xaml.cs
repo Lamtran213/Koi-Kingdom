@@ -21,7 +21,7 @@ namespace KoiKingdomPRN_WPF
     /// </summary>
     public partial class ManagerWindow : Window
     {
-        
+
         private Employee employee;
 
         public ManagerWindow()
@@ -37,6 +37,13 @@ namespace KoiKingdomPRN_WPF
             if (headerManagerWindow != null)
             {
                 headerManagerWindow.SetEmployee(employee);
+            }
+        }
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
             }
         }
     }

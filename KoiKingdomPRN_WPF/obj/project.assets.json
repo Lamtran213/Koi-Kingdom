@@ -2577,19 +2577,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ADMIN LAM\\.nuget\\packages\\": {}
+    "C:\\Users\\acer\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ADMIN LAM\\OneDrive\\Documents\\Visual Studio 2022\\PRN212_Project\\Koi-Kingdom\\KoiKingdomPRN_WPF\\KoiKingdomPRN_WPF.csproj",
+      "projectUniqueName": "C:\\Users\\acer\\Desktop\\123\\Cn5\\PRN212\\Koi\\Koi-Kingdom\\KoiKingdomPRN_WPF\\KoiKingdomPRN_WPF.csproj",
       "projectName": "KoiKingdomPRN_WPF",
-      "projectPath": "C:\\Users\\ADMIN LAM\\OneDrive\\Documents\\Visual Studio 2022\\PRN212_Project\\Koi-Kingdom\\KoiKingdomPRN_WPF\\KoiKingdomPRN_WPF.csproj",
-      "packagesPath": "C:\\Users\\ADMIN LAM\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ADMIN LAM\\OneDrive\\Documents\\Visual Studio 2022\\PRN212_Project\\Koi-Kingdom\\KoiKingdomPRN_WPF\\obj\\",
+      "projectPath": "C:\\Users\\acer\\Desktop\\123\\Cn5\\PRN212\\Koi\\Koi-Kingdom\\KoiKingdomPRN_WPF\\KoiKingdomPRN_WPF.csproj",
+      "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\acer\\Desktop\\123\\Cn5\\PRN212\\Koi\\Koi-Kingdom\\KoiKingdomPRN_WPF\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\ADMIN LAM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2598,14 +2603,15 @@
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
+        "C:\\Users\\acer\\.nuget\\packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\ADMIN LAM\\OneDrive\\Documents\\Visual Studio 2022\\PRN212_Project\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj": {
-              "projectPath": "C:\\Users\\ADMIN LAM\\OneDrive\\Documents\\Visual Studio 2022\\PRN212_Project\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj"
+            "C:\\Users\\acer\\Desktop\\123\\Cn5\\PRN212\\Koi\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj": {
+              "projectPath": "C:\\Users\\acer\\Desktop\\123\\Cn5\\PRN212\\Koi\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj"
             }
           }
         }
@@ -2653,6 +2659,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.29, 6.0.29]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[6.0.29, 6.0.29]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.29, 6.0.29]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.29, 6.0.29]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
@@ -2661,7 +2685,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
       }
     }
   }

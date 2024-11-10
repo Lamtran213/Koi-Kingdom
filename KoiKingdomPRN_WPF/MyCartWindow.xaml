@@ -43,50 +43,52 @@
                 </local:HeaderWindow>
 
                 <!-- Left side: Cart items -->
-                <StackPanel Grid.Column="0" Margin="0,210,192,270" RenderTransformOrigin="0.5,0.5">
-                    <StackPanel.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform AngleY="-0.112"/>
-                            <RotateTransform/>
-                            <TranslateTransform Y="-0.798"/>
-                        </TransformGroup>
-                    </StackPanel.RenderTransform>
-                    <TextBlock Text="My Cart" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" />
-                    <ListView x:Name="CartItemsListView" Width="814">
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn Header="Tour Image" Width="130">
-                                    <GridViewColumn.CellTemplate>
-                                        <DataTemplate>
-                                            <Image Source="{Binding TourImage}" Width="80" Height="80" />
-                                        </DataTemplate>
-                                    </GridViewColumn.CellTemplate>
-                                </GridViewColumn>
-                                <GridViewColumn Header="Tour Details" Width="140" DisplayMemberBinding="{Binding TourName}" />
-                                <GridViewColumn Header="Number of People" Width="175" DisplayMemberBinding="{Binding Quantity}" />
-                                <GridViewColumn Header="Tour Price" Width="125" DisplayMemberBinding="{Binding TourPrice}" />
-                                <GridViewColumn Header="Total" Width="100" DisplayMemberBinding="{Binding TotalPrice}" />
-                                <GridViewColumn Header="Action" Width="105">
-                                    <GridViewColumn.CellTemplate>
-                                        <DataTemplate/>
-                                    </GridViewColumn.CellTemplate>
-                                </GridViewColumn>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
-                </StackPanel>
+                <ScrollViewer Grid.Column="0" Margin="0,210,192,270" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                    <StackPanel RenderTransformOrigin="0.5,0.5">
+                        <StackPanel.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleY="-0.112"/>
+                                <RotateTransform/>
+                                <TranslateTransform Y="-0.798"/>
+                            </TransformGroup>
+                        </StackPanel.RenderTransform>
+                        <TextBlock Text="My Cart" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" />
+                        <ListView x:Name="CartItemsListView" Width="814">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="Tour Image" Width="130">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Image Source="{Binding TourImage}" Width="80" Height="80" />
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <GridViewColumn Header="Tour Details" Width="140" DisplayMemberBinding="{Binding TourName}" />
+                                    <GridViewColumn Header="Number of People" Width="175" DisplayMemberBinding="{Binding Quantity}" />
+                                    <GridViewColumn Header="Tour Price" Width="125" DisplayMemberBinding="{Binding TourPrice}" />
+                                    <GridViewColumn Header="Total" Width="100" DisplayMemberBinding="{Binding TotalPrice}" />
+                                    <GridViewColumn Header="Action" Width="105">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate/>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </StackPanel>
+                </ScrollViewer>
 
                 <!-- Right side: Summary -->
                 <StackPanel Margin="0,210,0,272" Grid.Column="1">
                     <TextBlock Text="Summary" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
-                    <TextBlock x:Name="TotalPriceTextBlock" FontSize="16" />
+                    <TextBlock x:Name="TotalPriceTextBlock" FontSize="16" HorizontalAlignment="Center" Width="115"/>
 
                     <Button x:Name="btnCheckout" Content="Checkout" Width="150" Height="30" Margin="10" Click="btnCheckout_Click"/>
                     <TextBlock Text="24/7 Customer Service" FontSize="14" Margin="10,20,10,0" HorizontalAlignment="Center"/>
                     <TextBlock Text="&#x9;0931 339 228" FontSize="14" HorizontalAlignment="Center" />
                 </StackPanel>
-                <Grid Background="#F8EDEB" Grid.ColumnSpan="2" Margin="0,556,0,22">
+                <Grid Background="#F8EDEB" Grid.ColumnSpan="2" Margin="-10,578,0,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="Auto"/>
@@ -167,6 +169,8 @@
                     <!-- Footer Bottom -->
                     <TextBlock Grid.Row="1" Grid.ColumnSpan="5" TextAlignment="Center" FontSize="12" Foreground="#777" Margin="0,20,0,0"><Run Text="© Copyright 2024 by Koi Kingdom | "/><Hyperlink><Run Text="Terms of Service"/></Hyperlink><Run Text=" ; "/><Hyperlink><Run Text="Privacy Policy"/></Hyperlink></TextBlock>
                 </Grid>
+
+                <!-- Other sections go here (footer, contact, etc.) -->
             </Grid>
         </Border>
     </Border>

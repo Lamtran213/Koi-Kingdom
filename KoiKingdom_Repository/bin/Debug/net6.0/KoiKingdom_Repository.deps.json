@@ -553,10 +553,7 @@
           "Microsoft.Extensions.Configuration.Json": "6.0.0"
         },
         "runtime": {
-          "KoiKingdom_BusinessObject.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "KoiKingdom_BusinessObject.dll": {}
         }
       },
       "KoiKingdom_DAOs/1.0.0": {
@@ -564,10 +561,7 @@
           "KoiKingdom_BusinessObject": "1.0.0"
         },
         "runtime": {
-          "KoiKingdom_DAOs.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "KoiKingdom_DAOs.dll": {}
         }
       }
     }

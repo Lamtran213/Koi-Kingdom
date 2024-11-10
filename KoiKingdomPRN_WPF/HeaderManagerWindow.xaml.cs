@@ -48,7 +48,7 @@ namespace KoiKingdomPRN_WPF
 
         public void SetEmployee(Employee employee)
         {
-           this.employee = employee;
+            this.employee = employee;
             // Cập nhật giao diện dựa trên thông tin Customer
         }
 
@@ -105,6 +105,15 @@ namespace KoiKingdomPRN_WPF
             Window.GetWindow(this)?.Hide();
             KoiOrderWindow koiOrderWindow = new KoiOrderWindow(koiOrderService, employeeService);
             koiOrderWindow.Show();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Window.GetWindow(this)?.Close();
+
+
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
         }
     }
 }

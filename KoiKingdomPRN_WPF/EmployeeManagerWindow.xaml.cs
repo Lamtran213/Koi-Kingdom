@@ -28,7 +28,13 @@ namespace KoiKingdomPRN_WPF
             InitializeComponent();
             employeeService = new EmployeeService();
         }
-
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
+        }
         private void ReloadEmployeeData()
         {
             this.dtgEmployee.ItemsSource = employeeService.GetEmployees().Select(a => new

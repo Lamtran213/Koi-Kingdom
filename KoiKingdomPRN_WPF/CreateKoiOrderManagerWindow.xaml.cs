@@ -2,6 +2,7 @@
 using KoiKingdom_Service;
 using System;
 using System.Windows;
+using System.Windows.Input;
 
 namespace KoiKingdomPRN_WPF
 {
@@ -26,7 +27,13 @@ namespace KoiKingdomPRN_WPF
             InitializeComponent();
             LoadList();
         }
-
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
+        }
         public void LoadList()
         {
             cmbKoiType.ItemsSource = koitypeService.GetKoitypes();

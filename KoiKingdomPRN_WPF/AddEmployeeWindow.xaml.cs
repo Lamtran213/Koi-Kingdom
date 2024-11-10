@@ -28,6 +28,13 @@ namespace KoiKingdomPRN_WPF
             this._employeeService = employeeService;
         }
 
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
+        }
         private void AddEmployee_Click(object sender, RoutedEventArgs e)
         {
             // Define an email pattern to validate
@@ -53,9 +60,9 @@ namespace KoiKingdomPRN_WPF
                 employee.Email,
                 employee.Password,
                 employee.Address,
-                employee.Role, 
+                employee.Role,
                 employee.FirstName,
-                employee.LastName, 
+                employee.LastName,
                 true
                 );
             if (addEmployee != null)

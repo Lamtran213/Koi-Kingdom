@@ -5,54 +5,76 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KoiKingdomPRN_WPF"
         mc:Ignorable="d"
-        Title="CreateKoiOrderManagerWindow" Height="450" Width="800">
+        Title="CreateKoiOrderManagerWindow" Height="800" Width="1200"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        Background="Transparent">
+    <Border CornerRadius="30" MouseDown="Window_MouseDown">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                <GradientStop Color="AntiqueWhite" Offset="0"/>
+                <GradientStop Color="Chocolate" Offset="0.75"/>
+            </LinearGradientBrush>
+        </Border.Background>
 
-    <!-- ScrollViewer added to allow scrolling -->
-    <ScrollViewer VerticalScrollBarVisibility="Auto">
-        <Grid>
+        <Border CornerRadius="20" BorderThickness="5" Opacity="0.9">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#006600" Offset="0"/>
+                    <GradientStop Color="#007700" Offset="0"/>
+                    <GradientStop Color="#FF66CC" Offset="0"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
 
-            <local:HeaderConsultingWindow Grid.Column="0" Margin="0,0,0,-7"/>
+            <!-- ScrollViewer added to allow scrolling -->
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <Grid>
 
-            <Grid Margin="212,20,0,20" HorizontalAlignment="Left" Width="568">
+                    <local:HeaderConsultingWindow Grid.Column="0" Margin="0,0,0,-7"/>
 
-                <TextBlock Text="Create Koi Order" FontSize="24" FontWeight="Bold" Foreground="Green" 
-                   HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0"/>
+                    <Grid Margin="212,20,0,20" HorizontalAlignment="Left" Width="900">
 
-                <!-- Customer ID -->
-                <TextBlock Text="Customer ID" Margin="10,78,361,0" VerticalAlignment="Top" Height="30"/>
-                <TextBox x:Name="txtCustomerID" Width="300" Height="30" Margin="235,64,225,0" VerticalAlignment="Top"/>
+                        <TextBlock Text="Create Koi Order" FontSize="24" FontWeight="Bold" Foreground="Green" 
+                   HorizontalAlignment="Left" VerticalAlignment="Top" Margin="370,10,0,0"/>
 
-                <!-- Order Date -->
-                <TextBlock Text="Order Date" Margin="16,125,423,0" VerticalAlignment="Top"/>
-                <DatePicker x:Name="orderDate" HorizontalAlignment="Left" Height="28" Margin="187,120,0,0" VerticalAlignment="Top" Width="218"/>
+                        <!-- Customer ID -->
+                        <TextBlock Text="Customer ID" Margin="102,79,726,0" VerticalAlignment="Top" Height="30"/>
+                        <TextBox x:Name="txtCustomerID" Height="30" Margin="180,64,450,0" VerticalAlignment="Top"/>
 
-                <!-- Order Details Section Header -->
-                <TextBlock Text="Koi Order Details" FontSize="20" FontWeight="Bold" Foreground="Green" 
-                   HorizontalAlignment="Left" VerticalAlignment="Top" Margin="206,185,0,0"/>
+                        <!-- Order Date -->
+                        <TextBlock Text="Order Date" Margin="102,123,732,0" VerticalAlignment="Top"/>
+                        <DatePicker x:Name="orderDate" HorizontalAlignment="Left" Height="28" Margin="180,109,0,0" VerticalAlignment="Top" Width="270"/>
 
-                <!-- Select Farm -->
-                <TextBlock Text="Select Farm" Margin="103,232,397,0" VerticalAlignment="Top"/>
-                <ComboBox  x:Name="cmbFarm"  Width="140" Height="30" Margin="92,252,336,0" VerticalAlignment="Top" />
+                        <!-- Order Details Section Header -->
+                        <TextBlock Text="Koi Order Details" FontSize="20" FontWeight="Bold" Foreground="Green" 
+                   HorizontalAlignment="Left" VerticalAlignment="Top" Margin="384,181,0,0"/>
 
-                <!-- Select Koi Type -->
-                <TextBlock Text="Select Koi Type" Margin="394,235,93,0" VerticalAlignment="Top"/>
-                <ComboBox x:Name="cmbKoiType"  Width="140" Height="30" Margin="380,259,48,0" VerticalAlignment="Top"/>
+                        <!-- Select Farm -->
+                        <TextBlock Text="Select Farm" Margin="102,240,732,0" VerticalAlignment="Top"/>
+                        <ComboBox  x:Name="cmbFarm"  Width="140" Height="30" Margin="180,225,580,0" VerticalAlignment="Top" />
 
-                <!-- Select Koi -->
-                <TextBlock Text="Select Koi" Margin="95,301,339,0" VerticalAlignment="Top" Height="25"/>
-                <ComboBox x:Name="cmbKoi" Width="140" Height="30" Margin="92,336,336,0" VerticalAlignment="Top"/>
+                        <!-- Select Koi Type -->
+                        <TextBlock Text="Select Koi Type" Margin="403,240,413,0" VerticalAlignment="Top"/>
+                        <ComboBox x:Name="cmbKoiType"  Width="140" Height="30" Margin="524,225,236,0" VerticalAlignment="Top"/>
 
-                <!-- Quantity -->
-                <TextBlock Text="Quantity" Margin="382,304,52,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="txtQuantity" Width="140" Height="30" Margin="383,336,45,0" VerticalAlignment="Top"/>
+                        <!-- Select Koi -->
+                        <TextBlock Text="Select Koi" Margin="102,307,741,0" VerticalAlignment="Top" Height="25"/>
+                        <ComboBox x:Name="cmbKoi" Width="140" Height="30" Margin="180,293,580,0" VerticalAlignment="Top"/>
 
-                <!-- Buttons with updated margins for visibility -->
-                <Button Content="Return" Width="100" Height="30" Margin="132,380,336,0" VerticalAlignment="Top" 
+                        <!-- Quantity -->
+                        <TextBlock Text="Quantity" Margin="403,307,444,0" VerticalAlignment="Top"/>
+                        <TextBox x:Name="txtQuantity" Width="140" Height="30" Margin="524,293,236,0" VerticalAlignment="Top"/>
+
+                        <!-- Buttons with updated margins for visibility -->
+                        <Button Content="Return" Height="32" Margin="349,390,322,0" VerticalAlignment="Top" 
                 Background="#6C757D" Foreground="White" RenderTransformOrigin="-0.675,0.686" Click="Return_Click"/>
-                <Button Content="Submit Order" Width="150" Margin="319,380,99,0" 
+                        <Button Content="Submit Order" Margin="349,482,322,236" 
                 Background="#28A745" Foreground="White" Click="Submit_Click"/>
-               
-            </Grid>
-        </Grid>
-    </ScrollViewer>
+
+                    </Grid>
+                </Grid>
+            </ScrollViewer>
+        </Border>
+    </Border>
 </Window>

@@ -30,7 +30,13 @@ namespace KoiKingdomPRN_WPF
         {
             InitializeComponent();
         }
-
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
+        }
         public KoiOrderWindow(KoiKingdom_Service.IKoiOrderService koiOrderService, IEmployeeService employeeService)
         {
             this.koiOrderService = koiOrderService;

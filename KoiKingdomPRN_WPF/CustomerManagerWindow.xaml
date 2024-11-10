@@ -5,70 +5,92 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KoiKingdomPRN_WPF"
         mc:Ignorable="d"
-        Title="CustomerManagerWindow" Height="450" Width="800" Loaded="WindowLoaded">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
-            <!-- Sidebar width -->
-            <ColumnDefinition Width="*"/>
-            <!-- Main content takes the remaining space -->
-        </Grid.ColumnDefinitions>
+        Title="CustomerManagerWindow" Height="450" Width="1200" Loaded="WindowLoaded"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        Background="Transparent">
+    <Border CornerRadius="30" MouseDown="Window_MouseDown">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                <GradientStop Color="Lime" Offset="0"/>
+                <GradientStop Color="Chocolate" Offset="0.75"/>
+            </LinearGradientBrush>
+        </Border.Background>
 
-        <!-- Sidebar -->
-        <local:HeaderManagerWindow Grid.Column="0"/>
+        <Border CornerRadius="20" BorderThickness="5" Opacity="0.9">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#006600" Offset="0"/>
+                    <GradientStop Color="#007700" Offset="0"/>
+                    <GradientStop Color="#FF66CC" Offset="0"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <!-- Sidebar width -->
+                    <ColumnDefinition Width="*"/>
+                    <!-- Main content takes the remaining space -->
+                </Grid.ColumnDefinitions>
 
-        <!-- Main Content -->
-        <Grid Grid.Column="1" Margin="10">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-                <!-- Dòng dành cho DataGrid, chiếm không gian còn lại -->
-            </Grid.RowDefinitions>
+                <!-- Sidebar -->
+                <local:HeaderManagerWindow Grid.Column="0"/>
 
-            <!-- Column Definitions -->
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="150"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="150"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+                <!-- Main Content -->
+                <Grid Grid.Column="1" Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <!-- Dòng dành cho DataGrid, chiếm không gian còn lại -->
+                    </Grid.RowDefinitions>
 
-            <!-- Customer ID -->
-            <Label Content="Customer ID" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Margin="10,10,0,0"/>
-            <TextBox x:Name="txtCustomerID" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10,10,0,0"/>
+                    <!-- Column Definitions -->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
 
-            <!-- Full Name -->
-            <Label Content="Full Name" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" Margin="10,10,0,0"/>
-            <TextBox x:Name="txtFullName" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Stretch" Margin="10,10,0,0"/>
+                    <!-- Customer ID -->
+                    <Label Content="Customer ID" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="0,29,41,15" Grid.RowSpan="2"/>
+                    <TextBox x:Name="txtCustomerID" Grid.Row="1" Margin="135,17,25,27" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
 
-            <!-- Email -->
-            <Label Content="Email" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="10,10,0,0"/>
-            <TextBox x:Name="txtEmail" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10,10,0,0"/>
+                    <!-- Full Name -->
+                    <Label Content="Full Name" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right" Margin="0,2,65,343" Grid.RowSpan="5"/>
+                    <TextBox x:Name="txtFullName" Grid.Row="1" Grid.Column="2" Margin="110,29,50,15" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
 
-            <!-- Address -->
-            <Label Content="Address" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" Margin="10,10,0,0"/>
-            <TextBox x:Name="txtAddress" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Stretch" Margin="10,10,0,0"/>
+                    <!-- Email -->
+                    <Label Content="Email" Grid.Row="6" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,79,291"/>
+                    <TextBox x:Name="txtEmail" Grid.Row="1" Margin="135,34,25,324" Grid.RowSpan="6" Grid.ColumnSpan="2"/>
 
-            <!-- Account Type -->
-            <Label Content="Account Type" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Margin="10,10,0,0"/>
-            <TextBox x:Name="txtAccountType" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10,10,0,0"/>
+                    <!-- Address -->
+                    <Label Content="Address" Grid.Row="6" Grid.Column="2" HorizontalAlignment="Left" Margin="24,10,0,266"/>
+                    <TextBox x:Name="txtAddress" Grid.Row="1" Grid.Column="2" Margin="110,23,50,321" Grid.ColumnSpan="2" Grid.RowSpan="6"/>
 
-            <!-- Status -->
-            <Label Content="Status" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right" Margin="10,10,0,0"/>
-            <ComboBox x:Name="cmbStatus" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Stretch" Margin="10,10,0,0" SelectionChanged="cmbStatus_SelectionChanged">
-                <ComboBoxItem Content="Active" Tag="True"/>
-                <ComboBoxItem Content="Blocked" Tag="False"/>
-            </ComboBox>
+                    <!-- Account Type -->
+                    <Label Content="Account Type" Grid.Row="6" HorizontalAlignment="Center" Margin="0,49,0,240"/>
+                    <TextBox x:Name="txtAccountType" Grid.Row="6" Margin="135,10,25,280" Grid.ColumnSpan="2"/>
 
-            <!-- DataGrid for displaying customer data -->
-            <DataGrid x:Name="dtgCustomer" Grid.Row="6" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Top" 
-                      Margin="10,20,10,0" Height="Auto" MaxHeight="200" Width="1000" 
+                    <!-- Status -->
+                    <Label Content="Status" Grid.Row="6" Grid.Column="2" HorizontalAlignment="Right" Margin="0,51,86,239"/>
+                    <ComboBox x:Name="cmbStatus" Grid.Row="6" Grid.Column="2" Margin="110,49,50,0" SelectionChanged="cmbStatus_SelectionChanged" Grid.ColumnSpan="2" VerticalAlignment="Top">
+                        <ComboBoxItem Content="Active" Tag="True"/>
+                        <ComboBoxItem Content="Blocked" Tag="False"/>
+                    </ComboBox>
+
+                    <!-- DataGrid for displaying customer data -->
+                    <DataGrid x:Name="dtgCustomer" Grid.Row="6" Grid.ColumnSpan="4" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                      Margin="0,105,0,0" Height="226" MaxHeight="200" Width="942" 
                       d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="dtgCustomer_SelectionChanged"/>
-        </Grid>
-    </Grid>
+                </Grid>
+            </Grid>
+        </Border>
+    </Border>
 </Window>
