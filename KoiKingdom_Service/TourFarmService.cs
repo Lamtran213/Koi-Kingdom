@@ -41,5 +41,10 @@ namespace KoiKingdom_Service
         {
             return iTourFarmRepo.DeleteTourFarm(tourId, farmid);
         }
+
+        public List<string> GetFarmNamesByTourId(Tour tour)
+        {
+            return iTourFarmRepo.GetFarmNamesByTourId(tour);
+        }
     }
 }

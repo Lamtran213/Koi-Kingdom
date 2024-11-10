@@ -25,5 +25,6 @@ namespace KoiKingdom_Repository
 
        List<string> GetKoitypesName();
 
+
     }
 }

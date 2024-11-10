@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nDa3lGkix9I=",
+  "dgSpecHash": "4kpadEVRQLg=",
   "success": true,
-  "projectFilePath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdomPRN_WPF\\KoiKingdomPRN_WPF.csproj",
+  "projectFilePath": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdomPRN_WPF\\KoiKingdomPRN_WPF.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\fontawesome\\4.7.0\\fontawesome.4.7.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512",

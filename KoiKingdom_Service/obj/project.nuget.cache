@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "n6Yan6Icjh4=",
+  "dgSpecHash": "PVJG3Ko3xMw=",
   "success": true,
-  "projectFilePath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj",
+  "projectFilePath": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",

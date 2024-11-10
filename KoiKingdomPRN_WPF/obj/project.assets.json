@@ -2582,11 +2582,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdomPRN_WPF\\KoiKingdomPRN_WPF.csproj",
+      "projectUniqueName": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdomPRN_WPF\\KoiKingdomPRN_WPF.csproj",
       "projectName": "KoiKingdomPRN_WPF",
-      "projectPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdomPRN_WPF\\KoiKingdomPRN_WPF.csproj",
+      "projectPath": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdomPRN_WPF\\KoiKingdomPRN_WPF.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdomPRN_WPF\\obj\\",
+      "outputPath": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdomPRN_WPF\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2603,8 +2603,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj": {
-              "projectPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj"
+            "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj": {
+              "projectPath": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj"
             }
           }
         }

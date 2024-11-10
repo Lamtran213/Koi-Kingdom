@@ -28,16 +28,18 @@
                             <StackPanel>
                                 <Image Source="{Binding ImageSource}" Height="150" Stretch="UniformToFill" Margin="5"/>
                                 <!-- Details Section -->
-                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="0,5">
-                                        <TextBlock Text="{Binding Rating}" FontSize="10" Foreground="Black" HorizontalAlignment="Right" Margin="0,5" TextWrapping="Wrap"/>
-                                        <TextBlock Text="{Binding Duration}" FontSize="10" Foreground="Black" HorizontalAlignment="Right" Margin="0,5" TextWrapping="Wrap"/>
-                                        <TextBlock Text="{Binding StartDate}" FontSize="10" Foreground="Black" HorizontalAlignment="Right" Margin="0,5" TextWrapping="Wrap"/>
-                                        <TextBlock Text="{Binding EndDate}" FontSize="10" Foreground="Black" HorizontalAlignment="Right" Margin="0,5" TextWrapping="Wrap"/>
-                                        <TextBlock Text="{Binding Farms}" FontSize="10" Foreground="Black" HorizontalAlignment="Right" Margin="0,5" TextWrapping="Wrap"/>
-                                        <TextBlock Text="{Binding DepartureLocation}" FontSize="10" Foreground="Black" HorizontalAlignment="Right" Margin="0,5" TextWrapping="Wrap"/>
-                                    <TextBlock Text="{Binding TourPrice}" FontWeight="Bold" FontSize="10" Foreground="Black" HorizontalAlignment="Right" Margin="0,5" TextWrapping="Wrap"/>
+                                <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="10,5,0,5">
+                                    <TextBlock Text="{Binding Rating}" FontSize="10" Foreground="Black" HorizontalAlignment="Right" Margin="5,5,0,5" TextWrapping="Wrap"/>
+                                    <TextBlock Text="{Binding Duration}" FontSize="10" Foreground="Black" HorizontalAlignment="Right" Margin="5,5,0,5" TextWrapping="Wrap"/>
+                                    <TextBlock Text="{Binding StartDate}" FontSize="10" Foreground="Black" HorizontalAlignment="Right" Margin="5,5,0,5" TextWrapping="Wrap"/>
+                                    <TextBlock Text="{Binding EndDate}" FontSize="10" Foreground="Black" HorizontalAlignment="Right" Margin="5,5,0,5" TextWrapping="Wrap"/>
+                                    <TextBlock Text="{Binding Farms}" FontSize="10" Foreground="Black" HorizontalAlignment="Right" Margin="5,5,0,5" TextWrapping="Wrap"/>
+                                    <TextBlock Text="{Binding Koitype}" FontSize="10" Foreground="Black" HorizontalAlignment="Right" Margin="5,5,0,5" TextWrapping="Wrap"/>
+                                    <TextBlock Text="{Binding DepartureLocation}" FontSize="10" Foreground="Black" HorizontalAlignment="Right" Margin="5,5,0,5" TextWrapping="Wrap"/>
+                                    <TextBlock Text="{Binding TourPrice}" FontWeight="Bold" FontSize="10" Foreground="Black" HorizontalAlignment="Right" Margin="5,5,0,5" TextWrapping="Wrap"/>
                                 </StackPanel>
-                        
+
+
                             </StackPanel>
                         </Button>
                     </DataTemplate>

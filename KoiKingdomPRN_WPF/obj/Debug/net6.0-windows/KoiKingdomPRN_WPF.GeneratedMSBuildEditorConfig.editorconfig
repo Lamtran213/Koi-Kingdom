@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = KoiKingdomPRN_WPF
-build_property.ProjectDir = D:\lab_PRn\Koi-Kingdom\KoiKingdomPRN_WPF\
+build_property.ProjectDir = D:\Achire\lab_PRn\Koi-Kingdom\KoiKingdomPRN_WPF\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

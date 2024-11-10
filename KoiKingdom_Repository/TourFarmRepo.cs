@@ -20,5 +20,7 @@ namespace KoiKingdom_Repository
         public List<TourFarm> GetTourFarms() => TourFarmDAO.Instance.GetTourFarms();
 
         public bool UpdateTourFarm(TourFarm tourFarm) => TourFarmDAO.Instance.UpdateTourFarm(tourFarm);
+
+        public List<string> GetFarmNamesByTourId(Tour tour) => TourFarmDAO.Instance.GetFarmNamesByTourId(tour);
     }
 }

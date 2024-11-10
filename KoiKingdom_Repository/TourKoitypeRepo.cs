@@ -20,5 +20,7 @@ namespace KoiKingdom_Repository
         public List<TourKoitype> GetTourKoitypes() => TourKoitypeDAO.Instance.GetTourKoitypes();
 
         public bool UpdateTourKoitype(TourKoitype tourKoitype) => TourKoitypeDAO.Instance.UpdateTourKoitype(tourKoitype);
+
+        public List<string> GetKoiTypeNamesByTourId(Tour tour) => TourKoitypeDAO.Instance.GetKoiTypeNamesByTourId(tour);
     }
 }

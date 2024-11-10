@@ -2301,11 +2301,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_DAOs\\KoiKingdom_DAOs.csproj",
+      "projectUniqueName": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_DAOs\\KoiKingdom_DAOs.csproj",
       "projectName": "KoiKingdom_DAOs",
-      "projectPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_DAOs\\KoiKingdom_DAOs.csproj",
+      "projectPath": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_DAOs\\KoiKingdom_DAOs.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_DAOs\\obj\\",
+      "outputPath": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_DAOs\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2322,8 +2322,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj": {
-              "projectPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj"
+            "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj": {
+              "projectPath": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj"
             }
           }
         }

@@ -36,6 +36,14 @@ namespace KoiKingdom_DAOs
             return dbContext.TourKoitypes.SingleOrDefault(e => e.TourId == tourId && e.KoiTypeId == koiTypeId);
         }
 
+        public List<string> GetKoiTypeNamesByTourId(Tour tour)
+        {
+            return dbContext.TourKoitypes
+                            .Where(f => f.TourId == tour.TourId)
+                            .Select(f => f.KoiType.TypeName) // Giả sử Farm là đối tượng liên kết và có thuộc tính Name
+                            .ToList();
+        }
+
         // Thêm hồ sơ tour koitype
         public TourKoitype AddTourKoitype(int tourId, int koiTypeId)
         {

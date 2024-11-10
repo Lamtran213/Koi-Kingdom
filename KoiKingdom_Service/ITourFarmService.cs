@@ -20,5 +20,7 @@ namespace KoiKingdom_Service
 
         // Cập nhật hồ sơ tour farm
         bool UpdateTourFarm(TourFarm tourFarm);
+
+        public List<string> GetFarmNamesByTourId(Tour tour);
     }
 }

@@ -19,5 +19,8 @@ namespace KoiKingdom_Repository
 
         // Cập nhật hồ sơ tour koitype
         bool UpdateTourKoitype(TourKoitype tourKoitype);
+
+
+        public List<string> GetKoiTypeNamesByTourId(Tour tour);
     }
 }

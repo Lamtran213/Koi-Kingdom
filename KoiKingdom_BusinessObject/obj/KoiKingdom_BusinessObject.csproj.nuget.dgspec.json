@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj": {}
+    "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj": {}
   },
   "projects": {
-    "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj": {
+    "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj",
+        "projectUniqueName": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj",
         "projectName": "KoiKingdom_BusinessObject",
-        "projectPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj",
+        "projectPath": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\obj\\",
+        "outputPath": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdomPRN_WPF\\KoiKingdomPRN_WPF.csproj": {}
+    "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdomPRN_WPF\\KoiKingdomPRN_WPF.csproj": {}
   },
   "projects": {
-    "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdomPRN_WPF\\KoiKingdomPRN_WPF.csproj": {
+    "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdomPRN_WPF\\KoiKingdomPRN_WPF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdomPRN_WPF\\KoiKingdomPRN_WPF.csproj",
+        "projectUniqueName": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdomPRN_WPF\\KoiKingdomPRN_WPF.csproj",
         "projectName": "KoiKingdomPRN_WPF",
-        "projectPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdomPRN_WPF\\KoiKingdomPRN_WPF.csproj",
+        "projectPath": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdomPRN_WPF\\KoiKingdomPRN_WPF.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdomPRN_WPF\\obj\\",
+        "outputPath": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdomPRN_WPF\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj": {
-                "projectPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj"
+              "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj": {
+                "projectPath": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj"
               }
             }
           }
@@ -89,14 +89,14 @@
         }
       }
     },
-    "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj": {
+    "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj",
+        "projectUniqueName": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj",
         "projectName": "KoiKingdom_BusinessObject",
-        "projectPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj",
+        "projectPath": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\obj\\",
+        "outputPath": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -171,14 +171,14 @@
         }
       }
     },
-    "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_DAOs\\KoiKingdom_DAOs.csproj": {
+    "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_DAOs\\KoiKingdom_DAOs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_DAOs\\KoiKingdom_DAOs.csproj",
+        "projectUniqueName": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_DAOs\\KoiKingdom_DAOs.csproj",
         "projectName": "KoiKingdom_DAOs",
-        "projectPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_DAOs\\KoiKingdom_DAOs.csproj",
+        "projectPath": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_DAOs\\KoiKingdom_DAOs.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_DAOs\\obj\\",
+        "outputPath": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_DAOs\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -195,8 +195,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj": {
-                "projectPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj"
+              "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj": {
+                "projectPath": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_BusinessObject\\KoiKingdom_BusinessObject.csproj"
               }
             }
           }
@@ -235,14 +235,14 @@
         }
       }
     },
-    "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Repository\\KoiKingdom_Repository.csproj": {
+    "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Repository\\KoiKingdom_Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Repository\\KoiKingdom_Repository.csproj",
+        "projectUniqueName": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Repository\\KoiKingdom_Repository.csproj",
         "projectName": "KoiKingdom_Repository",
-        "projectPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Repository\\KoiKingdom_Repository.csproj",
+        "projectPath": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Repository\\KoiKingdom_Repository.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Repository\\obj\\",
+        "outputPath": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -259,8 +259,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_DAOs\\KoiKingdom_DAOs.csproj": {
-                "projectPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_DAOs\\KoiKingdom_DAOs.csproj"
+              "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_DAOs\\KoiKingdom_DAOs.csproj": {
+                "projectPath": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_DAOs\\KoiKingdom_DAOs.csproj"
               }
             }
           }
@@ -299,14 +299,14 @@
         }
       }
     },
-    "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj": {
+    "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj",
+        "projectUniqueName": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj",
         "projectName": "KoiKingdom_Service",
-        "projectPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj",
+        "projectPath": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Service\\KoiKingdom_Service.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Service\\obj\\",
+        "outputPath": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -323,8 +323,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Repository\\KoiKingdom_Repository.csproj": {
-                "projectPath": "D:\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Repository\\KoiKingdom_Repository.csproj"
+              "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Repository\\KoiKingdom_Repository.csproj": {
+                "projectPath": "D:\\Achire\\lab_PRn\\Koi-Kingdom\\KoiKingdom_Repository\\KoiKingdom_Repository.csproj"
               }
             }
           }

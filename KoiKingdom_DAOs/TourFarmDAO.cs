@@ -37,6 +37,14 @@ namespace KoiKingdom_DAOs
             return dbContext.TourFarms.SingleOrDefault(tf => tf.TourId == tourid && tf.FarmId == farmid);
         }
 
+        public List<string> GetFarmNamesByTourId(Tour tour)
+        {
+            return dbContext.TourFarms
+                            .Where(f => f.TourId == tour.TourId)
+                            .Select(f => f.Farm.FarmName) // Giả sử Farm là đối tượng liên kết và có thuộc tính Name
+                            .ToList();
+        }
+
         // Lấy danh sách tất cả tour farms
         public List<TourFarm> GetTourFarms()
         {

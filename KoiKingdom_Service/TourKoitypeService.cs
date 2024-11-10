@@ -43,5 +43,10 @@ namespace KoiKingdom_Service
             return iTourKoitypeRepo.UpdateTourKoitype(tourKoitype);
         }
 
+
+        public List<string> GetKoiTypeNamesByTourId(Tour tour)
+        {
+            return iTourKoitypeRepo.GetKoiTypeNamesByTourId(tour);
+        }
     }
 }

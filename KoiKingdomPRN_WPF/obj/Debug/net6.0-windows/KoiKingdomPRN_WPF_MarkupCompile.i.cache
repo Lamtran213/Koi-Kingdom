@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\lab_PRn\Koi-Kingdom\KoiKingdomPRN_WPF\obj\Debug\net6.0-windows\
+D:\Achire\lab_PRn\Koi-Kingdom\KoiKingdomPRN_WPF\obj\Debug\net6.0-windows\
 KoiKingdomPRN_WPF
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-D:\lab_PRn\Koi-Kingdom\KoiKingdomPRN_WPF\App.xaml
+D:\Achire\lab_PRn\Koi-Kingdom\KoiKingdomPRN_WPF\App.xaml
 27448067510
 
 32-906586503
-238-789949702
+238-938010307
 AddEmployeeWindow.xaml;AddTourManagerWindow.xaml;CheckoutWindow.xaml;CreateKoiOrderManagerWindow.xaml;CustomerManagerWindow.xaml;EmployeeManagerWindow.xaml;FarmListWindow.xaml;Footer.xaml;HeaderConsultingWindow.xaml;HeaderManagerWindow.xaml;HeaderWindow.xaml;HomeConsultingWindow.xaml;HomeWindow.xaml;KoiOrderWindow.xaml;KoiTypeListWindow.xaml;LoginWindow.xaml;ManagerProfileWindow.xaml;ManagerWindow.xaml;MyBookingTourWindow.xaml;MyCartWindow.xaml;MyProfileModalWindow.xaml;Register.xaml;ServicePage.xaml;TourDetailManagementWindow.xaml;TourDetailWindow.xaml;TourManagerWindow.xaml;TourWindow.xaml;
 
-True
+False
 
